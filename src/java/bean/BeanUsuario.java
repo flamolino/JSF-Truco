@@ -26,7 +26,7 @@ public class BeanUsuario {
     /*
     Methods
      */
-    public void logar() throws SQLException {
+    public String logar() throws SQLException {
 
         Select sel = new Select();
 
@@ -34,16 +34,15 @@ public class BeanUsuario {
 
         if (this.user.getId() != -1) {
             setLogado(true);
-            setMensagem("Logou!");
+            return "main";
         } else {
-            setLogado(false);
-            setMensagem("Não Logou!");
+            return desloga();
         }
 
     }
 
-    public void cadastrarUsuario() {
-
+    public String cadastrarUsuario() {
+        this.mensagem = "";
         try {
             Select sel = new Select();
             Insert ins = new Insert();
@@ -53,18 +52,21 @@ public class BeanUsuario {
             } else {
                 if (ins.novoUsuario(user)) {
                     this.mensagem = "Cadastro realizado com sucesso!";
+                    return logar();
                 }
             }
         } catch (SQLException ex) {
             this.mensagem = "Erro ao realizar cadastro!";
             Logger.getLogger(BeanUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return "";
 
     }
 
     public String desloga() {
-        this.logado = false;
-        return callIndex();
+        this.mensagem = "";
+        this.user = new Usuario();
+        return "index";
     }
 
     /*
@@ -75,12 +77,6 @@ public class BeanUsuario {
         this.user = new Usuario();
         this.user.setIdade(10);
         return "cadastro_usuario";
-    }
-
-    public String callIndex() {
-        this.mensagem = "";
-        this.user = new Usuario();
-        return "index";
     }
 
     /*

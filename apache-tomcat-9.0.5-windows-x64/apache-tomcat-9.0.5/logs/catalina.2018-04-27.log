@@ -1743,3 +1743,372 @@ Caused by: java.lang.IllegalArgumentException: The main resource set specified [
 27-Apr-2018 15:41:17.376 INFORMAÇÕES [http-nio-8080-exec-167] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
 27-Apr-2018 15:41:17.889 INFORMAÇÕES [http-nio-8080-exec-167] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
 27-Apr-2018 15:41:17.892 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] is completed
+27-Apr-2018 17:04:09.621 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.5
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 21:42:23 UTC
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.5.0
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_131\jre
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\logging.properties
+27-Apr-2018 17:04:09.623 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|c430761
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\temp
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+27-Apr-2018 17:04:09.624 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+27-Apr-2018 17:04:09.625 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+27-Apr-2018 17:04:10.264 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+27-Apr-2018 17:04:10.356 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+27-Apr-2018 17:04:10.418 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Apr-2018 17:04:10.424 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+27-Apr-2018 17:04:10.425 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Apr-2018 17:04:10.425 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1058 ms
+27-Apr-2018 17:04:10.446 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+27-Apr-2018 17:04:10.446 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.5
+27-Apr-2018 17:04:10.451 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\aula_jsf_1502.xml]
+27-Apr-2018 17:04:15.671 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:04:15.775 INFORMAÇÕES [main] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.16 ( 20180118-0013 901a18e611bead474715a643c8f634cfa1312414) para o contexto '/aula_jsf_1502'
+27-Apr-2018 17:04:15.883 INFORMAÇÕES [main] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:04:16.168 ADVERTÊNCIA [main] com.sun.faces.application.annotation.ConverterConfigHandler.collect @FacesConverter is using both value and forClass, only value will be applied.
+27-Apr-2018 17:04:16.368 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\aula_jsf_1502.xml] has finished in [5,917] ms
+27-Apr-2018 17:04:16.368 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\MavenTeste.xml]
+27-Apr-2018 17:04:16.371 GRAVE [main] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+ org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@7aa9e414]
+	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4752)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4887)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:740)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\04783714118\Documents\NetBeansProjects\MavenTeste\target\MavenTeste-1.0-SNAPSHOT] is not valid
+	at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+	at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:706)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	... 41 more
+
+27-Apr-2018 17:04:16.380 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\MavenTeste.xml]
+ java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@7aa9e414]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:744)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+27-Apr-2018 17:04:16.381 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\MavenTeste.xml] has finished in [13] ms
+27-Apr-2018 17:04:16.381 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\truco.xml]
+27-Apr-2018 17:04:17.116 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:04:17.178 INFORMAÇÕES [main] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+27-Apr-2018 17:04:17.255 INFORMAÇÕES [main] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:04:17.821 INFORMAÇÕES [main] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+27-Apr-2018 17:04:17.824 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\truco.xml] has finished in [1,443] ms
+27-Apr-2018 17:04:17.824 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\trucoladrao.xml]
+27-Apr-2018 17:04:17.827 GRAVE [main] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+ org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@3b25709e]
+	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4752)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4887)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:740)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\04783714118\Documents\NetBeansProjects\trucoladrao\target\trucoladrao-1.0-SNAPSHOT] is not valid
+	at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+	at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:706)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	... 41 more
+
+27-Apr-2018 17:04:17.889 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\trucoladrao.xml]
+ java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@3b25709e]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:744)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+27-Apr-2018 17:04:17.889 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\trucoladrao.xml] has finished in [65] ms
+27-Apr-2018 17:04:17.890 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs]
+27-Apr-2018 17:04:17.913 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs] has finished in [22] ms
+27-Apr-2018 17:04:17.967 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples]
+27-Apr-2018 17:04:18.163 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples] has finished in [196] ms
+27-Apr-2018 17:04:18.163 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager]
+27-Apr-2018 17:04:18.189 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager] has finished in [26] ms
+27-Apr-2018 17:04:18.190 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager]
+27-Apr-2018 17:04:18.210 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager] has finished in [20] ms
+27-Apr-2018 17:04:18.211 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT]
+27-Apr-2018 17:04:18.228 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT] has finished in [18] ms
+27-Apr-2018 17:04:18.230 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+27-Apr-2018 17:04:18.237 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+27-Apr-2018 17:04:18.241 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 7815 ms
+27-Apr-2018 17:04:25.205 INFORMAÇÕES [http-nio-8080-exec-5] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/truco]
+27-Apr-2018 17:04:25.237 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\truco.xml]
+27-Apr-2018 17:04:25.952 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:04:26.017 INFORMAÇÕES [http-nio-8080-exec-1] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+27-Apr-2018 17:04:26.078 INFORMAÇÕES [http-nio-8080-exec-1] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:04:26.585 INFORMAÇÕES [http-nio-8080-exec-1] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+27-Apr-2018 17:04:26.588 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\truco\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\truco.xml] has finished in [1,351] ms
+27-Apr-2018 17:04:26.600 INFORMAÇÕES [http-nio-8080-exec-6] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after start() had already been called. The second call will be ignored.
+27-Apr-2018 17:04:27.136 ADVERTÊNCIA [http-nio-8080-exec-4] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+27-Apr-2018 17:05:17.404 INFORMAÇÕES [http-nio-8080-exec-13] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] has started
+27-Apr-2018 17:05:17.417 ADVERTÊNCIA [http-nio-8080-exec-13] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [truco] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+27-Apr-2018 17:05:17.785 INFORMAÇÕES [Finalizer] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [org.sqlite.SQLiteErrorCode]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [org.sqlite.SQLiteErrorCode]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1283)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1142)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1104)
+	at org.sqlite.core.DB.newSQLException(DB.java:907)
+	at org.sqlite.core.CoreStatement.internalClose(CoreStatement.java:115)
+	at org.sqlite.jdbc3.JDBC3Statement.close(JDBC3Statement.java:35)
+	at org.sqlite.jdbc4.JDBC4Statement.close(JDBC4Statement.java:27)
+	at org.sqlite.jdbc3.JDBC3Statement.finalize(JDBC3Statement.java:42)
+	at java.lang.System$2.invokeFinalize(System.java:1270)
+	at java.lang.ref.Finalizer.runFinalizer(Finalizer.java:98)
+	at java.lang.ref.Finalizer.access$100(Finalizer.java:34)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:210)
+
+27-Apr-2018 17:05:18.136 INFORMAÇÕES [http-nio-8080-exec-13] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:05:18.204 INFORMAÇÕES [http-nio-8080-exec-13] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+27-Apr-2018 17:05:18.270 INFORMAÇÕES [http-nio-8080-exec-13] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:05:18.814 INFORMAÇÕES [http-nio-8080-exec-13] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+27-Apr-2018 17:05:18.820 INFORMAÇÕES [http-nio-8080-exec-13] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] is completed
+27-Apr-2018 17:05:22.502 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] has started
+27-Apr-2018 17:05:23.158 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:05:23.221 INFORMAÇÕES [http-nio-8080-exec-17] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+27-Apr-2018 17:05:23.284 INFORMAÇÕES [http-nio-8080-exec-17] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:05:23.797 INFORMAÇÕES [http-nio-8080-exec-17] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+27-Apr-2018 17:05:23.801 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] is completed
+27-Apr-2018 17:05:24.286 ADVERTÊNCIA [http-nio-8080-exec-11] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+27-Apr-2018 17:06:59.003 INFORMAÇÕES [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] has started
+27-Apr-2018 17:06:59.008 ADVERTÊNCIA [http-nio-8080-exec-11] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [truco] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+27-Apr-2018 17:06:59.652 INFORMAÇÕES [http-nio-8080-exec-11] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:06:59.713 INFORMAÇÕES [http-nio-8080-exec-11] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+27-Apr-2018 17:06:59.772 INFORMAÇÕES [http-nio-8080-exec-11] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:07:00.285 INFORMAÇÕES [http-nio-8080-exec-11] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+27-Apr-2018 17:07:00.292 INFORMAÇÕES [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] is completed
+27-Apr-2018 17:07:12.547 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+27-Apr-2018 17:13:34.604 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] has started
+27-Apr-2018 17:13:35.256 INFORMAÇÕES [Finalizer] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [org.sqlite.SQLiteErrorCode]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [org.sqlite.SQLiteErrorCode]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1283)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1142)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1104)
+	at org.sqlite.core.DB.newSQLException(DB.java:907)
+	at org.sqlite.core.CoreStatement.internalClose(CoreStatement.java:115)
+	at org.sqlite.jdbc3.JDBC3Statement.close(JDBC3Statement.java:35)
+	at org.sqlite.jdbc4.JDBC4Statement.close(JDBC4Statement.java:27)
+	at org.sqlite.core.CorePreparedStatement.finalize(CorePreparedStatement.java:55)
+	at java.lang.System$2.invokeFinalize(System.java:1270)
+	at java.lang.ref.Finalizer.runFinalizer(Finalizer.java:98)
+	at java.lang.ref.Finalizer.access$100(Finalizer.java:34)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:210)
+
+27-Apr-2018 17:13:35.273 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+27-Apr-2018 17:13:35.335 INFORMAÇÕES [http-nio-8080-exec-37] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+27-Apr-2018 17:13:35.393 INFORMAÇÕES [http-nio-8080-exec-37] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+27-Apr-2018 17:13:35.899 INFORMAÇÕES [http-nio-8080-exec-37] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+27-Apr-2018 17:13:35.906 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/truco] is completed
+27-Apr-2018 17:13:36.263 ADVERTÊNCIA [http-nio-8080-exec-28] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+27-Apr-2018 17:19:00.961 1100 [http-nio-8080-exec-47] com.sun.faces.context.ExceptionHandlerImpl.log JSF1073: javax.faces.view.facelets.FaceletException obtido durante o processamento de RENDER_RESPONSE 6: UIComponent-ClientId=, Message=Error Parsing /main.xhtml: Error Traced[line: 20] O tipo de elemento div" deve ser encerrado pela tag final correspondente "</div>".
+27-Apr-2018 17:19:00.961 1100 [http-nio-8080-exec-47] com.sun.faces.context.ExceptionHandlerImpl.log Error Parsing /main.xhtml: Error Traced[line: 20] O tipo de elemento div" deve ser encerrado pela tag final correspondente "</div>".
+ javax.faces.view.facelets.FaceletException: Error Parsing /main.xhtml: Error Traced[line: 20] O tipo de elemento div" deve ser encerrado pela tag final correspondente "</div>".
+	at com.sun.faces.facelets.compiler.SAXCompiler.doCompile(SAXCompiler.java:456)
+	at com.sun.faces.facelets.compiler.SAXCompiler.doCompile(SAXCompiler.java:430)
+	at com.sun.faces.facelets.compiler.Compiler.compile(Compiler.java:124)
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.createFacelet(DefaultFaceletFactory.java:481)
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.access$100(DefaultFaceletFactory.java:106)
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory$1.newInstance(DefaultFaceletFactory.java:199)
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory$1.newInstance(DefaultFaceletFactory.java:197)
+	at com.sun.faces.facelets.impl.DefaultFaceletCache$1.newInstance(DefaultFaceletCache.java:86)
+	at com.sun.faces.facelets.impl.DefaultFaceletCache$1.newInstance(DefaultFaceletCache.java:81)
+	at com.sun.faces.util.ExpiringConcurrentCache$1.call(ExpiringConcurrentCache.java:99)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at com.sun.faces.util.ExpiringConcurrentCache.get(ExpiringConcurrentCache.java:114)
+	at com.sun.faces.facelets.impl.DefaultFaceletCache.getFacelet(DefaultFaceletCache.java:124)
+	at com.sun.faces.facelets.impl.DefaultFaceletCache.getFacelet(DefaultFaceletCache.java:63)
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.getFacelet(DefaultFaceletFactory.java:295)
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.getFacelet(DefaultFaceletFactory.java:239)
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.buildView(FaceletViewHandlingStrategy.java:984)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:99)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+27-Apr-2018 17:51:57.308 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+27-Apr-2018 17:51:57.309 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+27-Apr-2018 17:51:57.406 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+27-Apr-2018 17:51:57.490 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+27-Apr-2018 17:51:57.511 ADVERTÊNCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [truco] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+27-Apr-2018 17:51:57.514 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+27-Apr-2018 17:51:57.516 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+27-Apr-2018 17:51:57.517 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+27-Apr-2018 17:51:57.518 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

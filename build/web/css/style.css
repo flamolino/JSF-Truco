@@ -6,6 +6,70 @@ body {
     background-color: #3498db;
 }
 
+
+
+.main-form {
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    background: silver;
+    border: 1px solid gray;
+}
+
+.mainTop-form {
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    background: gray;
+}
+
+.mainTop-form .btn-mainTop {
+    padding: 1px;
+    width: 100px;
+    height: 26px;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    font-size: 14px;
+}
+
+.mainTop-form .btn-mainTopRight {
+    padding: 1px;
+    width: 100px;
+    height: 26px;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    font-size: 14px;
+    float: right;
+}
+
+.mainMid-form {
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    background: silver;
+}
+
+.mainMidLeftPan-form {
+    width: 15%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    background: #ffd3d3;
+}
+
+.mainMidRightPan-form {
+    width: 15%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    background: #ffd3d3;
+    float: right;
+}
+
 .login-form {
     width: 350px;
     overflow: hidden;
