@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title> TRUCO! Faça seu login </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+              integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
+    </head>
+
+    <body class="bg-dark">
+
+        <h:form>
+            <div class="cad-form">
+                <h2> Formulario de Cadastro </h2>
+                <h3>Nome</h3>
+                <h:inputText id='nome' value="#{usuario.nome}" required="true" requiredMessage="Digite o nome" styleClass="input-cad"/>
+                <h3>Login</h3>
+                <h:inputText id='login' value="#{usuario.login}" required="true" requiredMessage="Digite o login" styleClass="input-cad"/>
+                <h3>Senha</h3>
+                <h:inputSecret id='senha' value="#{usuario.senha}" required="true" requiredMessage="Digite a senha" styleClass="input-cad"/>
+                <h3>E-mail</h3>
+                <h:inputText id='email' value="#{usuario.email}" required="true" requiredMessage="Digite o e-mail" styleClass="input-cad"/>
+                <h3>Endereço</h3>
+                <h:inputText id='endereco' value="#{usuario.endereco}" required="true" requiredMessage="Digite o endereço" styleClass="input-cad"/>
+                <h3>Idade</h3>
+                <h:inputText id='idade' value="#{usuario.idade}" required="true" requiredMessage="Digite a idade" styleClass="input-cad"/>
+                <h:commandButton value="Cadastrar" styleClass="btn btn-success btn-cad" action="#{usuario.cadastrarUsuario()}"/>
+                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad" action="#{usuario.callIndex()}"/>
+                <h:outputLabel>#{usuario.mensagem}</h:outputLabel>
+            </div>
+        </h:form>
+
+    </body>
+
+
+</html>
+
