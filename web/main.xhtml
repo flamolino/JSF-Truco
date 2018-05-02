@@ -1,43 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
-        <title> TRUCO! #{usuario.login} </title>
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-              integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
-    </head>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/template.xhtml">
 
-    <body class="bg-dark">
+        <ui:define name="corpo">
+            <h:outputLabel>#{usuario.allValues}</h:outputLabel>
+        </ui:define>
 
-        <h:form>
-            <div class="main-form">
-
-                <div class="mainTop-form">
-                    <h:commandButton value="Início" styleClass="btn btn-link btn-mainTop"/>
-                    <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop"/>
-                    <h:commandButton value="Duplas" styleClass="btn btn-link btn-mainTop"/>
-                    <h:commandButton value="Sair" styleClass="btn btn-link btn-mainTopRight"/>
-                    <h:commandButton value="#{usuario.login}" styleClass="btn btn-link btn-mainTopRight"/>
-                </div>
-
-                <div class="mainMid-form">
-
-                    <div class="mainMidLeftPan-form">
-                        <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop"/>
-                    </div>
-
-                    <div class="mainMidRightPan-form">
-                        <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop"/>
-                    </div>
-
-                </div>
-            </div>
-        </h:form>
-
-    </body>
+    </ui:composition>
 
 
 </html>
-

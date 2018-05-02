@@ -16,6 +16,19 @@ body {
     border: 1px solid gray;
 }
 
+.main-form img {
+    margin: auto;
+    width: 140px;
+    margin-bottom: 1px;
+}
+
+.main-form h3 {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 8px;
+}
+
 .mainTop-form {
     width: 100%;
     overflow: hidden;
@@ -46,28 +59,12 @@ body {
 }
 
 .mainMid-form {
-    width: 100%;
+    height: 100%;
+    width: 280px;
     overflow: hidden;
     margin: auto;
     padding: 1px;
     background: silver;
-}
-
-.mainMidLeftPan-form {
-    width: 15%;
-    overflow: hidden;
-    margin: auto;
-    padding: 1px;
-    background: #ffd3d3;
-}
-
-.mainMidRightPan-form {
-    width: 15%;
-    overflow: hidden;
-    margin: auto;
-    padding: 1px;
-    background: #ffd3d3;
-    float: right;
 }
 
 .login-form {
@@ -162,4 +159,12 @@ body {
     border-radius: 3px;
     border: 0;
     font-size: 18px;
+}
+
+.btn-image-avatar {
+    height: 150px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+
 }

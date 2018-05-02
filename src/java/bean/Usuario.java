@@ -3,10 +3,10 @@ package bean;
 public class Usuario {
 
     private int id, idade, duplaAtual;
-    private String nome, login, senha, email, avatar, endereco;
+    private String nome, login, senha, email, avatar, endereco, data;
 
     public Usuario(int id, int idade, int duplaAtual, String nome, String login, String senha,
-            String email, String avatar, String endereco) {
+            String email, String avatar, String endereco, String data) {
         this.id = id;
         this.idade = idade;
         this.duplaAtual = duplaAtual;
@@ -16,18 +16,20 @@ public class Usuario {
         this.email = email;
         this.avatar = avatar;
         this.endereco = endereco;
+        this.data = data;
     }
 
     public Usuario() {
         this.id = -1;
         this.idade = 0;
-        this.duplaAtual = 0;
+        this.duplaAtual = -1;
         this.nome = "";
         this.login = "";
         this.senha = "";
         this.email = "";
         this.avatar = "";
         this.endereco = "";
+        this.data = "01-01-0001 01:01:01";
     }
 
     /**
@@ -142,6 +144,14 @@ public class Usuario {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
 }

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/template.xhtml">
+
+        <ui:define name="corpo" >
+
+            <div align="center" class="mainMid-form" style="display:#{(dupla.SeTemDupla(usuario.id))?'block':'none'}">
+
+
+                <h2 class="text-danger" > #{dupla.nome} </h2>
+                <h:commandButton image="#{dupla.logo}" styleClass="btn btn-dark btn-image-avatar" action="#{dupla.adicionarLogo()}"/>
+
+                <h:panelGrid columns="2">
+
+                    <h:outputLabel style="font-weight: bold;"> Criada em: </h:outputLabel>
+                    <h:outputLabel> #{dupla.data} </h:outputLabel>
+                    <h:outputLabel style="font-weight: bold;"> Líder: </h:outputLabel>
+                    <h:outputLabel> #{dupla.nomeDoLider} </h:outputLabel>
+                    <h:outputLabel style="font-weight: bold;"> Integrante: </h:outputLabel>
+                    <h:outputLabel> #{dupla.nomeDoIntegrante} </h:outputLabel>
+
+                </h:panelGrid>
+
+                <h:commandButton value="#{dupla.getDeletarOuSairDaDupla(usuario.id)}" styleClass="btn btn-danger btn-cad" action="#{dupla.excluirOuSairDaDupla(dupla.getDeletarOuSairDaDupla(usuario.id))}" />
+
+
+            </div>
+
+            <div align="center" class="mainMid-form" style="display:#{(dupla.SeTemDupla(usuario.id))?'none':'block'}">
+
+                <div class="cad-form">
+                    <h2> Nova dupla </h2>
+                    <h3>Nome da dupla</h3>
+                    <h:inputText id='nomedupla' value="#{dupla.nome}" requiredMessage="Digite o nome da dupla" styleClass="input-cad"/>
+
+                    <h:commandButton value="criar" styleClass="btn btn-success btn-cad" actionListener="#{dupla.cadastrarDupla(usuario.id)}" />
+
+                    <h:outputLabel>#{dupla.mensagem}</h:outputLabel>
+                </div>
+
+            </div>
+
+        </ui:define>
+
+
+
+    </ui:composition>
+
+
+</html>

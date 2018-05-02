@@ -3,10 +3,12 @@ package bean;
 import data.qry.Insert;
 import data.qry.Select;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import outro.Utilities;
 
 @ManagedBean(name = "usuario")
 @SessionScoped
@@ -41,16 +43,16 @@ public class BeanUsuario {
 
     }
 
-    public String cadastrarUsuario() {
+    public String cadastrarUsuario() throws ParseException {
         this.mensagem = "";
         try {
             Select sel = new Select();
             Insert ins = new Insert();
-
+            this.user.setData(Utilities.getDataAtualString());
             if (sel.verificaUsuarioExistente(this.user.getLogin())) {
                 this.mensagem = "Já existe um usuário com esse login!";
             } else {
-                if (ins.novoUsuario(user)) {
+                if (ins.novoUsuario(this.user)) {
                     this.mensagem = "Cadastro realizado com sucesso!";
                     return logar();
                 }
@@ -61,6 +63,15 @@ public class BeanUsuario {
         }
         return "";
 
+    }
+
+    public String minhaDupla() throws SQLException {
+        Select sel = new Select();
+        if (sel.verificaSeEstaOuSeTemDupla(this.user.getId())) {
+            return "";
+        } else {
+            return "";
+        }
     }
 
     public String desloga() {
@@ -77,6 +88,21 @@ public class BeanUsuario {
         this.user = new Usuario();
         this.user.setIdade(10);
         return "cadastro_usuario";
+    }
+
+    public String callTorneio() {
+        this.mensagem = "";
+        return "torneio";
+    }
+
+    public String callMain() {
+        this.mensagem = "";
+        return "main";
+    }
+
+    public String callPerfil() {
+        this.mensagem = "";
+        return "perfil";
     }
 
     /*
@@ -138,6 +164,14 @@ public class BeanUsuario {
         this.user.setEndereco(str);
     }
 
+    public String getData() {
+        return this.user.getData();
+    }
+
+    public void setData(String str) {
+        this.user.setData(str);
+    }
+
     public int getId() {
         return this.user.getId();
     }
@@ -168,6 +202,17 @@ public class BeanUsuario {
 
     public void setLogado(boolean bool) {
         this.logado = bool;
+    }
+
+    public String getAllValues() {
+        String s = "";
+
+        s += this.user.getNome() + " | ";
+        s += this.user.getData() + " | ";
+        s += this.user.getAvatar() + " | ";
+        s += String.valueOf(this.user.getId()) + " | ";
+
+        return s;
     }
 
 }
