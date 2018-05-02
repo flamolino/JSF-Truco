@@ -13,31 +13,38 @@
                 <h2 class="text-danger" > #{dupla.nome} </h2>
                 <h:commandButton image="#{dupla.logo}" styleClass="btn btn-dark btn-image-avatar" action="#{dupla.adicionarLogo()}"/>
 
-                <h:panelGrid columns="2">
+                <h:panelGrid columns="3" >
 
                     <h:outputLabel style="font-weight: bold;"> Criada em: </h:outputLabel>
                     <h:outputLabel> #{dupla.data} </h:outputLabel>
+                    <h:outputLabel>&nbsp;</h:outputLabel>
                     <h:outputLabel style="font-weight: bold;"> Líder: </h:outputLabel>
                     <h:outputLabel> #{dupla.nomeDoLider} </h:outputLabel>
-                    <h:outputLabel style="font-weight: bold;"> Integrante: </h:outputLabel>
-                    <h:outputLabel> #{dupla.nomeDoIntegrante} </h:outputLabel>
+                    <h:outputLabel>&nbsp;</h:outputLabel>
+                    <h:outputLabel style="font-weight: bold;"> Parceiro: </h:outputLabel>
+                    <h:outputLabel style="display:#{(dupla.seTemIntegrante())?'block':'none'}"> #{dupla.nomeDoIntegrante} </h:outputLabel>
+                    <h:commandButton value="Convidar" styleClass="btn btn-primary btn-con btn-sm" style="display:#{(dupla.seTemIntegrante())?'none':'block'}" action="#{dupla.convidarParceiro(usuario.login, usuario.senha)}"/>
 
                 </h:panelGrid>
-
-                <h:commandButton value="#{dupla.getDeletarOuSairDaDupla(usuario.id)}" styleClass="btn btn-danger btn-cad" action="#{dupla.excluirOuSairDaDupla(dupla.getDeletarOuSairDaDupla(usuario.id))}" />
-
+                <h:commandButton value="#{dupla.getDeletarOuSairDaDupla(usuario.id)}" styleClass="btn btn-danger btn-del" action="#{dupla.excluirOuSairDaDupla(dupla.getDeletarOuSairDaDupla(usuario.id))}" />
+                <h:outputLabel>#{dupla.mensagem}</h:outputLabel>
 
             </div>
 
             <div align="center" class="mainMid-form" style="display:#{(dupla.SeTemDupla(usuario.id))?'none':'block'}">
 
-                <div class="cad-form">
+                <div class="cadDupla-form">
                     <h2> Nova dupla </h2>
                     <h3>Nome da dupla</h3>
-                    <h:inputText id='nomedupla' value="#{dupla.nome}" requiredMessage="Digite o nome da dupla" styleClass="input-cad"/>
+                    <h:inputText id='nomedupla' value="#{dupla.nome}" requiredMessage="Digite o nome da dupla" styleClass="input-cad" />
 
-                    <h:commandButton value="criar" styleClass="btn btn-success btn-cad" actionListener="#{dupla.cadastrarDupla(usuario.id)}" />
+                    <h:commandButton value="Criar" styleClass="btn btn-success btn-cad" actionListener="#{dupla.cadastrarDupla(usuario.id)}" />
 
+                    <div class="cadDupla-form div" style="display:#{(usuario.verificaSeTemConvite())?'block':'none'}">
+                        <img src="resources/img/iconAtencao.png" style="width:20%;"/>
+                        <h:outputLabel value="#{usuario.mensagemDeConviteDupla}" escape="false"/>
+                        <h:commandButton value="Aceitar" styleClass="btn btn-warning btn-con btn-sm" actionListener="#{usuario.aceitarConviteDeDupla()}"/>
+                    </div>
                     <h:outputLabel>#{dupla.mensagem}</h:outputLabel>
                 </div>
 

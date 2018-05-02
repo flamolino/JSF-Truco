@@ -7,17 +7,20 @@ import data.Conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import outro.Utilities;
 
 public class Select {
 
     private static final String AUTENTICAR_LOGIN = "select * from usuario where login = ? and senha = ?;";
-    private static final String VERIFICAR_USUARIO_EXISTENTE = "select login from usuario where login = ?;";
+    private static final String VERIFICAR_USUARIO_EXISTENTE = "select * from usuario where login = ?;";
     private static final String PEGA_USUARIO_POR_ID = "select * from usuario where id = ?;";
+    private static final String PEGA_USUARIO_POR_LOGIN = "select * from usuario where login = ?;";
 
-    private static final String VERIFICA_ESTA_OU_TEM_DUPLA = "select jogadorLider, jogador from dupla where jogadorLider = ? or jogador = ?";
-    private static final String VERIFICAR_DUPLA_EXISTENTE = "select nome from dupla where nome = ?;";
+    private static final String VERIFICA_ESTA_OU_TEM_DUPLA = "select * from dupla where jogadorLider = ? or jogador = ?";
+    private static final String VERIFICAR_DUPLA_EXISTENTE = "select * from dupla where nome = ?;";
     private static final String AUTENTICAR_DUPLA = "select * from dupla where jogadorLider = ? or jogador = ?;";
+    private static final String PEGA_DUPLA_POR_ID = "select * from dupla where jogadorLider = ?;";
 
     private Usuario user = null;
     private Dupla dupla = null;
@@ -91,7 +94,7 @@ public class Select {
         return this.dupla;
     }
 
-    public String getNomeDoLiderOuIntegrante(int id) throws SQLException {
+    public String getLoginPorID(int id) throws SQLException {
         String nome = "";
         try {
 
@@ -106,12 +109,8 @@ public class Select {
             if (this.rs != null) {
 
                 if (this.rs.next()) {
-                    nome = this.rs.getString("nome");
-                } else {
-                    nome = "";
+                    nome = this.rs.getString("login");
                 }
-            } else {
-                nome = "Não Possui";
             }
 
         } catch (SQLException e) {
@@ -119,6 +118,59 @@ public class Select {
         }
         closeConns();
         return nome;
+    }
+
+    public String getNomeDuplaPorLiderID(int id) throws SQLException {
+        String nome = "";
+        try {
+
+            this.conexao = new Conn();
+
+            this.pstmt = conexao.getConexao().prepareStatement(PEGA_DUPLA_POR_ID);
+
+            this.pstmt.setInt(1, id);
+
+            this.rs = pstmt.executeQuery();
+
+            if (this.rs != null) {
+
+                if (this.rs.next()) {
+
+                    nome = this.rs.getString("nome");
+                }
+            }
+
+        } catch (SQLException e) {
+
+        }
+        closeConns();
+        return nome;
+    }
+
+    public int getIDPorLogin(String login) throws SQLException {
+        int id = -1;
+        try {
+
+            this.conexao = new Conn();
+
+            this.pstmt = conexao.getConexao().prepareStatement(PEGA_USUARIO_POR_LOGIN);
+
+            this.pstmt.setString(1, login);
+
+            this.rs = pstmt.executeQuery();
+
+            if (this.rs != null) {
+
+                if (this.rs.next()) {
+                    id = this.rs.getInt("id");
+                }
+            }
+
+        } catch (SQLException e) {
+
+        }
+        closeConns();
+        return id;
     }
 
     public boolean verificaUsuarioExistente(String login) throws SQLException {
@@ -136,12 +188,46 @@ public class Select {
                 closeConns();
                 return true;
             } else {
+                closeConns();
                 return false;
             }
 
         } else {
             closeConns();
             return false;
+        }
+    }
+
+    public int verificaUsuarioTemConvite(String login) throws SQLException {
+
+        int convite = -1;
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_USUARIO_POR_LOGIN);
+
+        this.pstmt.setString(1, login);
+
+        this.rs = pstmt.executeQuery();
+
+        if (this.rs != null) {
+            if (this.rs.next()) {
+
+                if (this.rs.getInt("convite") != -1) {
+                    convite = this.rs.getInt("convite");
+                    closeConns();
+                    return convite;
+                } else {
+                    closeConns();
+                    return convite;
+                }
+            } else {
+                closeConns();
+                return convite;
+            }
+
+        } else {
+            closeConns();
+            return convite;
         }
     }
 
@@ -160,6 +246,7 @@ public class Select {
                 closeConns();
                 return true;
             } else {
+                closeConns();
                 return false;
             }
 
@@ -185,6 +272,7 @@ public class Select {
                 closeConns();
                 return true;
             } else {
+                closeConns();
                 return false;
             }
         } else {
@@ -211,6 +299,7 @@ public class Select {
         u.setDuplaAtual(rSet.getInt("duplaAtual"));
         u.setEndereco(rSet.getString("endereco"));
         u.setData(Utilities.DateToString(Utilities.StringToDate(rSet.getString("dataCriacao"))));
+        u.setConvite(rSet.getInt("convite"));
 
         return u;
     }

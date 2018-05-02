@@ -2,14 +2,15 @@ package bean;
 
 public class Usuario {
 
-    private int id, idade, duplaAtual;
+    private int id, idade, duplaAtual, convite;
     private String nome, login, senha, email, avatar, endereco, data;
 
-    public Usuario(int id, int idade, int duplaAtual, String nome, String login, String senha,
+    public Usuario(int id, int idade, int duplaAtual, int convite, String nome, String login, String senha,
             String email, String avatar, String endereco, String data) {
         this.id = id;
         this.idade = idade;
         this.duplaAtual = duplaAtual;
+        this.convite = convite;
         this.nome = nome;
         this.login = login;
         this.senha = senha;
@@ -23,6 +24,7 @@ public class Usuario {
         this.id = -1;
         this.idade = 0;
         this.duplaAtual = -1;
+        this.convite = -1;
         this.nome = "";
         this.login = "";
         this.senha = "";
@@ -72,6 +74,14 @@ public class Usuario {
      */
     public void setDuplaAtual(int duplaAtual) {
         this.duplaAtual = duplaAtual;
+    }
+
+    public int getConvite() {
+        return convite;
+    }
+
+    public void setConvite(int convite) {
+        this.convite = convite;
     }
 
     public String getNome() {

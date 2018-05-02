@@ -13,6 +13,8 @@
 
         <h:form>
             <div class="login-form">
+
+
                 <h2> Formulario de Login </h2>
                 <img src="resources/img/naipes.png"/>
                 <h3>Usuário</h3>
@@ -20,11 +22,14 @@
                 <h3>Senha</h3>
                 <h:inputSecret id='senha' value="#{usuario.senha}" required="true" requiredMessage="Digite a senha" styleClass="input-login"/>
                 <h:commandButton value="Logar" styleClass="btn btn-dark btn-login" action="#{usuario.logar}"/>
+
                 <h:commandButton value="Cadastrar" styleClass="btn btn-danger btn-login" action="#{usuario.callCadastroUsuario}"/>
                 <h:outputLabel>#{usuario.mensagem}</h:outputLabel>
-            </div>
-        </h:form>
 
+
+            </div>
+
+        </h:form>
     </body>
 
 

@@ -27,32 +27,34 @@ public class beanDupla {
         this.mensagem = "TESTE";
     }
 
-    public String cadastrarDupla(int id) throws SQLException {
+    public void cadastrarDupla(int id) throws SQLException {
 
         this.mensagem = "";
-        this.dupla.setJogadorLider(id);
-        this.dupla.setData(Utilities.getDataAtualString());
         Select sel = new Select();
-        Insert ins = new Insert();
-
         if (sel.verificaDuplaExistente(this.dupla.getNome())) {
             this.mensagem = "Já existe uma dupla cadastrada com esse nome!";
         } else {
+            this.dupla.setJogadorLider(id);
+            this.dupla.setData(Utilities.getDataAtualString());
+
+            Insert ins = new Insert();
+            Update upd = new Update();
             if (ins.novaDupla(this.dupla)) {
-                this.mensagem = "Cadastro realizado com sucesso";
+                this.mensagem = "Dupla criada com sucesso!";
                 this.temDupla = sel.verificaDuplaExistente(this.dupla.getNome());
                 this.dupla = sel.AutenticarDupla(id, id);
-                return "dupla";
+                upd.atualizaDuplaAtual(this.dupla.getId(), id);
+
             } else {
-                this.mensagem = "Erro ao realizar cadastro!";
+                this.mensagem = "Erro ao criar dupla!";
             }
         }
-        return "";
 
     }
 
     public String getDeletarOuSairDaDupla(int id) throws SQLException {
         Select sel = new Select();
+        this.temDupla = sel.verificaDuplaExistente(this.dupla.getNome());
         this.dupla = sel.AutenticarDupla(id, id);
         if (this.dupla.getJogadorLider() == id) {
             return "Deletar dupla";
@@ -65,12 +67,14 @@ public class beanDupla {
     }
 
     public void excluirOuSairDaDupla(String dupla) throws SQLException {
-        if (dupla.equals("Deletar dupla")) {
-            Delete del = new Delete();
-            del.deletarDupla(this.dupla.getId());
-        } else if (dupla.equals("Deixar dupla")) {
-            Update upd = new Update();
-            upd.sairDaDupla(this.dupla.getId());
+        if (this.temDupla) {
+            if (dupla.equals("Deletar dupla")) {
+                Delete del = new Delete();
+                del.deletarDupla(this.dupla.getId(), this.dupla.getJogadorLider());
+            } else if (dupla.equals("Deixar dupla")) {
+                Update upd = new Update();
+                upd.sairDaDupla(this.dupla.getId(), this.dupla.getJogador());
+            }
         }
     }
 
@@ -81,18 +85,48 @@ public class beanDupla {
         return "dupla";
     }
 
+    public boolean seTemIntegrante() {
+
+        return this.dupla.getJogador() != -1;
+
+    }
+
     public String getNomeDoLider() throws SQLException {
         Select sel = new Select();
-        return sel.getNomeDoLiderOuIntegrante(this.dupla.getJogadorLider());
+        return sel.getLoginPorID(this.dupla.getJogadorLider());
     }
 
     public String getNomeDoIntegrante() throws SQLException {
         Select sel = new Select();
-        return sel.getNomeDoLiderOuIntegrante(this.dupla.getJogador());
+        return sel.getLoginPorID(this.dupla.getJogador());
     }
 
-    public void adicionarLogo() {
+    public void adicionarLogo() throws SQLException {
+
         setLogo(JOptionPane.showInputDialog("Digite a URL da logo da dupla"));
+        Update upd = new Update();
+        upd.atualizarLogo(this.dupla.getId(), this.dupla.getLogo());
+
+    }
+
+    public void convidarParceiro(String login, String senha) throws SQLException {
+
+        String parceiro = JOptionPane.showInputDialog("Digite o login do parceiro que deseja convidar:");
+
+        Select sel = new Select();
+
+        if (sel.verificaUsuarioExistente(parceiro)) {
+            if (sel.verificaUsuarioTemConvite(parceiro) != -1) {
+                this.mensagem = "Este usuário já têm um convite pendente";
+            } else {
+                Update upd = new Update();
+                upd.convidaParceiro(this.dupla.getJogadorLider(), sel.getIDPorLogin(parceiro));
+                this.mensagem = "Um convite foi enviado para o usuário " + parceiro;
+            }
+        } else {
+            this.mensagem = "Não existe um usuário com esse login";
+        }
+
     }
 
     public int getId() {
@@ -136,7 +170,11 @@ public class beanDupla {
     }
 
     public String getData() {
-        return Utilities.formataData(this.getDupla().getData());
+        if (this.temDupla) {
+            return Utilities.formataData(this.getDupla().getData());
+        } else {
+            return "";
+        }
     }
 
     public void setData(String data) {

@@ -2,12 +2,14 @@ package bean;
 
 import data.qry.Insert;
 import data.qry.Select;
+import data.qry.Update;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.swing.JOptionPane;
 import outro.Utilities;
 
 @ManagedBean(name = "usuario")
@@ -38,7 +40,7 @@ public class BeanUsuario {
             setLogado(true);
             return "main";
         } else {
-            return desloga();
+            return "";
         }
 
     }
@@ -74,10 +76,38 @@ public class BeanUsuario {
         }
     }
 
-    public String desloga() {
+    public String desloga(Dupla dupla) {
         this.mensagem = "";
         this.user = new Usuario();
+        dupla = new Dupla();
         return "index";
+    }
+
+    public boolean verificaSeTemConvite() throws SQLException {
+        Select sel = new Select();
+        this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
+        return sel.verificaUsuarioTemConvite(this.user.getLogin()) != -1;
+    }
+
+    public String getMensagemDeConviteDupla() throws SQLException {
+        if (this.verificaSeTemConvite()) {
+            Select sel = new Select();
+
+            return "<b>" + sel.getLoginPorID(this.user.getConvite())
+                    + "</b><br>está te convidando para ser seu parceiro na dupla<br><b>"
+                    + sel.getNomeDuplaPorLiderID(this.user.getConvite()) + "<b>";
+        }
+        return "";
+
+    }
+
+    public void aceitarConviteDeDupla() throws SQLException {
+        Update upd = new Update();
+        Select sel = new Select();
+        upd.atualizaDuplaAtual(sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId(), this.user.getId());
+        upd.entrarParaDupla(this.user.getId(), sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId());
+        this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
+
     }
 
     /*
@@ -178,6 +208,14 @@ public class BeanUsuario {
 
     public void setId(int id) {
         this.user.setId(id);
+    }
+
+    public int getConvite() {
+        return this.user.getConvite();
+    }
+
+    public void setConvite(int convite) {
+        this.user.setConvite(convite);
     }
 
     public int getIdade() {

@@ -11,8 +11,8 @@ public class Insert {
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
     private static final String NOVO_USUARIO = "INSERT INTO usuario "
-            + "(id, nome, login, senha, email, avatar, idade, duplaAtual, endereco, dataCriacao)"
-            + " VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            + "(id, nome, login, senha, email, avatar, idade, duplaAtual, endereco, dataCriacao, convite)"
+            + " VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String NOVA_DUPLA = "INSERT INTO dupla "
             + "(id, nome, logo, jogadorLider, jogador, dataCriacao)"
             + " VALUES (null, ?, ?, ?, ?, ?)";
@@ -33,6 +33,7 @@ public class Insert {
         this.pstmt.setInt(7, user.getDuplaAtual());
         this.pstmt.setString(8, user.getEndereco());
         this.pstmt.setString(9, user.getData());
+        this.pstmt.setInt(10, user.getConvite());
 
         this.registros = this.pstmt.executeUpdate();
         closeConns();
