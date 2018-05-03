@@ -11,7 +11,7 @@
 
 
                 <h2 class="text-danger" > #{dupla.nome} </h2>
-                <h:commandButton image="#{dupla.logo}" styleClass="btn btn-dark btn-image-avatar" action="#{dupla.adicionarLogo()}"/>
+                <h:commandButton image="#{dupla.logo}" styleClass="btn btn-dark btn-image-avatar" action="#{dupla.adicionarLogo()}" />
 
                 <h:panelGrid columns="3" >
 
@@ -23,8 +23,12 @@
                     <h:outputLabel>&nbsp;</h:outputLabel>
                     <h:outputLabel style="font-weight: bold;"> Parceiro: </h:outputLabel>
                     <h:outputLabel style="display:#{(dupla.seTemIntegrante())?'block':'none'}"> #{dupla.nomeDoIntegrante} </h:outputLabel>
-                    <h:commandButton value="Convidar" styleClass="btn btn-primary btn-con btn-sm" style="display:#{(dupla.seTemIntegrante())?'none':'block'}" action="#{dupla.convidarParceiro(usuario.login, usuario.senha)}"/>
-
+                  
+                        <h:panelGrid columns="2" >
+                        <h:inputText id='parceiro' value="#{dupla.parceiro}" requiredMessage="Digite o nome do parceiro para convidar" styleClass="input-parceiro" style="display:#{(dupla.seTemIntegrante())?'none':'block'}"/>
+                        <h:commandButton value="Convidar" styleClass="btn btn-primary btn-con btn-sm" style="display:#{(dupla.seTemIntegrante())?'none':'block'}" action="#{dupla.convidarParceiro()}"/>
+                        </h:panelGrid>
+               
                 </h:panelGrid>
                 <h:commandButton value="#{dupla.getDeletarOuSairDaDupla(usuario.id)}" styleClass="btn btn-danger btn-del" action="#{dupla.excluirOuSairDaDupla(dupla.getDeletarOuSairDaDupla(usuario.id))}" />
                 <h:outputLabel>#{dupla.mensagem}</h:outputLabel>
@@ -43,7 +47,10 @@
                     <div class="cadDupla-form div" style="display:#{(usuario.verificaSeTemConvite())?'block':'none'}">
                         <img src="resources/img/iconAtencao.png" style="width:20%;"/>
                         <h:outputLabel value="#{usuario.mensagemDeConviteDupla}" escape="false"/>
-                        <h:commandButton value="Aceitar" styleClass="btn btn-warning btn-con btn-sm" actionListener="#{usuario.aceitarConviteDeDupla()}"/>
+                        <h:panelGrid columns="2" class="pnl-grid" >
+                        <h:commandButton value="Aceitar" styleClass="btn btn-warning btn-convite btn-sm" actionListener="#{usuario.aceitarConviteDeDupla()}"/>
+                        <h:commandButton value="Recusar" styleClass="btn btn-danger btn-convite btn-sm" actionListener="#{usuario.recusarConviteDeDupla()}"/>
+                        </h:panelGrid>
                     </div>
                     <h:outputLabel>#{dupla.mensagem}</h:outputLabel>
                 </div>

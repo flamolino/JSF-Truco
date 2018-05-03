@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title> TRUCO! Faça seu login </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+              integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
+    </head>
+
+    <body class="bg-dark">
+
+        <h:form>
+            <div class="inputText-form">
+
+
+                <h2> #{dupla.inputTextTitle} </h2>
+                <h:inputText id='inputText' value="#{dupla.inputText}" styleClass="input-inputText"/>
+                
+                 <h:panelGrid columns="2" styleClass="pnlGrid-inputText">
+                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-inputText"/>
+
+                <h:commandButton value="Confirmar" styleClass="btn btn-success btn-inputText" action="#{dupla.screenInputTextConfimarLogo()}"/>
+                 </h:panelGrid>
+                <h:outputLabel>#{usuario.mensagem}</h:outputLabel>
+
+
+            </div>
+
+        </h:form>
+    </body>
+
+
+</html>
+

@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package data.qry;
 
 import data.Conn;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author 04783714118
- */
 public class Update {
 
     private static final String SAIR_DA_DUPLA = "UPDATE dupla SET jogador = -1 WHERE id = ?; UPDATE usuario SET duplaAtual = -1 WHERE id = ?;";
@@ -20,6 +12,7 @@ public class Update {
     private static final String ATUALIZAR_LOGO_DUPLA = "UPDATE dupla SET logo = ? WHERE id = ?;";
     private static final String CONVIDA_PARCEIRO = "UPDATE usuario SET convite = ? WHERE id = ?;";
     private static final String ENTRAR_PARA_DUPLA = "UPDATE DUPLA SET JOGADOR = ? WHERE id = ?;";
+    private static final String RECUSAR_CONVITE = "UPDATE usuario SET convite = -1 WHERE id = ?";
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
 
@@ -31,6 +24,20 @@ public class Update {
 
         this.pstmt.setInt(1, id);
         this.pstmt.setInt(2, idJogador);
+
+        pstmt.executeUpdate();
+
+        closeConns();
+    }
+    
+        public void recusarConvite(int idJogador) throws SQLException {
+
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(RECUSAR_CONVITE);
+
+        this.pstmt.setInt(1, idJogador);
+
 
         pstmt.executeUpdate();
 

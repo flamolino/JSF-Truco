@@ -9,7 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.swing.JOptionPane;
 import outro.Utilities;
 
 @ManagedBean(name = "usuario")
@@ -20,11 +19,15 @@ public class BeanUsuario {
     private String mensagem;
     private boolean logado;
     private Usuario user = null;
+    private String inputText;
+    private String inputTextTitle;
 
     //constructor
     public BeanUsuario() {
         this.user = new Usuario();
         this.logado = false;
+        this.inputText = "";
+        this.inputTextTitle = "";
     }
 
     /*
@@ -110,6 +113,12 @@ public class BeanUsuario {
 
     }
 
+    public void recusarConviteDeDupla() throws SQLException{
+        Update upd = new Update();
+                
+        upd.recusarConvite(this.user.getId());    
+    }
+    
     /*
     Direct Screens Calls
      */
@@ -200,6 +209,22 @@ public class BeanUsuario {
 
     public void setData(String str) {
         this.user.setData(str);
+    }
+    
+        public String getInputText() {
+        return this.inputText;
+    }
+
+    public void setInputText(String str) {
+        this.inputText=str;
+    }
+    
+            public String getInputTextTitle() {
+        return this.inputTextTitle;
+    }
+
+    public void setInputTextTitle(String str) {
+        this.inputTextTitle=str;
     }
 
     public int getId() {

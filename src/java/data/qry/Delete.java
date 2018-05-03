@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package data.qry;
 
 import data.Conn;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author 04783714118
- */
 public class Delete {
 
     public static final String DELETAR_DUPLA = "DELETE FROM dupla where id = ?; UPDATE usuario SET duplaAtual = -1 WHERE id = ?;";

@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package bean;
 
-/**
- *
- * @author 04783714118
- */
 public class Dupla {
 
     private int id, jogadorLider, jogador;

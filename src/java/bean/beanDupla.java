@@ -7,7 +7,6 @@ import data.qry.Update;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.swing.JOptionPane;
 import outro.Utilities;
 
 @ManagedBean(name = "dupla")
@@ -18,13 +17,18 @@ public class beanDupla {
     private String mensagem;
     private boolean temDupla;
     private Dupla dupla = null;
+    private String parceiro;
+        private String inputText;
+    private String inputTextTitle;
 
     //constructor
     public beanDupla() {
         this.dupla = new Dupla();
         this.dupla.setLogo("https://milvus.com.br/wordpress/wp-content/uploads/2017/05/avatar-default.jpg");
         this.temDupla = false;
-        this.mensagem = "TESTE";
+        this.mensagem = "";
+                this.inputText = "";
+        this.inputTextTitle = "";
     }
 
     public void cadastrarDupla(int id) throws SQLException {
@@ -101,17 +105,21 @@ public class beanDupla {
         return sel.getLoginPorID(this.dupla.getJogador());
     }
 
-    public void adicionarLogo() throws SQLException {
-
-        setLogo(JOptionPane.showInputDialog("Digite a URL da logo da dupla"));
-        Update upd = new Update();
-        upd.atualizarLogo(this.dupla.getId(), this.dupla.getLogo());
+    public String adicionarLogo() {
+        this.inputTextTitle = "Coloque a URL da imagem";
+        this.inputText = "";
+        return "inputText";
 
     }
+    
+    public String screenInputTextConfimarLogo() throws SQLException{
+        setLogo(this.inputText);
+        Update upd = new Update();
+        upd.atualizarLogo(this.dupla.getId(), this.dupla.getLogo());
+        return "dupla";
+    }
 
-    public void convidarParceiro(String login, String senha) throws SQLException {
-
-        String parceiro = JOptionPane.showInputDialog("Digite o login do parceiro que deseja convidar:");
+    public void convidarParceiro() throws SQLException {
 
         Select sel = new Select();
 
@@ -128,6 +136,8 @@ public class beanDupla {
         }
 
     }
+    
+
 
     public int getId() {
         return this.getDupla().getId();
@@ -208,6 +218,30 @@ public class beanDupla {
 
     public void setDupla(Dupla dupla) {
         this.dupla = dupla;
+    }
+    
+    public String getParceiro(){
+        return this.parceiro;
+    }
+    
+    public void setParceiro(String par){
+        this.parceiro = par;
+    }
+    
+            public String getInputText() {
+        return this.inputText;
+    }
+
+    public void setInputText(String str) {
+        this.inputText=str;
+    }
+    
+            public String getInputTextTitle() {
+        return this.inputTextTitle;
+    }
+
+    public void setInputTextTitle(String str) {
+        this.inputTextTitle=str;
     }
 
 }
