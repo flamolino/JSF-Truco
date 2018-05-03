@@ -1,4 +1,3 @@
-
 package data.qry;
 
 import data.Conn;
@@ -7,7 +6,7 @@ import java.sql.SQLException;
 
 public class Delete {
 
-    public static final String DELETAR_DUPLA = "DELETE FROM dupla where id = ?; UPDATE usuario SET duplaAtual = -1 WHERE id = ?;";
+    public static final String DELETAR_DUPLA = "DELETE FROM dupla where id = ?;";
 
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
@@ -17,10 +16,11 @@ public class Delete {
         this.conexao = new Conn();
 
         this.pstmt = conexao.getConexao().prepareStatement(DELETAR_DUPLA);
-
         this.pstmt.setInt(1, id);
-        this.pstmt.setInt(1, idLider);
+        pstmt.executeUpdate();
 
+        this.pstmt = conexao.getConexao().prepareStatement("UPDATE usuario SET duplaAtual = -1 WHERE id = ?;");
+        this.pstmt.setInt(1, idLider);
         pstmt.executeUpdate();
 
         closeConns();

@@ -1,4 +1,3 @@
-
 package data.qry;
 
 import data.Conn;
@@ -7,7 +6,7 @@ import java.sql.SQLException;
 
 public class Update {
 
-    private static final String SAIR_DA_DUPLA = "UPDATE dupla SET jogador = -1 WHERE id = ?; UPDATE usuario SET duplaAtual = -1 WHERE id = ?;";
+    private static final String SAIR_DA_DUPLA = "UPDATE dupla SET jogador = -1 WHERE id = ?;";
     private static final String ATUALIZAR_DUPLA_ATUAL = "UPDATE usuario SET duplaAtual = ? WHERE id = ?;";
     private static final String ATUALIZAR_LOGO_DUPLA = "UPDATE dupla SET logo = ? WHERE id = ?;";
     private static final String CONVIDA_PARCEIRO = "UPDATE usuario SET convite = ? WHERE id = ?;";
@@ -16,28 +15,28 @@ public class Update {
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
 
-    public void sairDaDupla(int id, int idJogador) throws SQLException {
+    public void sairDaDupla(int idDupla, int idJogador) throws SQLException {
 
         this.conexao = new Conn();
 
         this.pstmt = conexao.getConexao().prepareStatement(SAIR_DA_DUPLA);
+        this.pstmt.setInt(1, idDupla);
+        pstmt.executeUpdate();
 
-        this.pstmt.setInt(1, id);
-        this.pstmt.setInt(2, idJogador);
-
+        this.pstmt = conexao.getConexao().prepareStatement("UPDATE usuario SET duplaAtual = -1 WHERE id =  ?;");
+        this.pstmt.setInt(1, idJogador);
         pstmt.executeUpdate();
 
         closeConns();
     }
-    
-        public void recusarConvite(int idJogador) throws SQLException {
+
+    public void recusarConvite(int idJogador) throws SQLException {
 
         this.conexao = new Conn();
 
         this.pstmt = conexao.getConexao().prepareStatement(RECUSAR_CONVITE);
 
         this.pstmt.setInt(1, idJogador);
-
 
         pstmt.executeUpdate();
 

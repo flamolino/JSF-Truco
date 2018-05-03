@@ -56,6 +56,27 @@ body {
     float: right;
 }
 
+.torneioMid-form {
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.tabela-torneio {
+    width: 96%;
+    text-align: center;
+}
+
+.tabela-torneio .lbl-tabela{
+    font-size: 12px;
+    text-align: left;
+}
+
 .mainMid-form {
     height: 100%;
     width: 400px;
@@ -69,6 +90,7 @@ body {
     padding: 5px;
     width: 122px;
     height: 40px;
+    margin-top: 60px;
     margin-bottom: 10px;
     color: #fff;
     border-radius: 3px;
@@ -87,7 +109,7 @@ body {
 }
 
 .mainMid-form .input-parceiro {
-    
+
     padding: 5px;
     width: 80px;
     margin-bottom: 10px;
@@ -141,7 +163,6 @@ body {
     border-radius: 3px;
     border: 1px solid silver;
     padding: 5px;
-    text-align: center;
 }
 
 .login-form {

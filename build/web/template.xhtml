@@ -18,7 +18,7 @@
                     <h:form>
                         <div class="mainTop-form">
                             <h:commandButton value="Início" styleClass="btn btn-link btn-mainTop" action="#{usuario.callMain}"/>
-                            <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop" action="#{usuario.callTorneio}"/>
+                            <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop" action="#{torneio.callTorneio()}"/>
                             <h:commandButton value="Duplas" styleClass="btn btn-link btn-mainTop" action="#{dupla.callDupla(usuario.id)}"/>
                             <h:commandButton value="Sair" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.desloga(dupla.dupla)}"/>
                             <h:commandButton value="#{usuario.login}" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.callPerfil}"/>

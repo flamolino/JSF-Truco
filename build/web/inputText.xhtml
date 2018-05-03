@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <head>
-        <title> TRUCO! Faça seu login </title>
+        <title> TRUCO! </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
               integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
@@ -14,17 +15,15 @@
         <h:form>
             <div class="inputText-form">
 
+                <h2> #{inputText.inputTextTitle} </h2>
+                <h:inputText id='inputText' value="#{inputText.inputText}" styleClass="input-inputText" a:autofocus="true"/>
 
-                <h2> #{dupla.inputTextTitle} </h2>
-                <h:inputText id='inputText' value="#{dupla.inputText}" styleClass="input-inputText"/>
-                
-                 <h:panelGrid columns="2" styleClass="pnlGrid-inputText">
-                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-inputText"/>
+                <h:panelGrid columns="2" styleClass="pnlGrid-inputText">
+                    <h:commandButton value="Voltar" styleClass="btn btn-danger btn-inputText" action="#{inputText.btnCancelar()}"/>
 
-                <h:commandButton value="Confirmar" styleClass="btn btn-success btn-inputText" action="#{dupla.screenInputTextConfimarLogo()}"/>
-                 </h:panelGrid>
-                <h:outputLabel>#{usuario.mensagem}</h:outputLabel>
-
+                    <h:commandButton value="Confirmar" styleClass="btn btn-success btn-inputText" action="#{inputText.btnConfirmar()}"/>
+                </h:panelGrid>
+                <h:outputLabel>#{inputText.mensagem}</h:outputLabel>
 
             </div>
 

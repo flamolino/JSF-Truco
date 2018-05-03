@@ -19,15 +19,11 @@ public class BeanUsuario {
     private String mensagem;
     private boolean logado;
     private Usuario user = null;
-    private String inputText;
-    private String inputTextTitle;
 
     //constructor
     public BeanUsuario() {
         this.user = new Usuario();
         this.logado = false;
-        this.inputText = "";
-        this.inputTextTitle = "";
     }
 
     /*
@@ -46,6 +42,11 @@ public class BeanUsuario {
             return "";
         }
 
+    }
+
+    public void atualizaUsuario() throws SQLException {
+        Select sel = new Select();
+        this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
     }
 
     public String cadastrarUsuario() throws ParseException {
@@ -109,16 +110,17 @@ public class BeanUsuario {
         Select sel = new Select();
         upd.atualizaDuplaAtual(sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId(), this.user.getId());
         upd.entrarParaDupla(this.user.getId(), sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId());
+        upd.recusarConvite(this.user.getId());
         this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
 
     }
 
-    public void recusarConviteDeDupla() throws SQLException{
+    public void recusarConviteDeDupla() throws SQLException {
         Update upd = new Update();
-                
-        upd.recusarConvite(this.user.getId());    
+
+        upd.recusarConvite(this.user.getId());
     }
-    
+
     /*
     Direct Screens Calls
      */
@@ -210,22 +212,6 @@ public class BeanUsuario {
     public void setData(String str) {
         this.user.setData(str);
     }
-    
-        public String getInputText() {
-        return this.inputText;
-    }
-
-    public void setInputText(String str) {
-        this.inputText=str;
-    }
-    
-            public String getInputTextTitle() {
-        return this.inputTextTitle;
-    }
-
-    public void setInputTextTitle(String str) {
-        this.inputTextTitle=str;
-    }
 
     public int getId() {
         return this.user.getId();
@@ -276,6 +262,10 @@ public class BeanUsuario {
         s += String.valueOf(this.user.getId()) + " | ";
 
         return s;
+    }
+
+    public Usuario getUser() {
+        return this.user;
     }
 
 }

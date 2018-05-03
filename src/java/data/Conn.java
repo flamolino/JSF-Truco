@@ -12,12 +12,12 @@ public class Conn {
     private Connection conexao = null;
 
     public Conn() {
-System.out.println(URL);
+
         if (conexao == null) {
             try {
 
                 Class.forName("org.sqlite.JDBC");
-                
+
                 this.conexao = DriverManager.getConnection(URL);
 
             } catch (ClassNotFoundException | SQLException e) {

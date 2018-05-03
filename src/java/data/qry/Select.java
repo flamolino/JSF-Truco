@@ -2,12 +2,13 @@ package data.qry;
 
 import bean.Dupla;
 import bean.Usuario;
+import bean.tabelas.ListaDeTorneios;
 import data.Conn;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
+import java.util.ArrayList;
 import outro.Utilities;
 
 public class Select {
@@ -22,11 +23,39 @@ public class Select {
     private static final String AUTENTICAR_DUPLA = "select * from dupla where jogadorLider = ? or jogador = ?;";
     private static final String PEGA_DUPLA_POR_ID = "select * from dupla where jogadorLider = ?;";
 
+    private static final String PEGA_LISTA_DE_TORNEIOS_EM_ATIVIDADE = "select torneio.nome as nome, count(inscritos"
+            + "_torneio.id) as qtd, torneio.limiteDuplas as limite, torneio.descricao as desc from torneio, inscritos_"
+            + "torneio where torneio.id = inscritos_torneio.idTorneio and torneio.finalizado = 0 group by torneio.id;";
+
     private Usuario user = null;
     private Dupla dupla = null;
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
     private ResultSet rs = null;
+    private ListaDeTorneios lstDTor = null;
+    private ArrayList<ListaDeTorneios> listaDeTorneios = null;
+
+    public ArrayList<ListaDeTorneios> getListaDeTorneiosAtualizada() throws SQLException {
+
+        this.conexao = new Conn();
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_LISTA_DE_TORNEIOS_EM_ATIVIDADE);
+
+        this.rs = pstmt.executeQuery();
+
+        if (this.rs != null) {
+            this.listaDeTorneios = new ArrayList();
+            while (this.rs.next()) {
+                this.lstDTor = new ListaDeTorneios();
+                this.lstDTor.setNome(this.rs.getString("nome"));
+                this.lstDTor.setDescricao(this.rs.getString("desc"));
+                this.lstDTor.setQtdInscritos(this.rs.getInt("qtd"));
+                this.lstDTor.setLimiteDuplas(this.rs.getInt("limite"));
+                this.listaDeTorneios.add(lstDTor);
+            }
+        }
+
+        return listaDeTorneios;
+    }
 
     public Usuario AutenticarLogin(String login, String senha) throws SQLException {
 

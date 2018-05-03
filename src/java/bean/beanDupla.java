@@ -18,8 +18,6 @@ public class beanDupla {
     private boolean temDupla;
     private Dupla dupla = null;
     private String parceiro;
-        private String inputText;
-    private String inputTextTitle;
 
     //constructor
     public beanDupla() {
@@ -27,8 +25,6 @@ public class beanDupla {
         this.dupla.setLogo("https://milvus.com.br/wordpress/wp-content/uploads/2017/05/avatar-default.jpg");
         this.temDupla = false;
         this.mensagem = "";
-                this.inputText = "";
-        this.inputTextTitle = "";
     }
 
     public void cadastrarDupla(int id) throws SQLException {
@@ -70,9 +66,20 @@ public class beanDupla {
 
     }
 
+    public void atualizaDupla(int id) throws SQLException {
+        Select sel = new Select();
+        this.dupla = sel.AutenticarDupla(id, id);
+    }
+
     public void excluirOuSairDaDupla(String dupla) throws SQLException {
         if (this.temDupla) {
             if (dupla.equals("Deletar dupla")) {
+
+                if (this.dupla.getJogador() != -1) {
+                    Update upd = new Update();
+                    upd.sairDaDupla(this.dupla.getId(), this.dupla.getJogador());
+                }
+
                 Delete del = new Delete();
                 del.deletarDupla(this.dupla.getId(), this.dupla.getJogadorLider());
             } else if (dupla.equals("Deixar dupla")) {
@@ -104,40 +111,6 @@ public class beanDupla {
         Select sel = new Select();
         return sel.getLoginPorID(this.dupla.getJogador());
     }
-
-    public String adicionarLogo() {
-        this.inputTextTitle = "Coloque a URL da imagem";
-        this.inputText = "";
-        return "inputText";
-
-    }
-    
-    public String screenInputTextConfimarLogo() throws SQLException{
-        setLogo(this.inputText);
-        Update upd = new Update();
-        upd.atualizarLogo(this.dupla.getId(), this.dupla.getLogo());
-        return "dupla";
-    }
-
-    public void convidarParceiro() throws SQLException {
-
-        Select sel = new Select();
-
-        if (sel.verificaUsuarioExistente(parceiro)) {
-            if (sel.verificaUsuarioTemConvite(parceiro) != -1) {
-                this.mensagem = "Este usuário já têm um convite pendente";
-            } else {
-                Update upd = new Update();
-                upd.convidaParceiro(this.dupla.getJogadorLider(), sel.getIDPorLogin(parceiro));
-                this.mensagem = "Um convite foi enviado para o usuário " + parceiro;
-            }
-        } else {
-            this.mensagem = "Não existe um usuário com esse login";
-        }
-
-    }
-    
-
 
     public int getId() {
         return this.getDupla().getId();
@@ -219,29 +192,13 @@ public class beanDupla {
     public void setDupla(Dupla dupla) {
         this.dupla = dupla;
     }
-    
-    public String getParceiro(){
+
+    public String getParceiro() {
         return this.parceiro;
     }
-    
-    public void setParceiro(String par){
+
+    public void setParceiro(String par) {
         this.parceiro = par;
-    }
-    
-            public String getInputText() {
-        return this.inputText;
-    }
-
-    public void setInputText(String str) {
-        this.inputText=str;
-    }
-    
-            public String getInputTextTitle() {
-        return this.inputTextTitle;
-    }
-
-    public void setInputTextTitle(String str) {
-        this.inputTextTitle=str;
     }
 
 }

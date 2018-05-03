@@ -2,23 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="JSF">
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/bean/BeanUsuario.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/data/qry/Delete.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/web/index.xhtml</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/web/main.xhtml</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/data/qry/Insert.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/web/css/style.css</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/web/template.xhtml</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/data/qry/Select.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/bean/Usuario.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/web/dupla.xhtml</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/bean/beanDupla.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/bean/Dupla.java</file>
-            <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/truco/src/java/data/qry/Update.java</file>
-        </group>
         <group>
             <file>file:/C:/Users/Administrador/Documents/GitHub/JSF-Truco/nbproject/build-impl.xml</file>
+        </group>
+        <group name="JSF">
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/main.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/css/style.css</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/template.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/Dupla.java</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/dupla.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/beanDupla.java</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/torneio.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/data/qry/Select.java</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanUsuario.java</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanTorneio.java</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/inputText.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/cadastro_usuario.xhtml</file>
         </group>
     </open-files>
 </project-private>

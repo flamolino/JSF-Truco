@@ -29,7 +29,7 @@ public class Usuario {
         this.login = "";
         this.senha = "";
         this.email = "";
-        this.avatar = "";
+        this.avatar = "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
         this.endereco = "";
         this.data = "01-01-0001 01:01:01";
     }
