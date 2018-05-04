@@ -12,7 +12,7 @@
     <body class="bg-dark">
 
         <h:form>
-            <div class="cad-form">
+            <div class="cad-form bg-light">
                 <h2> Formulario de Cadastro </h2>
                 <h3>Nome</h3>
                 <h:inputText id='nome' value="#{usuario.nome}" required="true" requiredMessage="Digite o nome" styleClass="input-cad"/>
@@ -26,8 +26,8 @@
                 <h:inputText id='endereco' value="#{usuario.endereco}" required="true" requiredMessage="Digite o endereço" styleClass="input-cad"/>
                 <h3>Idade</h3>
                 <h:inputText id='idade' value="#{usuario.idade}" required="true" requiredMessage="Digite a idade" styleClass="input-cad"/>
-                <h:commandButton value="Cadastrar" styleClass="btn btn-success btn-cad" action="#{usuario.cadastrarUsuario()}"/>
-                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad" action="#{usuario.desloga()}"/>
+                <h:commandButton value="Cadastrar" styleClass="btn btn-secondary btn-cad" action="#{usuario.cadastrarUsuario()}"/>
+                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad" action="#{usuario.desloga(dupla.dupla)}"/>
                 <h:outputLabel>#{usuario.mensagem}</h:outputLabel>
             </div>
         </h:form>

@@ -4,6 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
     <ui:composition template="/template.xhtml">
         <f:metadata>
             <f:event type="preRenderView" listener="#{dupla.atualizaDupla(usuario.id)}"/>
@@ -11,40 +12,50 @@
 
         <ui:define name="corpo">
 
-            <div align="center" class="torneioMid-form">
+            <div align="center" class="mainMid-form bg-light">
 
                 <h2> Lista de Torneios </h2>
 
-                <h:dataTable id='tabelatorneio' value="#{torneio.listaDeTorneiosAtualizada}" var='lstTorneios' border="1" class="tabela-torneio">
+                <h:dataTable id='tabelatorneio' value="#{torneio.listaDeTorneiosAtualizada}" var='lstTorneios' border="1"
+                             columnClasses="dttbl-col1 bg-light,dttbl-col2 bg-light,dttbl-col3 bg-light,dttbl-col4 bg-light"
+                             styleClass="bg-dark dttbl-torneio text-light" >
 
                     <h:column>
                         <f:facet name='header'>
                             Nome
                         </f:facet>
-                        <h:outputLabel value="#{lstTorneios.nome}" class="lbl-tabela"/>
+                        <h:commandLink styleClass="text-dark">
+                            #{lstTorneios.nome}
+                        </h:commandLink>
                     </h:column>
+
                     <h:column>
                         <f:facet name='header'>
                             Vagas
                         </f:facet>
-                        <h:outputLabel value="#{lstTorneios.qtdInscritos}/#{lstTorneios.limiteDuplas}" class="lbl-tabela"/>
+                        <h:outputLabel value="#{lstTorneios.qtdInscritos}/" class="text-dark"/>
+                        <h:outputLabel value="#{lstTorneios.limiteDuplas}" class="text-danger"/>
                     </h:column>
+
                     <h:column>
                         <f:facet name='header'>
                             Descrição
                         </f:facet>
-                        <h:outputLabel value="#{lstTorneios.descricao}" class="lbl-tabela"/>
+                        <h:outputLabel value="#{lstTorneios.descricao}" class="text-dark"/>
+                    </h:column>
+
+                    <h:column>
+                        <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" />
                     </h:column>
 
                 </h:dataTable>
 
+                <h:commandButton value="Criar um torneio" styleClass="btn btn-secondary btn-criar-torneio"/>
+
             </div>
-
-
 
         </ui:define>
 
     </ui:composition>
-
 
 </html>

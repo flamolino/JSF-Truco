@@ -1,5 +1,6 @@
 
 body {
+    width: 100%;
     margin:0;
     padding:0;
     font-family: 'Arial';
@@ -7,11 +8,11 @@ body {
 }
 
 .main-form {
+    width: 100%;
     overflow: hidden;
     margin: auto;
     padding: 1px;
-    background: silver;
-    border: 1px solid gray;
+    border: 1px;
 }
 
 .main-form img {
@@ -28,11 +29,13 @@ body {
 }
 
 .mainTop-form {
+
     width: 100%;
     overflow: hidden;
     margin: auto;
+    margin-top: 2px;
     padding: 1px;
-    background: gray;
+    border-radius: 2px;
 }
 
 .mainTop-form .btn-mainTop {
@@ -56,34 +59,97 @@ body {
     float: right;
 }
 
-.torneioMid-form {
-    height: 100%;
+.dttbl-torneio{
     width: 80%;
     overflow: hidden;
     margin: auto;
-    margin-top: 20px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 3px;
-}
-
-.tabela-torneio {
-    width: 96%;
+    padding: 1px;
     text-align: center;
 }
 
-.tabela-torneio .lbl-tabela{
+.btn-criar-torneio{
+    margin: auto;
+    margin-top: 60px;
+}
+
+.dttbl-col1{
+    width: 20%;
+    margin: 1px;
+    padding: 1px;
+    font-weight: bold;
     font-size: 12px;
+}
+.dttbl-col2{
+    width: 10%;
+    margin: 1px;
+    padding: 1px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.dttbl-col3{
+    width: 50%;
     text-align: left;
+    margin: 1px;
+    padding: 1px;
+    font-size: 12px;
+}
+.dttbl-col4{
+    width: 7%;
+    margin: 1px;
+    padding: 1px;
+    font-size: 12px;
+}
+
+.lbl-table{
+    font-size: 12px;
+}
+
+.rodape-form {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    border: 1px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+}
+
+.news-form{
+    height: 100%;
+    width: 75%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    border: 1px;
+    border-radius: 2px;
+}
+
+.news-form-itens{
+    height: 100%;
+    width: 33.333%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    border: 1px;
+    border-radius: 2px;
+    float: left;
+}
+
+.news-title{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
 }
 
 .mainMid-form {
     height: 100%;
-    width: 400px;
+    width: 100%;
     overflow: hidden;
     margin: auto;
+    margin-top: 6px;
     padding: 1px;
-    background: silver;
+    border: 1px;
+    border-radius: 2px;
 }
 
 .mainMid-form .btn-del {
@@ -102,7 +168,7 @@ body {
     padding: 5px;
     width: 80px;
     margin-bottom: 10px;
-    color: black;
+    color: #fff;
     border-radius: 3px;
     border: 0;
     font-size: 14px;
@@ -121,14 +187,13 @@ body {
 }
 
 .inputText-form {
-    width: 600px;
+    width: 30%;
     overflow: hidden;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 60px;
     padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid silver;
+    border-radius: 2px;
+    border: 1px;
 }
 
 .inputText-form h2 {
@@ -171,9 +236,8 @@ body {
     margin: auto;
     margin-top: 150px;
     padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid silver;
+    border-radius: 3px;
+    border: 1px;
 }
 
 .login-form img {
@@ -279,12 +343,13 @@ body {
     width: 80px;
     margin-bottom: 4px;
     margin-left: 8px;
-    color: black;
+    color: white;
     border-radius: 3px;
     border: 0;
     font-size: 14px;
 
 }
+
 
 .cad-form {
     width: 350px;
@@ -292,9 +357,8 @@ body {
     margin: auto;
     margin-top: 100px;
     padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid silver;
+    border-radius: 3px;
+    border: 1px;
 }
 
 .cad-form h2 {
@@ -335,5 +399,25 @@ body {
     border-radius: 3px;
     border: 1px solid gray;
     margin-bottom: 10px;
+}
 
+.btn-image-news {
+
+    width: 96%;
+    height: 96%;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin: auto;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 4px;
+}
+
+.naipes {
+    font-family: 'Calibri';
+    font-size: 32px;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
 }

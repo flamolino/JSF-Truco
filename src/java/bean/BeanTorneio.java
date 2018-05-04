@@ -32,6 +32,16 @@ public class BeanTorneio {
         return "torneio";
     }
 
+    public ArrayList<String> getNumeroDeDuplas() {
+
+        ArrayList<String> a = new ArrayList();
+        a.add("2");
+        a.add("4");
+
+        return a;
+
+    }
+
     public String getMensagem() {
         return mensagem;
     }

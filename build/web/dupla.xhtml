@@ -12,10 +12,9 @@
 
         <ui:define name="corpo" >
 
-            <div align="center" class="mainMid-form" style="display:#{(dupla.SeTemDupla(usuario.id))?'block':'none'}">
+            <div align="center" class="mainMid-form bg-light" style="display:#{(dupla.SeTemDupla(usuario.id))?'block':'none'}">
 
-
-                <h2 class="text-danger" > #{dupla.nome} </h2>
+                <h2 class="text-dark" > #{dupla.nome} </h2>
                 <h:commandButton image="#{dupla.logo}" styleClass="btn btn-dark btn-image-avatar" action="#{inputText.callInputText(dupla.dupla, 'dupla', 1, 'Adicione a URL da imagem')}"> </h:commandButton>
 
                 <h:panelGrid columns="3" >
@@ -35,23 +34,22 @@
                 <h:commandButton value="#{dupla.getDeletarOuSairDaDupla(usuario.id)}" styleClass="btn btn-danger btn-del" actionListener="#{dupla.excluirOuSairDaDupla(dupla.getDeletarOuSairDaDupla(usuario.id))}" />
                 <h:outputLabel value="#{dupla.mensagem}"/>
 
-
             </div>
 
-            <div align="center" class="mainMid-form" style="display:#{(dupla.SeTemDupla(usuario.id))?'none':'block'}">
+            <div align="center" class="mainMid-form bg-light" style="display:#{(dupla.SeTemDupla(usuario.id))?'none':'block'}">
 
                 <div class="cadDupla-form">
                     <h2> Nova dupla </h2>
                     <h3>Nome da dupla</h3>
                     <h:inputText id='nomedupla' value="#{dupla.nome}" requiredMessage="Digite o nome da dupla" styleClass="input-cad" />
 
-                    <h:commandButton value="Criar" styleClass="btn btn-success btn-cad" actionListener="#{dupla.cadastrarDupla(usuario.id)}" />
+                    <h:commandButton value="Criar" styleClass="btn btn-secondary btn-cad" actionListener="#{dupla.cadastrarDupla(usuario.id)}" />
 
                     <div class="cadDupla-form div" style="display:#{(usuario.verificaSeTemConvite())?'block':'none'}">
                         <img src="resources/img/iconAtencao.png" style="width:20%;"/>
                         <h:outputLabel value="#{usuario.mensagemDeConviteDupla}" escape="false"/>
                         <h:panelGrid columns="2" class="pnl-grid" >
-                            <h:commandButton value="Aceitar" styleClass="btn btn-warning btn-convite btn-sm" actionListener="#{usuario.aceitarConviteDeDupla()}"/>
+                            <h:commandButton value="Aceitar" styleClass="btn btn-secondary btn-convite btn-sm" actionListener="#{usuario.aceitarConviteDeDupla()}"/>
                             <h:commandButton value="Recusar" styleClass="btn btn-danger btn-convite btn-sm" actionListener="#{usuario.recusarConviteDeDupla()}"/>
                         </h:panelGrid>
                     </div>
@@ -62,9 +60,6 @@
 
         </ui:define>
 
-
-
     </ui:composition>
-
 
 </html>
