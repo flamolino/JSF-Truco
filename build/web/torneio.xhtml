@@ -17,7 +17,7 @@
                 <h2> Lista de Torneios </h2>
 
                 <h:dataTable id='tabelatorneio' value="#{torneio.listaDeTorneiosAtualizada}" var='lstTorneios' border="1"
-                             columnClasses="dttbl-col1 bg-light,dttbl-col2 bg-light,dttbl-col3 bg-light,dttbl-col4 bg-light"
+                             columnClasses="dttbl-col1 bg-light,dttbl-col2 bg-light,dttbl-col3 bg-light, dttbl-col4 bg-light, dttbl-col5 bg-light"
                              styleClass="bg-dark dttbl-torneio text-light" >
 
                     <h:column>
@@ -45,12 +45,19 @@
                     </h:column>
 
                     <h:column>
-                        <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" />
+                        <f:facet name='header'>
+                            Enc. Inscrições
+                        </f:facet>
+                        <h:outputLabel value="#{lstTorneios.dataEncerraInsc}" class="text-dark"/>
+                    </h:column>
+
+                    <h:column>
+                        <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" disabled="#{lstTorneios.cheio}" />
                     </h:column>
 
                 </h:dataTable>
 
-                <h:commandButton value="Criar um torneio" styleClass="btn btn-secondary btn-criar-torneio"/>
+                <h:commandButton value="Criar um torneio" styleClass="btn btn-secondary btn-criar-torneio" action="#{torneio.callCadastroTorneio}"/>
 
             </div>
 

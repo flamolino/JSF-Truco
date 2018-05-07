@@ -23,9 +23,11 @@ public class Select {
     private static final String AUTENTICAR_DUPLA = "select * from dupla where jogadorLider = ? or jogador = ?;";
     private static final String PEGA_DUPLA_POR_ID = "select * from dupla where jogadorLider = ?;";
 
-    private static final String PEGA_LISTA_DE_TORNEIOS_EM_ATIVIDADE = "select torneio.nome as nome, count(inscritos"
-            + "_torneio.id) as qtd, torneio.limiteDuplas as limite, torneio.descricao as descr from torneio, inscritos_"
-            + "torneio where torneio.id = inscritos_torneio.idTorneio and torneio.finalizado = 0 group by torneio.id;";
+    private static final String VERIFICAR_TORNEIO_EXISTENTE = "select * from torneio where nome = ?;";
+
+    private static final String PEGA_LISTA_DE_TORNEIOS_EM_ATIVIDADE = "select T.nome as nome, count(I.id) as qtd, T.lim"
+            + "iteDuplas as limite, T.descricao as descr, T.dataEncerramentoInsc as dataEnc from  torneio T left join inscritos_torneio I on T.id = I.idTorn"
+            + "eio where T.finalizado <= 0 group by T.id order by qtd desc;";
 
     private Usuario user = null;
     private Dupla dupla = null;
@@ -50,6 +52,14 @@ public class Select {
                 this.lstDTor.setDescricao(this.rs.getString("descr"));
                 this.lstDTor.setQtdInscritos(this.rs.getInt("qtd"));
                 this.lstDTor.setLimiteDuplas(this.rs.getInt("limite"));
+                this.lstDTor.setDataEncerraInsc(Utilities.DateToString(Utilities.StringToDate(this.rs.getString("dataEnc"))));
+
+                if (this.lstDTor.getQtdInscritos() >= this.lstDTor.getLimiteDuplas()) {
+                    this.lstDTor.setCheio(true);
+                } else {
+                    this.lstDTor.setCheio(false);
+                }
+
                 this.listaDeTorneios.add(lstDTor);
             }
         }
@@ -225,6 +235,27 @@ public class Select {
             closeConns();
             return false;
         }
+    }
+
+    public boolean verificaTorneioExistente(String nome) throws SQLException {
+
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(VERIFICAR_TORNEIO_EXISTENTE);
+
+        this.pstmt.setString(1, nome);
+
+        this.rs = pstmt.executeQuery();
+
+        if (this.rs != null) {
+            if (this.rs.next()) {
+                closeConns();
+                return true;
+            }
+
+        }
+        closeConns();
+        return false;
     }
 
     public int verificaUsuarioTemConvite(String login) throws SQLException {

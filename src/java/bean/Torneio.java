@@ -1,19 +1,23 @@
 package bean;
 
+import outro.Utilities;
+
 public class Torneio {
 
     private int id, limiteDuplas, finalizado, criador;
     private String nome, descricao;
-    private String data = null;
+    private String data, dataEncerraInsc;
 
     public Torneio() {
         this.id = -1;
         this.limiteDuplas = 0;
-        this.finalizado = 0;
+        this.finalizado = -1;
         this.criador = -1;
         this.nome = "";
         this.descricao = "";
-        this.data = "";
+        this.data = "01-01-0001 01:01:01";
+        this.dataEncerraInsc = Utilities.getDataAtualSemHoraString();
+
     }
 
     /**
@@ -112,6 +116,20 @@ public class Torneio {
      */
     public void setData(String data) {
         this.data = data;
+    }
+
+    /**
+     * @return the dataEncerraInsc
+     */
+    public String getDataEncerraInsc() {
+        return dataEncerraInsc;
+    }
+
+    /**
+     * @param dataEncerraInsc the dataEncerraInsc to set
+     */
+    public void setDataEncerraInsc(String dataEncerraInsc) {
+        this.dataEncerraInsc = dataEncerraInsc;
     }
 
 }

@@ -1,6 +1,7 @@
 package data.qry;
 
 import bean.Dupla;
+import bean.Torneio;
 import bean.Usuario;
 import data.Conn;
 import java.sql.PreparedStatement;
@@ -10,12 +11,19 @@ public class Insert {
 
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
+
     private static final String NOVO_USUARIO = "INSERT INTO usuario "
             + "(id, nome, login, senha, email, avatar, idade, duplaAtual, endereco, dataCriacao, convite)"
             + " VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
     private static final String NOVA_DUPLA = "INSERT INTO dupla "
             + "(id, nome, logo, jogadorLider, jogador, dataCriacao)"
             + " VALUES (null, ?, ?, ?, ?, ?)";
+
+    private static final String NOVO_TORNEIO = "INSERT INTO torneio "
+            + "(id, limiteDuplas, nome, finalizado, descricao, dataCriacao, criador, dataEncerramentoInsc)"
+            + " VALUES (null, ?, ?, ?, ?, ?, ?, ?);";
+
     private int registros;
 
     public boolean novoUsuario(Usuario user) throws SQLException {
@@ -57,6 +65,26 @@ public class Insert {
         closeConns();
 
         return this.registros == 1;
+    }
+
+    public boolean novoTorneio(Torneio torneio) throws SQLException {
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(NOVO_TORNEIO);
+
+        this.pstmt.setInt(1, torneio.getLimiteDuplas());
+        this.pstmt.setString(2, torneio.getNome());
+        this.pstmt.setInt(3, torneio.getFinalizado());
+        this.pstmt.setString(4, torneio.getDescricao());
+        this.pstmt.setString(5, torneio.getData());
+        this.pstmt.setInt(6, torneio.getCriador());
+        this.pstmt.setString(7, torneio.getDataEncerraInsc());
+
+        this.registros = this.pstmt.executeUpdate();
+        closeConns();
+
+        return this.registros == 1;
+
     }
 
     private void closeConns() throws SQLException {

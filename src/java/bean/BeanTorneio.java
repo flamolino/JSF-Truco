@@ -1,11 +1,14 @@
 package bean;
 
 import bean.tabelas.ListaDeTorneios;
+import data.qry.Insert;
 import data.qry.Select;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import outro.Utilities;
 
 @ManagedBean(name = "torneio")
 @SessionScoped
@@ -15,16 +18,19 @@ public class BeanTorneio {
     private String mensagem;
     private Torneio torneio = null;
     private ArrayList<ListaDeTorneios> listaDeTorneios = null;
+    private Date dtCalendario = null;
 
     public BeanTorneio() {
         this.mensagem = "";
         this.torneio = new Torneio();
         this.listaDeTorneios = new ArrayList();
+        this.dtCalendario = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
     }
 
     public ArrayList<ListaDeTorneios> getListaDeTorneiosAtualizada() throws SQLException {
         Select sel = new Select();
-        return sel.getListaDeTorneiosAtualizada();
+        ArrayList<ListaDeTorneios> lst = sel.getListaDeTorneiosAtualizada();
+        return lst;
     }
 
     public String callTorneio() {
@@ -32,14 +38,50 @@ public class BeanTorneio {
         return "torneio";
     }
 
+    public void criarNovoTorneio(int idCriador) throws SQLException {
+        this.mensagem = "";
+        Select sel = new Select();
+
+        if (sel.verificaTorneioExistente(this.torneio.getNome())) {
+            this.mensagem = "Já existe um torneio com este nome!";
+        } else {
+
+            this.torneio.setData(Utilities.getDataAtualString());
+            this.torneio.setDataEncerraInsc(
+                    Utilities.DateToString(this.dtCalendario)
+                    + " 01:01:01");
+            this.torneio.setCriador(idCriador);
+            this.torneio.setData(Utilities.getDataAtualString());
+
+            Insert ins = new Insert();
+
+            if (ins.novoTorneio(this.torneio)) {
+                this.mensagem = "Torneio criado com sucesso!";
+
+                this.torneio = new Torneio();
+            } else {
+                this.mensagem = "Falha ao criar torneio!";
+            }
+
+        }
+    }
+
     public ArrayList<String> getNumeroDeDuplas() {
 
         ArrayList<String> a = new ArrayList();
-        a.add("2");
-        a.add("4");
+
+        for (int i = 2; i <= 512; i *= 2) {
+
+            a.add(i + "");
+
+        }
 
         return a;
 
+    }
+
+    public String callCadastroTorneio() {
+        return "cadastro_torneio";
     }
 
     public String getMensagem() {
@@ -114,6 +156,14 @@ public class BeanTorneio {
         this.torneio.setData(data);// = data;
     }
 
+    public String getDataEncerramento() {
+        return this.torneio.getDataEncerraInsc();
+    }
+
+    public void setDataEncerramento(String data) {
+        this.torneio.setDataEncerraInsc(data);
+    }
+
     /**
      * @return the listaDeTorneios
      */
@@ -126,6 +176,13 @@ public class BeanTorneio {
      */
     public void setListaDeTorneios(ArrayList<ListaDeTorneios> listaDeTorneios) {
         this.listaDeTorneios = listaDeTorneios;
+    }
+
+    /**
+     * @return the dtCalendario
+     */
+    public Date getDtCalendario() {
+        return dtCalendario;
     }
 
 }

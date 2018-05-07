@@ -67,6 +67,10 @@ body {
     text-align: center;
 }
 
+.pCalendar {
+
+}
+
 .btn-criar-torneio{
     margin: auto;
     margin-top: 60px;
@@ -94,6 +98,13 @@ body {
     font-size: 12px;
 }
 .dttbl-col4{
+    width: 10%;
+    margin: 1px;
+    padding: 1px;
+    font-size: 12px;
+}
+
+.dttbl-col5{
     width: 7%;
     margin: 1px;
     padding: 1px;

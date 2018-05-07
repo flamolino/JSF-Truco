@@ -7,6 +7,7 @@ package outro;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -20,6 +21,13 @@ public class Utilities {
         SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
         String data = formataData.format(dataHoje);
         return data + " 01:01:01";
+    }
+
+    public static String getDataAtualSemHoraString() {
+        Date dataHoje = new Date();
+        SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+        String data = formataData.format(dataHoje);
+        return data;
     }
 
     public static Date StringToDate(String str) {
@@ -45,6 +53,12 @@ public class Utilities {
 
         return DateToString(dt);
 
+    }
+
+    public static Calendar DateToCalendar(Date date) {
+        Calendar calendario = Calendar.getInstance();
+        calendario.setTime(date);
+        return calendario;
     }
 
 }
