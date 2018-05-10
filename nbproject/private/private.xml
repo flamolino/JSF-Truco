@@ -2,9 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Administrador/Documents/GitHub/JSF-Truco/nbproject/build-impl.xml</file>
-        </group>
         <group name="JSF">
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/torneio_detalhado.xhtml</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/main.xhtml</file>
@@ -13,6 +10,9 @@
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/torneio.xhtml</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanUsuario.java</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanTorneio.java</file>
+        </group>
+        <group>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/src/java/bean/BeanInputText.java</file>
         </group>
     </open-files>
 </project-private>
