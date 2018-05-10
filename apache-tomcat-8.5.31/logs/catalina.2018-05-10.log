@@ -1,0 +1,118 @@
+10-May-2018 10:23:05.046 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.31
+10-May-2018 10:23:05.058 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 27 2018 20:24:25 UTC
+10-May-2018 10:23:05.059 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.31.0
+10-May-2018 10:23:05.060 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+10-May-2018 10:23:05.061 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.13.0-41-generic
+10-May-2018 10:23:05.061 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          i386
+10-May-2018 10:23:05.062 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+10-May-2018 10:23:05.064 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_171-b11
+10-May-2018 10:23:05.064 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-May-2018 10:23:05.065 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:23:05.065 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:23:05.065 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/conf/logging.properties
+10-May-2018 10:23:05.068 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-May-2018 10:23:05.073 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|rafa-pc
+10-May-2018 10:23:05.074 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-May-2018 10:23:05.075 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-May-2018 10:23:05.076 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+10-May-2018 10:23:05.076 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-May-2018 10:23:05.076 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:23:05.076 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:23:05.077 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/temp
+10-May-2018 10:23:05.079 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/lib/jvm/java-8-oracle/bin/../jre/lib/amd64:/usr/lib/jvm/java-8-oracle/bin/../jre/lib/i386::/usr/java/packages/lib/i386:/lib:/usr/lib]
+10-May-2018 10:23:05.782 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:23:05.842 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-May-2018 10:23:05.878 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:23:05.893 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-May-2018 10:23:05.900 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 2414 ms
+10-May-2018 10:23:06.017 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-May-2018 10:23:06.018 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.31
+10-May-2018 10:23:06.038 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/examples]
+10-May-2018 10:23:08.338 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/examples] has finished in [2,299] ms
+10-May-2018 10:23:08.339 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/docs]
+10-May-2018 10:23:08.402 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/docs] has finished in [63] ms
+10-May-2018 10:23:08.405 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/ROOT]
+10-May-2018 10:23:08.453 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/ROOT] has finished in [48] ms
+10-May-2018 10:23:08.455 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/host-manager]
+10-May-2018 10:23:08.573 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/host-manager] has finished in [118] ms
+10-May-2018 10:23:08.580 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/manager]
+10-May-2018 10:23:08.712 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/manager] has finished in [132] ms
+10-May-2018 10:23:08.733 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:23:08.828 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:23:08.896 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 2994 ms
+10-May-2018 10:23:16.617 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/conf/Catalina/localhost/truco.xml]
+10-May-2018 10:23:18.193 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+10-May-2018 10:23:18.375 INFORMAÇÕES [http-nio-8080-exec-2] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+10-May-2018 10:23:18.654 INFORMAÇÕES [http-nio-8080-exec-2] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+10-May-2018 10:23:19.959 INFORMAÇÕES [http-nio-8080-exec-2] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+10-May-2018 10:23:19.966 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/conf/Catalina/localhost/truco.xml] has finished in [3,349] ms
+10-May-2018 10:23:19.989 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after start() had already been called. The second call will be ignored.
+10-May-2018 10:23:22.403 ADVERTÊNCIA [http-nio-8080-exec-4] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+10-May-2018 10:24:46.423 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/truco]
+10-May-2018 10:24:52.834 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+10-May-2018 10:24:52.834 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:24:52.892 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:24:52.943 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-May-2018 10:24:53.059 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:24:53.066 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:24:53.069 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:24:53.071 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:26:24.875 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.31
+10-May-2018 10:26:24.885 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 27 2018 20:24:25 UTC
+10-May-2018 10:26:24.885 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.31.0
+10-May-2018 10:26:24.886 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+10-May-2018 10:26:24.887 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.13.0-41-generic
+10-May-2018 10:26:24.887 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          i386
+10-May-2018 10:26:24.897 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+10-May-2018 10:26:24.897 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_171-b11
+10-May-2018 10:26:24.897 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-May-2018 10:26:24.897 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:26:24.897 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:26:24.898 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/conf/logging.properties
+10-May-2018 10:26:24.898 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-May-2018 10:26:24.898 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|rafa-pc
+10-May-2018 10:26:24.898 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-May-2018 10:26:24.900 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-May-2018 10:26:24.901 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+10-May-2018 10:26:24.901 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-May-2018 10:26:24.901 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:26:24.901 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31
+10-May-2018 10:26:24.901 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/temp
+10-May-2018 10:26:24.901 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/lib/jvm/java-8-oracle/bin/../jre/lib/amd64:/usr/lib/jvm/java-8-oracle/bin/../jre/lib/i386::/usr/java/packages/lib/i386:/lib:/usr/lib]
+10-May-2018 10:26:25.471 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:26:25.526 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-May-2018 10:26:25.541 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:26:25.543 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-May-2018 10:26:25.544 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 2537 ms
+10-May-2018 10:26:25.685 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-May-2018 10:26:25.686 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.31
+10-May-2018 10:26:25.708 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/examples]
+10-May-2018 10:26:27.735 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/examples] has finished in [2,026] ms
+10-May-2018 10:26:27.736 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/docs]
+10-May-2018 10:26:27.802 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/docs] has finished in [66] ms
+10-May-2018 10:26:27.808 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/ROOT]
+10-May-2018 10:26:27.852 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/ROOT] has finished in [43] ms
+10-May-2018 10:26:27.856 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/host-manager]
+10-May-2018 10:26:27.943 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/host-manager] has finished in [87] ms
+10-May-2018 10:26:27.944 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/manager]
+10-May-2018 10:26:28.027 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/manager] has finished in [84] ms
+10-May-2018 10:26:28.064 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:26:28.172 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:26:28.228 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 2684 ms
+10-May-2018 10:26:33.957 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/conf/Catalina/localhost/truco.xml]
+10-May-2018 10:26:35.994 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+10-May-2018 10:26:36.172 INFORMAÇÕES [http-nio-8080-exec-2] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+10-May-2018 10:26:36.492 INFORMAÇÕES [http-nio-8080-exec-2] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+10-May-2018 10:26:38.033 INFORMAÇÕES [http-nio-8080-exec-2] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+10-May-2018 10:26:38.069 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/conf/Catalina/localhost/truco.xml] has finished in [4,113] ms
+10-May-2018 10:26:38.110 INFORMAÇÕES [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after start() had already been called. The second call will be ignored.
+10-May-2018 10:26:40.725 ADVERTÊNCIA [http-nio-8080-exec-5] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+10-May-2018 10:27:29.900 ADVERTÊNCIA [http-nio-8080-exec-9] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+10-May-2018 10:31:42.415 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+10-May-2018 10:31:42.416 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:31:42.489 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:31:42.541 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-May-2018 10:31:42.897 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:31:42.900 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+10-May-2018 10:31:42.906 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-May-2018 10:31:42.907 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
