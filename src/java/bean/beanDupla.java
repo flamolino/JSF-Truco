@@ -201,4 +201,16 @@ public class beanDupla {
         this.parceiro = par;
     }
 
+    public String pegaTitle(int id) throws SQLException {
+        Select sel = new Select();
+        this.dupla = sel.AutenticarDupla(id, id);
+        return this.dupla.getNome();
+    }
+
+    public String pegaLogo(int id) throws SQLException {
+        Select sel = new Select();
+        this.dupla = sel.AutenticarDupla(id, id);
+        return this.dupla.getLogo();
+    }
+
 }

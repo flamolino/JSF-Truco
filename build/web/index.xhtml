@@ -14,9 +14,14 @@
         <h:form>
             <div class="login-form bg-light">
 
-
                 <h2> Formulario de Login </h2>
-                <img src="resources/img/naipes.png"/>
+                <div align="center" class="rodape-form container" style="margin: auto; margin-top: -36px;">
+                    <h:outputLabel styleClass="text-danger naipes" value="&hearts;" style="font-size: 76px;margin: auto; margin-left: 4px; margin-right: 4px;"/>
+                    <h:outputLabel styleClass="text-dark naipes" value="&spades;" style="font-size: 76px;margin: auto; margin-left: 4px; margin-right: 4px;"/>
+                    <h:outputLabel styleClass="text-danger naipes" value="&diams;" style="font-size: 76px;margin: auto; margin-left: 4px; margin-right: 4px;"/>
+                    <h:outputLabel styleClass="text-dark naipes" value="&clubs;" style="font-size: 76px;margin: auto; margin-left: 4px; margin-right: 4px;"/>
+                </div>
+
                 <h3>Usuário</h3>
                 <h:inputText id='login' value="#{usuario.login}" required="true" requiredMessage="Digite o login" styleClass="input-login"/>
                 <h3>Senha</h3>

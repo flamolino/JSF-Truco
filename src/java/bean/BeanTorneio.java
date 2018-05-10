@@ -84,6 +84,10 @@ public class BeanTorneio {
         return "cadastro_torneio";
     }
 
+    public String callTorneioDetalhado() {
+        return "torneio_detalhado";
+    }
+
     public String getMensagem() {
         return mensagem;
     }

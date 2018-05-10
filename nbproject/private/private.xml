@@ -6,21 +6,13 @@
             <file>file:/C:/Users/Administrador/Documents/GitHub/JSF-Truco/nbproject/build-impl.xml</file>
         </group>
         <group name="JSF">
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/tabelas/ListaDeTorneios.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/Dupla.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/outro/Utilities.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/beanDupla.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/Torneio.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanUsuario.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/cadastro_torneio.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/torneio_detalhado.xhtml</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/main.xhtml</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/css/style.css</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/template.xhtml</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/dupla.xhtml</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/Dupla.java</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/torneio.xhtml</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/data/qry/Select.java</file>
+            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanUsuario.java</file>
             <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/src/java/bean/BeanTorneio.java</file>
-            <file>file:/C:/Users/04783714118/Documents/LAZARUS/PROJETOS/JSF-Truco/web/index.xhtml</file>
         </group>
     </open-files>
 </project-private>

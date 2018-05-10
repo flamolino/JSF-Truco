@@ -65,6 +65,7 @@ body {
     margin: auto;
     padding: 1px;
     text-align: center;
+    font-size: 14px;
 }
 
 .pCalendar {
@@ -140,7 +141,7 @@ body {
     width: 33.333%;
     overflow: hidden;
     margin: auto;
-    padding: 1px;
+    padding: 40px;
     border: 1px;
     border-radius: 2px;
     float: left;
@@ -413,7 +414,6 @@ body {
 }
 
 .btn-image-news {
-
     width: 96%;
     height: 96%;
     border-radius: 3px;
