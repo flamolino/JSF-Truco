@@ -80,10 +80,9 @@ public class BeanUsuario {
         }
     }
 
-    public String desloga(Dupla dupla) {
+    public String desloga() {
         this.mensagem = "";
         this.user = new Usuario();
-        dupla = new Dupla();
         return "index";
     }
 

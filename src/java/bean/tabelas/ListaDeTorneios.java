@@ -106,6 +106,10 @@ public class ListaDeTorneios {
         return this.verificaSeDataJaUltrapassouAtual() || this.cheio;
     }
 
+    public boolean isJustCheio() {
+        return this.cheio;
+    }
+
     /**
      * @param cheio the cheio to set
      */
@@ -119,6 +123,10 @@ public class ListaDeTorneios {
         Date dtAtual = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
 
         return dtEnc.compareTo(dtAtual) <= 0;
+    }
+
+    public ListaDeTorneios getObjLstTorneio() {
+        return this;
     }
 
 }

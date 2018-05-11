@@ -7,6 +7,40 @@ body {
     background-color: #3498db;
 }
 
+.torneio-detalhado-item{
+    height: 100%;
+    width: 49%;
+    overflow: hidden;
+    margin: auto;
+    padding: 40px;
+    border: 1px;
+    border-radius: 2px;
+    float: left;
+}
+
+.torneio-detalhado-chave{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 40px;
+    border: 1px;
+    border-radius: 2px;
+}
+
+.torneio-detalhado-img{
+
+}
+
+.midTorneio-detalhado-form{
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    border: 1px;
+    border-radius: 2px;
+}
+
 .main-form {
     width: 100%;
     overflow: hidden;
@@ -68,6 +102,31 @@ body {
     font-size: 14px;
 }
 
+.dttbl-insrito{
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.dttblIns-col1{
+    width: 80%;
+    margin: 1px;
+    padding: 1px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.dttblIns-col2{
+    width: 20%;
+    margin: 1px;
+    padding: 1px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
 .pCalendar {
 
 }
@@ -84,6 +143,7 @@ body {
     font-weight: bold;
     font-size: 12px;
 }
+
 .dttbl-col2{
     width: 10%;
     margin: 1px;

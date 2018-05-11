@@ -27,7 +27,7 @@
                 <h3>Idade</h3>
                 <h:inputText id='idade' value="#{usuario.idade}" required="true" requiredMessage="Digite a idade" styleClass="input-cad"/>
                 <h:commandButton value="Cadastrar" styleClass="btn btn-secondary btn-cad" action="#{usuario.cadastrarUsuario()}"/>
-                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad" action="#{usuario.desloga(dupla.dupla)}"/>
+                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad" action="#{usuario.desloga()}"/>
                 <h:outputLabel>#{usuario.mensagem}</h:outputLabel>
             </div>
         </h:form>

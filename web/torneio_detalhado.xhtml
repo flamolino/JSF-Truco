@@ -2,14 +2,79 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="/template.xhtml">
 
         <ui:define name="corpo">
 
             <div align="center" class="mainMid-form bg-light">
 
+                <div class="midTorneio-detalhado-form bg-light">
 
+                    <div class="torneio-detalhado-item bg-light" align="center">
+
+                        <h2 class="news-title text-light bg-dark" style="font-weight: bold; border-radius: 5px;"> #{torneio.nome} </h2>
+                        <h:graphicImage styleClass="torneio-detalhado-img" value="res/svg/trophy.svg"/>
+                        <h:panelGrid columns="2" >
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: bold;"> Criador : </h:outputLabel>
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;"> #{torneio.nomeCriador  } </h:outputLabel>
+
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: bold;"> Criado dia : </h:outputLabel>
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;"> #{torneio.data} </h:outputLabel>
+
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: bold;"> Inscrições até dia : </h:outputLabel>
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;"> #{torneio.dataEncerramento  } </h:outputLabel>
+
+                            <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: bold;"> Status : </h:outputLabel>
+                            <h:outputLabel class="bg-transparent text-#{torneio.corStatusDoTorneio}" style="font-size: 14px; font-weight: bold;"> #{torneio.statusDoTorneio  } </h:outputLabel>
+
+                        </h:panelGrid>
+                        <h3 class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;  border-radius: 5px;"> #{torneio.descricao} </h3>
+
+                        <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" style="margin: auto; margin-top: 10px;" disabled="#{torneio.isInscrever}" />
+
+                    </div>
+
+                    <div class="torneio-detalhado-item bg-light" align="center">
+
+                        <h2 class="news-title text-light bg-dark" style="font-weight: bold; border-radius: 5px;"> #{torneio.inscrBarraLimite} </h2>
+                        <h:dataTable id='tabelatorneio' value="#{torneio.listaDeInscritosAtualizada}" var='lstInscritos' border="1"
+                                     columnClasses="dttblIns-col1 bg-light,dttblIns-col2 bg-light"
+                                     styleClass="bg-dark dttbl-insrito text-light" >
+
+                            <h:column>
+                                <f:facet name='header'>
+                                    Duplas
+                                </f:facet>
+                                <h:commandLink styleClass="text-dark" >
+                                    #{lstInscritos.nome}
+                                </h:commandLink>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name='header'>
+                                    Ordem
+                                </f:facet>
+                                <h:outputLabel value="#{lstInscritos.ordem}" class="text-dark"/>
+                            </h:column>
+
+                        </h:dataTable>
+
+                    </div>
+
+                    <div class="torneio-detalhado-chave bg-light" align="center" style="display:#{(torneio.estaAtivo )?'none':'block'}">
+                        <h2 class="news-title text-light bg-dark" style="font-weight: bold; border-radius: 5px;"> Chave </h2>
+                        <div class="torneio-detalhado-item bg-light" align="center">
+                            teste
+                        </div>
+                        <div class="torneio-detalhado-item bg-light" align="center">
+
+                            retstas
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 

@@ -1,5 +1,6 @@
 package bean;
 
+import bean.tabelas.ListaDeInscritosEmUmTorneio;
 import bean.tabelas.ListaDeTorneios;
 import data.qry.Insert;
 import data.qry.Select;
@@ -17,12 +18,14 @@ public class BeanTorneio {
 
     private String mensagem;
     private Torneio torneio = null;
+    private ListaDeTorneios lstTorneio = null;
     private ArrayList<ListaDeTorneios> listaDeTorneios = null;
     private Date dtCalendario = null;
 
     public BeanTorneio() {
         this.mensagem = "";
         this.torneio = new Torneio();
+        this.lstTorneio = new ListaDeTorneios();
         this.listaDeTorneios = new ArrayList();
         this.dtCalendario = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
     }
@@ -31,6 +34,11 @@ public class BeanTorneio {
         Select sel = new Select();
         ArrayList<ListaDeTorneios> lst = sel.getListaDeTorneiosAtualizada();
         return lst;
+    }
+
+    public ArrayList<ListaDeInscritosEmUmTorneio> getListaDeInscritosAtualizada() throws SQLException {
+        Select sel = new Select();
+        return sel.getListaDeInscritosAtualizada(this.torneio.getId());
     }
 
     public String callTorneio() {
@@ -84,8 +92,52 @@ public class BeanTorneio {
         return "cadastro_torneio";
     }
 
-    public String callTorneioDetalhado() {
-        return "torneio_detalhado";
+    public String callTorneioDetalhado(String nomeTorneio, ListaDeTorneios lst) throws SQLException {
+
+        Select sel = new Select();
+        this.torneio = sel.getTorneioPorNome(nomeTorneio);
+        this.lstTorneio = lst;
+        if (this.torneio != null) {
+            return "torneio_detalhado";
+        }
+        return "";
+
+    }
+
+    public String getStatusDoTorneio() {
+        if (this.torneio.getFinalizado() > -1) {
+            return "Finalizado";
+        } else if (this.torneio.getFinalizado() == -1 && !this.getTorneioIsCheio()) {
+            return "Aberto";
+        } else if (this.torneio.getFinalizado() == -1 && this.getTorneioIsCheio()) {
+            return "Ativo";
+        }
+        return "";
+    }
+
+    public String getCorStatusDoTorneio() {
+        if (this.torneio.getFinalizado() > -1) {
+            return "danger";
+        } else if (this.torneio.getFinalizado() == -1 && !this.getTorneioIsCheio()) {
+            return "warning";
+        } else if (this.torneio.getFinalizado() == -1 && this.getTorneioIsCheio()) {
+            return "success";
+        }
+        return "dark";
+    }
+
+    public boolean isEstaAtivo() {
+        return !(this.torneio.getFinalizado() == -1 && this.getTorneioIsCheio());
+    }
+
+    public String getNomeCriador() throws SQLException {
+        Select sel = new Select();
+
+        return sel.getLoginPorID(this.torneio.getCriador());
+    }
+
+    public String getInscrBarraLimite() {
+        return "Lista de Inscritos (" + this.lstTorneio.getQtdInscritos() + "/" + this.lstTorneio.getLimiteDuplas() + ")";
     }
 
     public String getMensagem() {
@@ -168,25 +220,24 @@ public class BeanTorneio {
         this.torneio.setDataEncerraInsc(data);
     }
 
-    /**
-     * @return the listaDeTorneios
-     */
     public ArrayList<ListaDeTorneios> getListaDeTorneios() {
         return listaDeTorneios;
     }
 
-    /**
-     * @param listaDeTorneios the listaDeTorneios to set
-     */
     public void setListaDeTorneios(ArrayList<ListaDeTorneios> listaDeTorneios) {
         this.listaDeTorneios = listaDeTorneios;
     }
 
-    /**
-     * @return the dtCalendario
-     */
     public Date getDtCalendario() {
         return dtCalendario;
+    }
+
+    public boolean getTorneioIsCheio() {
+        return this.lstTorneio.isJustCheio();
+    }
+
+    public boolean getIsInscrever() {
+        return this.lstTorneio.isCheio();
     }
 
 }

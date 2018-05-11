@@ -24,7 +24,7 @@
                         <f:facet name='header'>
                             Nome
                         </f:facet>
-                        <h:commandLink styleClass="text-dark" action="#{torneio.callTorneioDetalhado()}">
+                        <h:commandLink styleClass="text-dark" action="#{torneio.callTorneioDetalhado(lstTorneios.nome, lstTorneios.objLstTorneio)}">
                             #{lstTorneios.nome}
                         </h:commandLink>
                     </h:column>
