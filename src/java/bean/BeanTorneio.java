@@ -30,6 +30,15 @@ public class BeanTorneio {
         this.dtCalendario = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
     }
 
+    public boolean setDefaultTorneio() {
+        this.mensagem = "";
+        this.torneio = new Torneio();
+        this.lstTorneio = new ListaDeTorneios();
+        this.listaDeTorneios = new ArrayList();
+        this.dtCalendario = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
+        return true;
+    }
+
     public ArrayList<ListaDeTorneios> getListaDeTorneiosAtualizada() throws SQLException {
         Select sel = new Select();
         ArrayList<ListaDeTorneios> lst = sel.getListaDeTorneiosAtualizada();
@@ -126,41 +135,54 @@ public class BeanTorneio {
         return "dark";
     }
 
-    public void inscreverTorneio(int idDupla, String nomeTorneio) throws SQLException{
-        
+    public void inscreverTorneio(int idUsuario, int idDupla, String nomeTorneio) throws SQLException {
+
+        boolean bool;
         this.mensagem = "";
         Select sel = new Select();
         Dupla dupla = sel.AutenticarDupla(idDupla);
-        
-        int idTorneio = sel.getTorneioPorNome(nomeTorneio).getId();
-        
-        if(dupla.getJogadorLider() > 0){
-            
-            if(dupla.getJogador() > 0){
-                
-                if(!sel.verificaEstaInscritoTorneio(idDupla, idTorneio)){
 
-                    Insert ins = new Insert();
-                    ins.inscreverNoTorneio(idDupla, idTorneio);
-                    this.mensagem = "a dupla foi inscrita!";
-                    
-                }else{                    
-                    this.mensagem = "Sua dupla já está inscrita neste torneio!";                    
+        int idTorneio = sel.getTorneioPorNome(nomeTorneio).getId();
+
+        if (dupla.getJogadorLider() > 0) {
+
+            if (dupla.getJogadorLider() != idUsuario) {
+                if (dupla.getJogador() > 0) {
+
+                    bool = sel.verificaEstaInscritoTorneio(idDupla, idTorneio);
+                    if (!bool) {
+
+                        Insert ins = new Insert();
+                        ins.inscreverNoTorneio(idDupla, idTorneio);
+                        this.mensagem = "a dupla foi inscrita!";
+
+                    } else {
+                        this.mensagem = "Sua dupla já está inscrita neste torneio!";
+                    }
+
+                } else {
+                    this.mensagem = "Sua dupla não possui um parceiro!";
                 }
-                
             } else {
-                this.mensagem = "Sua dupla não possui um parceiro!";
+                this.mensagem = "Apenas o líder da dupla pode inscrever-se em um torneio!";
             }
-            
+
         } else {
-            
+
             this.mensagem = "Precisa compor uma dupla para participar desde torneio!";
-            
+
         }
-        
-        
     }
-    
+
+    public boolean verificaSeTemMensagem() {
+        return !this.mensagem.equals("");
+    }
+
+    public void limpaMensagem() throws SQLException {
+
+        this.mensagem = "";
+    }
+
     public boolean isEstaAtivo() {
         return !(this.torneio.getFinalizado() == -1 && this.getTorneioIsCheio());
     }
@@ -263,10 +285,10 @@ public class BeanTorneio {
         this.listaDeTorneios = listaDeTorneios;
     }
 
-        public void setDtCalendario(Date data) {
+    public void setDtCalendario(Date data) {
         this.torneio.setData(Utilities.DateToString(data));
     }
-    
+
     public Date getDtCalendario() {
         return dtCalendario;
     }

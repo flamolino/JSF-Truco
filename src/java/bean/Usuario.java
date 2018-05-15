@@ -22,7 +22,7 @@ public class Usuario {
 
     public Usuario() {
         this.id = -1;
-        this.idade = 0;
+        this.idade = 18;
         this.duplaAtual = -1;
         this.convite = -1;
         this.nome = "";

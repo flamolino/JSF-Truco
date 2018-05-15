@@ -12,9 +12,18 @@
 
     <body class="bg-dark">
 
-        <h:form>
-            <div class="inputText-form bg-light">
 
+        <div class="inputText-form bg-light">
+            <h:form>
+                <div class="btn-group btn-group-toggle" style="width: 100%; margin-bottom: 20px;">
+                    <label class="btn btn-warning active" style="width: 100%; height: 40px; display:#{(inputText.verificaSeTemMensagem())?'block':'none'}">
+                        <h:outputLabel value='#{inputText.mensagem}' styleClass="text-light bg-transparent"/>
+                    </label>
+                    <h:commandLink class="btn btn-warning text-light" style="width: 44%; height: 40px; display:#{(inputText.verificaSeTemMensagem())?'block':'none'}"
+                                   actionListener="#{inputText.limpaMensagem()}" value="&Chi;"/>
+                </div>
+            </h:form>
+            <h:form>
                 <h2> #{inputText.inputTextTitle} </h2>
                 <h:inputText id='inputText' value="#{inputText.inputText}" styleClass="input-inputText" a:autofocus="true"/>
 
@@ -23,11 +32,10 @@
 
                     <h:commandButton value="Confirmar" styleClass="btn btn-success btn-inputText" action="#{inputText.btnConfirmar()}"/>
                 </h:panelGrid>
-                <h:outputLabel>#{inputText.mensagem}</h:outputLabel>
+            </h:form>
+        </div>
 
-            </div>
 
-        </h:form>
     </body>
 
 

@@ -27,7 +27,10 @@ public class Delete {
     }
 
     private void closeConns() throws SQLException {
-        this.pstmt.close();
+        if (this.pstmt != null) {
+            this.pstmt.close();
+        }
+        this.conexao.close();
     }
 
 }

@@ -30,6 +30,23 @@ public class BeanInputText {
         this.mensagem = "";
     }
 
+    public boolean setDefaultInputText() {
+        this.inputText = "";
+        this.inputTextTitle = "";
+        this.retorno = "";
+        this.mensagem = "";
+        return true;
+    }
+
+    public boolean verificaSeTemMensagem() {
+        return !this.mensagem.equals("");
+    }
+
+    public void limpaMensagem() throws SQLException {
+
+        this.mensagem = "";
+    }
+
     public String callInputText(Usuario objeto, String telaRetorno, int opcao, String titulo) {
 
         this.inputTextTitle = titulo;

@@ -31,11 +31,11 @@ public class Select {
             + "iteDuplas as limite, T.descricao as descr, T.dataEncerramentoInsc as dataEnc from  torneio T left join inscritos_torneio I on T.id = I.idTorn"
             + "eio where T.finalizado <= 0 group by T.id order by qtd desc;";
     private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO = "select dupla.nome as duplas, "
-            + "inscritos_torneio.ordem as ordem from dupla, torneio, inscritos_torneio where torneio.id = ? and dupla.id = ins"
+            + "inscritos_torneio.ordem as ordem, dupla.logo as logo from dupla, torneio, inscritos_torneio where torneio.id = ? and dupla.id = ins"
             + "critos_torneio.idDupla and torneio.id = inscritos_torneio.idTorneio group by inscritos_torneio.ordem;";
     private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO_ALEATORIAMENTE = " select dupla.nome as duplas from dupla, torneio, inscri"
             + "tos_torneio where torneio.id = ? and torneio.id = inscritos_torneio.idTorneio and dupla.id = inscritos_torneio.idDupla group by dupla.nome order by random(); ";
-    
+
     private static final String VERIFICA_SE_JA_ESTA_INSCRITO_NO_TORNEIO = "select * from inscritos_torneio where idDupla = ? and idTorneio = ?;";
 
     private Usuario user = null;
@@ -63,7 +63,8 @@ public class Select {
             while (this.rs.next()) {
                 this.lstInscrTor = new ListaDeInscritosEmUmTorneio();
                 this.lstInscrTor.setNome(this.rs.getString("duplas"));
-                this.lstInscrTor.setOrdem(i);
+                this.lstInscrTor.setLogo(this.rs.getString("logo"));
+                this.lstInscrTor.setOrdem(this.rs.getInt("ordem"));
                 this.listaDeInscritosEmUmTorneio.add(lstInscrTor);
                 i++;
             }
@@ -151,6 +152,7 @@ public class Select {
             }
         }
 
+        this.closeConns();
         return this.torneio;
     }
 
@@ -161,7 +163,6 @@ public class Select {
             this.conexao = new Conn();
 
             this.pstmt = conexao.getConexao().prepareStatement(AUTENTICAR_LOGIN);
-System.out.println("NÃO É NULO");
             this.pstmt.setString(1, login);
             this.pstmt.setString(2, senha);
 
@@ -176,7 +177,7 @@ System.out.println("NÃO É NULO");
                 } else {
                     this.user.setId(-1);
                 }
-                
+
             } else {
                 this.user.setId(-1);
 
@@ -224,36 +225,28 @@ System.out.println("NÃO É NULO");
 
     public Dupla AutenticarDupla(int idDupla) throws SQLException {
 
-        try {
-            this.dupla = new Dupla();
-            this.conexao = new Conn();
+        this.dupla = new Dupla();
+        this.conexao = new Conn();
 
-            this.pstmt = conexao.getConexao().prepareStatement(PEGA_DUPLA_POR_ID);
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_DUPLA_POR_ID);
 
-            this.pstmt.setInt(1, idDupla);
+        this.pstmt.setInt(1, idDupla);
 
-            this.rs = pstmt.executeQuery();
+        this.rs = pstmt.executeQuery();
 
-            if (this.rs != null) {
+        if (this.rs != null) {
 
-                if (this.rs.next()) {
+            if (this.rs.next()) {
 
-                    this.dupla = getConsultaDupla(this.rs);
+                this.dupla = getConsultaDupla(this.rs);
 
-                } else {
-                    this.dupla.setId(-1);
-                }
-            } else {
-                this.dupla.setId(-1);
             }
-
-        } catch (SQLException e) {
-
         }
+
         closeConns();
         return this.dupla;
-    }    
-    
+    }
+
     public String getLoginPorID(int id) throws SQLException {
         String nome = "";
         try {
@@ -332,7 +325,7 @@ System.out.println("NÃO É NULO");
         closeConns();
         return id;
     }
-    
+
     public boolean verificaEstaInscritoTorneio(int idDupla, int idTorneio) throws SQLException {
 
         this.conexao = new Conn();
@@ -351,11 +344,11 @@ System.out.println("NÃO É NULO");
             }
 
         }
-            closeConns();
-            return false;
-        
+        closeConns();
+        return false;
+
     }
-    
+
     public boolean verificaUsuarioExistente(String login) throws SQLException {
 
         this.conexao = new Conn();
@@ -486,12 +479,15 @@ System.out.println("NÃO É NULO");
     }
 
     public void closeConns() throws SQLException {
-        
 
+        if (this.pstmt != null) {
             this.pstmt.close();
+        }
+        if (this.rs != null) {
             this.rs.close();
+        }
+        this.conexao.close();
 
-        
     }
 
     private Usuario getConsultaUsuario(ResultSet rSet) throws SQLException {
@@ -524,11 +520,11 @@ System.out.println("NÃO É NULO");
 
         return d;
     }
-    
-    public int getCountQry(String qry) throws SQLException{
+
+    public int getCountQry(String qry) throws SQLException {
         this.conexao = new Conn();
 
-        this.pstmt = conexao.getConexao().prepareStatement(qry);        
+        this.pstmt = conexao.getConexao().prepareStatement(qry);
 
         this.rs = pstmt.executeQuery();
 
@@ -537,9 +533,9 @@ System.out.println("NÃO É NULO");
                 int count = this.rs.getInt("c");
                 closeConns();
                 return count;
-            } 
+            }
 
-        }  
+        }
         closeConns();
         return 0;
     }

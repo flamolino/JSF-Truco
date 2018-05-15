@@ -3,7 +3,6 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 public class Conn {
 
@@ -13,30 +12,36 @@ public class Conn {
     private Connection conexao = null;
 
     public Conn() throws SQLException {
-        //this.conexao = null;
+
         if (this.conexao == null) {
             try {
 
                 Class.forName("org.sqlite.JDBC");
-                
-                if(System.getProperty("os.name").equals("Windows")){
+
+                if (System.getProperty("os.name").contains("Windows")) {
                     this.conexao = DriverManager.getConnection(URL_WIN);
                 } else {
                     this.conexao = DriverManager.getConnection(URL);
                 }
-                
+
             } catch (ClassNotFoundException | SQLException e) {
                 System.out.println("ERRO ao se conectar ao banco!");
             }
-            
+
         }
-        
 
     }
 
     public Connection getConexao() {
+
         return this.conexao;
 
+    }
+
+    public void close() throws SQLException {
+        if (this.conexao != null) {
+            this.conexao.close();
+        }
     }
 
 }

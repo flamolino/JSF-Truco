@@ -24,6 +24,7 @@ public class BeanUsuario {
     public BeanUsuario() {
         this.user = new Usuario();
         this.logado = false;
+        this.mensagem = "";
     }
 
     /*
@@ -41,7 +42,7 @@ public class BeanUsuario {
             return "main";
         } else {
             this.mensagem = "Erro ao tentar logar!";
-            return "";            
+            return "";
         }
 
     }
@@ -82,7 +83,16 @@ public class BeanUsuario {
         }
     }
 
-    public String desloga() {
+    public String desloga(boolean dp, boolean to, boolean it) {
+        dp = false;
+        to = false;
+        it = false;
+        this.mensagem = "";
+        this.user = new Usuario();
+        return "index";
+    }
+
+    public String voltaIndex() {
         this.mensagem = "";
         this.user = new Usuario();
         return "index";
@@ -109,7 +119,7 @@ public class BeanUsuario {
     public void aceitarConviteDeDupla() throws SQLException {
         Update upd = new Update();
         Select sel = new Select();
-        
+
         upd.atualizaDuplaAtual(sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId(), this.user.getId());
         upd.entrarParaDupla(this.user.getId(), sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId());
         upd.recusarConvite(this.user.getId());
@@ -123,13 +133,21 @@ public class BeanUsuario {
         upd.recusarConvite(this.user.getId());
     }
 
+    public boolean verificaSeTemMensagem() {
+        return !this.mensagem.equals("");
+    }
+
+    public void limpaMensagem() throws SQLException {
+
+        this.mensagem = "";
+    }
+
     /*
     Direct Screens Calls
      */
     public String callCadastroUsuario() {
         this.mensagem = "";
         this.user = new Usuario();
-        this.user.setIdade(10);
         return "cadastro_usuario";
     }
 
@@ -232,7 +250,7 @@ public class BeanUsuario {
     }
 
     public int getIdade() {
-        return this.user.getDuplaAtual();
+        return this.user.getIdade();
     }
 
     public void setIdade(int idade) {

@@ -27,6 +27,14 @@ public class beanDupla {
         this.mensagem = "";
     }
 
+    public boolean setDefaultDupla() {
+        this.dupla = new Dupla();
+        this.dupla.setLogo("https://milvus.com.br/wordpress/wp-content/uploads/2017/05/avatar-default.jpg");
+        this.temDupla = false;
+        this.mensagem = "";
+        return true;
+    }
+
     public void cadastrarDupla(int id) throws SQLException {
 
         this.mensagem = "";
@@ -41,7 +49,6 @@ public class beanDupla {
             Update upd = new Update();
             if (ins.novaDupla(this.dupla)) {
                 this.mensagem = "Dupla criada com sucesso!";
-                this.temDupla = sel.verificaDuplaExistente(this.dupla.getNome());
                 this.dupla = sel.AutenticarDupla(id, id);
                 upd.atualizaDuplaAtual(this.dupla.getId(), id);
 
@@ -49,12 +56,13 @@ public class beanDupla {
                 this.mensagem = "Erro ao criar dupla!";
             }
         }
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
 
     }
 
     public String getDeletarOuSairDaDupla(int id) throws SQLException {
         Select sel = new Select();
-        this.temDupla = sel.verificaDuplaExistente(this.dupla.getNome());
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
         this.dupla = sel.AutenticarDupla(id, id);
         if (this.dupla.getJogadorLider() == id) {
             return "Deletar dupla";
@@ -69,10 +77,14 @@ public class beanDupla {
     public void atualizaDupla(int id) throws SQLException {
         Select sel = new Select();
         this.dupla = sel.AutenticarDupla(id, id);
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
     }
 
     public void excluirOuSairDaDupla(String dupla) throws SQLException {
+        int id1 = this.dupla.getJogador();
+        int id2 = this.dupla.getJogadorLider();
         if (this.temDupla) {
+
             if (dupla.equals("Deletar dupla")) {
 
                 if (this.dupla.getJogador() != -1) {
@@ -87,13 +99,27 @@ public class beanDupla {
                 upd.sairDaDupla(this.dupla.getId(), this.dupla.getJogador());
             }
         }
+        Select sel = new Select();
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id1);
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id2);
+
     }
 
     public String callDupla(int id) throws SQLException {
         Select sel = new Select();
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
         this.dupla = sel.AutenticarDupla(id, id);
         this.mensagem = "";
         return "dupla";
+    }
+
+    public boolean verificaSeTemMensagem() {
+        return !this.mensagem.equals("");
+    }
+
+    public void limpaMensagem() throws SQLException {
+
+        this.mensagem = "";
     }
 
     public boolean seTemIntegrante() {
@@ -153,11 +179,13 @@ public class beanDupla {
     }
 
     public String getData() {
+
         if (this.temDupla) {
             return Utilities.formataData(this.getDupla().getData());
         } else {
             return "";
         }
+
     }
 
     public void setData(String data) {
@@ -178,7 +206,8 @@ public class beanDupla {
 
     public boolean SeTemDupla(int id) throws SQLException {
         Select sel = new Select();
-        return sel.verificaSeEstaOuSeTemDupla(id);
+        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
+        return this.temDupla;
     }
 
     public void setTemDupla(boolean temDupla) {

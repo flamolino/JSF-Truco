@@ -15,9 +15,18 @@
 
     <body class="bg-dark">
 
-        <h:form>
-            <div class="cad-form bg-light">
 
+        <div class="cad-form bg-light">
+            <h:form>
+                <div class="btn-group btn-group-toggle" style="width: 100%; margin-bottom: 20px;">
+                    <label class="btn btn-warning active" style="width: 100%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}">
+                        <h:outputLabel value='#{torneio.mensagem}' styleClass="text-light bg-transparent"/>
+                    </label>
+                    <h:commandLink class="btn btn-warning text-light" style="width: 44%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}"
+                                   actionListener="#{torneio.limpaMensagem()}" value="&Chi;"/>
+                </div>
+            </h:form>
+            <h:form>
                 <h2>Criar novo torneio</h2>
                 <h3>Nome</h3>
                 <h:inputText id='nome_torneio' value="#{torneio.nome}" required="true" requiredMessage="Digite o nome do torneio" styleClass="input-cad"/>
@@ -40,11 +49,13 @@
                 </p:calendar>
 
 
-                <h:commandButton value="Criar" styleClass="btn btn-secondary btn-cad" actionListener="#{torneio.criarNovoTorneio(usuario.id)}"/>
-                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad"/>
-                <h:outputLabel>#{torneio.mensagem}</h:outputLabel>
-            </div>
-        </h:form>
+                <h:commandButton value="Criar" styleClass="btn btn-dark btn-cad" actionListener="#{torneio.criarNovoTorneio(usuario.id)}"/>
+            </h:form>
+            <h:form>
+                <h:commandButton value="Cancelar" styleClass="btn btn-danger btn-cad" actionListener="#{torneio.callTorneio()}"/>
+            </h:form>
+        </div>
+
 
     </body>
 

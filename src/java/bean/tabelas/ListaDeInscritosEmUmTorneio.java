@@ -11,11 +11,12 @@ package bean.tabelas;
  */
 public class ListaDeInscritosEmUmTorneio {
 
-    private String nome;
+    private String nome, logo;
     private int ordem;
 
     public ListaDeInscritosEmUmTorneio() {
         this.nome = "";
+        this.logo = "";
         this.ordem = -1;
     }
 
@@ -45,5 +46,19 @@ public class ListaDeInscritosEmUmTorneio {
      */
     public void setOrdem(int ordem) {
         this.ordem = ordem;
+    }
+
+    /**
+     * @return the logo
+     */
+    public String getLogo() {
+        return logo;
+    }
+
+    /**
+     * @param logo the logo to set
+     */
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 }

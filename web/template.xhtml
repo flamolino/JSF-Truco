@@ -13,38 +13,40 @@
 
     <body class="bg-dark">
 
-        <h:form>
-            <div class="main-form bg-white container">
-                <ui:insert name="menu">
-                    <h:form>
-                        <div class="mainTop-form bg-danger">
-                            <h:commandButton value="Início" styleClass="btn btn-link btn-mainTop" action="#{usuario.callMain}"/>
-                            <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop" action="#{torneio.callTorneio()}"/>
-                            <h:commandButton value="Rankings" styleClass="btn btn-link btn-mainTop"/>
-                            <h:commandButton value="Sair" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.desloga()}"/>
-                            <h:commandButton value="#{usuario.login}" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.callPerfil}"/>
-                            <h:commandButton value="Minha dupla" styleClass="btn btn-link btn-mainTopRight" action="#{dupla.callDupla(usuario.id)}"/>
-                        </div>
-                    </h:form>
-                </ui:insert>
 
-                <ui:insert name="corpo" >
+        <div class="main-form bg-white container">
+            <ui:insert name="menu">
+                <h:form>
+                    <div class="mainTop-form bg-danger">
+                        <h:commandButton value="Início" styleClass="btn btn-link btn-mainTop" action="#{usuario.callMain}"/>
+                        <h:commandButton value="Torneios" styleClass="btn btn-link btn-mainTop" action="#{torneio.callTorneio()}"/>
+                        <h:commandButton value="Rankings" styleClass="btn btn-link btn-mainTop"/>
+                        <h:commandButton value="Sair" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.desloga(dupla.setDefaultDupla(), torneio.setDefaultTorneio(), inputText.setDefaultInputText())}"/>
+                        <h:commandButton value="#{usuario.login}" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.callPerfil}"/>
+                        <h:commandButton value="Minha dupla" styleClass="btn btn-link btn-mainTopRight" action="#{dupla.callDupla(usuario.id)}"/>
+                    </div>
+                </h:form>
+            </ui:insert>
 
-                </ui:insert>
 
-                <ui:insert name="rodape">
-                    <h:form>
-                        <div align="center" class="rodape-form bg-light container">
-                            <h:outputLabel styleClass="text-danger naipes" value="&hearts;"/>
-                            <h:outputLabel styleClass="text-dark naipes" value="&spades;"/>
-                            <h:outputLabel styleClass="text-danger naipes" value="&diams;"/>
-                            <h:outputLabel styleClass="text-dark naipes" value="&clubs;"/>
-                        </div>
+            <ui:insert name="corpo" >
 
-                    </h:form>
-                </ui:insert>
-            </div>
-        </h:form>
+            </ui:insert>
+
+
+            <ui:insert name="rodape">
+                <h:form>
+                    <div align="center" class="rodape-form bg-light container">
+                        <h:outputLabel styleClass="text-danger naipes" value="&hearts;"/>
+                        <h:outputLabel styleClass="text-dark naipes" value="&spades;"/>
+                        <h:outputLabel styleClass="text-danger naipes" value="&diams;"/>
+                        <h:outputLabel styleClass="text-dark naipes" value="&clubs;"/>
+                    </div>
+
+                </h:form>
+            </ui:insert>
+        </div>
+
 
     </body>
 

@@ -20,6 +20,7 @@ public class ListaDeTorneios {
 
     public ListaDeTorneios() {
         this.nome = "";
+
         this.descricao = "";
         this.qtdInscritos = -1;
         this.limiteDuplas = -1;
