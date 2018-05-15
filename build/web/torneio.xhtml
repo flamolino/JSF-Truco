@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{dupla.atualizaDupla(usuario.id)}"/>
+        </f:metadata>
+
+        <ui:define name="corpo">
+
+            <h:form>
+                <div class="btn-group btn-group-toggle" style="width: 100%; margin-bottom: 20px;">
+                    <label class="btn btn-warning active" style="width: 100%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}">
+                        <h:outputLabel value='#{torneio.mensagem}' styleClass="text-light bg-transparent"/>
+                    </label>
+                    <h:commandLink class="btn btn-warning text-light" style="width: 44%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}"
+                                   actionListener="#{torneio.limpaMensagem()}" value="&Chi;"/>
+                </div>
+            </h:form>
+
+            <h:form>
+                <div align="center" class="mainMid-form bg-light">
+
+                    <h2> Lista de Torneios </h2>
+
+                    <h:dataTable id='tabelatorneio' value="#{torneio.listaDeTorneiosAtualizada}" var='lstTorneios' border="1"
+                                 columnClasses="dttbl-col1 bg-light,dttbl-col2 bg-light,dttbl-col3 bg-light, dttbl-col4 bg-light, dttbl-col5 bg-light"
+                                 styleClass="bg-dark dttbl-torneio text-light" >
+
+                        <h:column>
+                            <f:facet name='header'>
+                                Nome
+                            </f:facet>
+                            <h:commandLink styleClass="text-dark" action="#{torneio.callTorneioDetalhado(lstTorneios.nome, lstTorneios.objLstTorneio)}">
+                                #{lstTorneios.nome}
+                            </h:commandLink>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name='header'>
+                                Vagas
+                            </f:facet>
+                            <h:outputLabel value="#{lstTorneios.qtdInscritos}/" class="text-dark"/>
+                            <h:outputLabel value="#{lstTorneios.limiteDuplas}" class="text-danger"/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name='header'>
+                                Descrição
+                            </f:facet>
+                            <h:outputLabel value="#{lstTorneios.descricao}" class="text-dark"/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name='header'>
+                                Encerra Inscrições
+                            </f:facet>
+                            <h:outputLabel value="#{lstTorneios.dataEncerraInsc}" class="text-dark"/>
+                        </h:column>
+
+                        <h:column>
+                            <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" disabled="#{lstTorneios.cheio}" action="#{torneio.inscreverTorneio(dupla.id, lstTorneios.nome)}"/>
+                        </h:column>
+
+                    </h:dataTable>
+
+                    <h:commandButton value="Criar um torneio" styleClass="btn btn-dark btn-criar-torneio" action="#{torneio.callCadastroTorneio}"/>
+
+                </div>
+            </h:form>
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>

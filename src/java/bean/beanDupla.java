@@ -110,7 +110,7 @@ public class beanDupla {
         this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
         this.dupla = sel.AutenticarDupla(id, id);
         this.mensagem = "";
-        return "dupla";
+        return "go-to-dupla";
     }
 
     public boolean verificaSeTemMensagem() {

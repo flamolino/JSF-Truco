@@ -52,7 +52,7 @@ public class BeanTorneio {
 
     public String callTorneio() {
         this.mensagem = "";
-        return "torneio";
+        return "go-to-torneio";
     }
 
     public void criarNovoTorneio(int idCriador) throws SQLException {
@@ -98,7 +98,7 @@ public class BeanTorneio {
     }
 
     public String callCadastroTorneio() {
-        return "cadastro_torneio";
+        return "go-to-cadastro_torneio";
     }
 
     public String callTorneioDetalhado(String nomeTorneio, ListaDeTorneios lst) throws SQLException {
@@ -107,7 +107,7 @@ public class BeanTorneio {
         this.torneio = sel.getTorneioPorNome(nomeTorneio);
         this.lstTorneio = lst;
         if (this.torneio != null) {
-            return "torneio_detalhado";
+            return "go-to-torneio_detalhado";
         }
         return "";
 

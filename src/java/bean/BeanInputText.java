@@ -142,7 +142,7 @@ public class BeanInputText {
     }
 
     public String callInputText() {
-        return "inputText";
+        return "go-to-inputText";
     }
 
     private void setNull() {

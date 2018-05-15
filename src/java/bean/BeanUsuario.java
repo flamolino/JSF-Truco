@@ -39,9 +39,9 @@ public class BeanUsuario {
 
         if (this.user.getId() != -1) {
             setLogado(true);
-            return "main";
+            return "go-to-main";
         } else {
-            this.mensagem = "Erro ao tentar logar!";
+            this.mensagem = "Usuário ou senha incorretos!";
             return "";
         }
 
@@ -95,7 +95,7 @@ public class BeanUsuario {
     public String voltaIndex() {
         this.mensagem = "";
         this.user = new Usuario();
-        return "index";
+        return "go-to-index";
     }
 
     public boolean verificaSeTemConvite() throws SQLException {
@@ -148,22 +148,22 @@ public class BeanUsuario {
     public String callCadastroUsuario() {
         this.mensagem = "";
         this.user = new Usuario();
-        return "cadastro_usuario";
+        return "go-to-cad-user";
     }
 
     public String callTorneio() {
         this.mensagem = "";
-        return "torneio";
+        return "go-to-torneio";
     }
 
     public String callMain() {
         this.mensagem = "";
-        return "main";
+        return "go-to-main";
     }
 
     public String callPerfil() {
         this.mensagem = "";
-        return "perfil";
+        return "go-to-perfil";
     }
 
     /*
