@@ -126,6 +126,41 @@ public class BeanTorneio {
         return "dark";
     }
 
+    public void inscreverTorneio(int idDupla, String nomeTorneio) throws SQLException{
+        
+        this.mensagem = "";
+        Select sel = new Select();
+        Dupla dupla = sel.AutenticarDupla(idDupla);
+        
+        int idTorneio = sel.getTorneioPorNome(nomeTorneio).getId();
+        
+        if(dupla.getJogadorLider() > 0){
+            
+            if(dupla.getJogador() > 0){
+                
+                if(!sel.verificaEstaInscritoTorneio(idDupla, idTorneio)){
+
+                    Insert ins = new Insert();
+                    ins.inscreverNoTorneio(idDupla, idTorneio);
+                    this.mensagem = "a dupla foi inscrita!";
+                    
+                }else{                    
+                    this.mensagem = "Sua dupla já está inscrita neste torneio!";                    
+                }
+                
+            } else {
+                this.mensagem = "Sua dupla não possui um parceiro!";
+            }
+            
+        } else {
+            
+            this.mensagem = "Precisa compor uma dupla para participar desde torneio!";
+            
+        }
+        
+        
+    }
+    
     public boolean isEstaAtivo() {
         return !(this.torneio.getFinalizado() == -1 && this.getTorneioIsCheio());
     }
@@ -228,6 +263,10 @@ public class BeanTorneio {
         this.listaDeTorneios = listaDeTorneios;
     }
 
+        public void setDtCalendario(Date data) {
+        this.torneio.setData(Utilities.DateToString(data));
+    }
+    
     public Date getDtCalendario() {
         return dtCalendario;
     }

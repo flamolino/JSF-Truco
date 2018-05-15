@@ -52,11 +52,12 @@
                     </h:column>
 
                     <h:column>
-                        <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" disabled="#{lstTorneios.cheio}" />
+                        <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" disabled="#{lstTorneios.cheio}" action="#{torneio.inscreverTorneio(dupla.id, lstTorneios.nome)}"/>
                     </h:column>
 
                 </h:dataTable>
 
+                <h:outputLabel value="#{torneio.mensagem}" class="text-dark"/>
                 <h:commandButton value="Criar um torneio" styleClass="btn btn-secondary btn-criar-torneio" action="#{torneio.callCadastroTorneio}"/>
 
             </div>

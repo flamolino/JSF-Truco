@@ -23,6 +23,9 @@ public class Insert {
     private static final String NOVO_TORNEIO = "INSERT INTO torneio "
             + "(id, limiteDuplas, nome, finalizado, descricao, dataCriacao, criador, dataEncerramentoInsc)"
             + " VALUES (null, ?, ?, ?, ?, ?, ?, ?);";
+    
+    private static final String INSCREVER_TORNEIO = "INSERT INTO inscritos_torneio "+
+            "(id, idDupla, idTorneio, ordem) VALUES (null, ?, ?, ?);";
 
     private int registros;
 
@@ -85,6 +88,23 @@ public class Insert {
 
         return this.registros == 1;
 
+    }
+    
+        public boolean inscreverNoTorneio(int idDupla, int idTorneio) throws SQLException {
+            
+        Select sel = new Select();     
+        int ordem = sel.getCountQry("select count(*) as c from inscritos_torneio where idTorneio = "+idTorneio+";") + 1;        
+        
+        this.conexao = new Conn();
+        this.pstmt = this.conexao.getConexao().prepareStatement(INSCREVER_TORNEIO);
+
+        this.pstmt.setInt(1, idDupla);
+        this.pstmt.setInt(2, idTorneio);
+        this.pstmt.setInt(3, ordem);
+                  
+        this.registros = this.pstmt.executeUpdate();        
+        closeConns();     
+        return this.registros == 1;
     }
 
     private void closeConns() throws SQLException {

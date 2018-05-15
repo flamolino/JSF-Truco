@@ -8,22 +8,29 @@ import javax.swing.JOptionPane;
 public class Conn {
 
     private String path = System.getProperty("user.dir");
-    private final String URL = "jdbc:sqlite:" + path + "\\database\\truco.db";
+    private final String URL_WIN = "jdbc:sqlite:" + path + "\\database\\truco.db";
+    private final String URL = "jdbc:sqlite:" + path + "/database/truco.db";
     private Connection conexao = null;
 
-    public Conn() {
-
-        if (conexao == null) {
+    public Conn() throws SQLException {
+        //this.conexao = null;
+        if (this.conexao == null) {
             try {
 
                 Class.forName("org.sqlite.JDBC");
-
-                this.conexao = DriverManager.getConnection(URL);
-
+                
+                if(System.getProperty("os.name").equals("Windows")){
+                    this.conexao = DriverManager.getConnection(URL_WIN);
+                } else {
+                    this.conexao = DriverManager.getConnection(URL);
+                }
+                
             } catch (ClassNotFoundException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "ERRO ao se conectar ao banco!");
+                System.out.println("ERRO ao se conectar ao banco!");
             }
+            
         }
+        
 
     }
 

@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import outro.Utilities;
 
 public class Select {
@@ -24,17 +23,20 @@ public class Select {
     private static final String VERIFICA_ESTA_OU_TEM_DUPLA = "select * from dupla where jogadorLider = ? or jogador = ?";
     private static final String VERIFICAR_DUPLA_EXISTENTE = "select * from dupla where nome = ?;";
     private static final String AUTENTICAR_DUPLA = "select * from dupla where jogadorLider = ? or jogador = ?;";
-    private static final String PEGA_DUPLA_POR_ID = "select * from dupla where jogadorLider = ?;";
+    private static final String PEGA_DUPLA_POR_LIDER = "select * from dupla where jogadorLider = ?;";
+    private static final String PEGA_DUPLA_POR_ID = "select * from dupla where id = ?;";
 
     private static final String VERIFICAR_TORNEIO_EXISTENTE = "select * from torneio where nome = ?;";
     private static final String PEGA_LISTA_DE_TORNEIOS_EM_ATIVIDADE = "select T.nome as nome, count(I.id) as qtd, T.lim"
             + "iteDuplas as limite, T.descricao as descr, T.dataEncerramentoInsc as dataEnc from  torneio T left join inscritos_torneio I on T.id = I.idTorn"
             + "eio where T.finalizado <= 0 group by T.id order by qtd desc;";
     private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO = "select dupla.nome as duplas, "
-            + "rowid as ordem from dupla, torneio, inscritos_torneio where torneio.id = ? and dupla.id = ins"
+            + "inscritos_torneio.ordem as ordem from dupla, torneio, inscritos_torneio where torneio.id = ? and dupla.id = ins"
             + "critos_torneio.idDupla and torneio.id = inscritos_torneio.idTorneio group by inscritos_torneio.ordem;";
     private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO_ALEATORIAMENTE = " select dupla.nome as duplas from dupla, torneio, inscri"
             + "tos_torneio where torneio.id = ? and torneio.id = inscritos_torneio.idTorneio and dupla.id = inscritos_torneio.idDupla group by dupla.nome order by random(); ";
+    
+    private static final String VERIFICA_SE_JA_ESTA_INSCRITO_NO_TORNEIO = "select * from inscritos_torneio where idDupla = ? and idTorneio = ?;";
 
     private Usuario user = null;
     private Dupla dupla = null;
@@ -159,7 +161,7 @@ public class Select {
             this.conexao = new Conn();
 
             this.pstmt = conexao.getConexao().prepareStatement(AUTENTICAR_LOGIN);
-
+System.out.println("NÃO É NULO");
             this.pstmt.setString(1, login);
             this.pstmt.setString(2, senha);
 
@@ -174,8 +176,10 @@ public class Select {
                 } else {
                     this.user.setId(-1);
                 }
+                
             } else {
                 this.user.setId(-1);
+
             }
 
         } catch (SQLException e) {
@@ -218,6 +222,38 @@ public class Select {
         return this.dupla;
     }
 
+    public Dupla AutenticarDupla(int idDupla) throws SQLException {
+
+        try {
+            this.dupla = new Dupla();
+            this.conexao = new Conn();
+
+            this.pstmt = conexao.getConexao().prepareStatement(PEGA_DUPLA_POR_ID);
+
+            this.pstmt.setInt(1, idDupla);
+
+            this.rs = pstmt.executeQuery();
+
+            if (this.rs != null) {
+
+                if (this.rs.next()) {
+
+                    this.dupla = getConsultaDupla(this.rs);
+
+                } else {
+                    this.dupla.setId(-1);
+                }
+            } else {
+                this.dupla.setId(-1);
+            }
+
+        } catch (SQLException e) {
+
+        }
+        closeConns();
+        return this.dupla;
+    }    
+    
     public String getLoginPorID(int id) throws SQLException {
         String nome = "";
         try {
@@ -250,7 +286,7 @@ public class Select {
 
             this.conexao = new Conn();
 
-            this.pstmt = conexao.getConexao().prepareStatement(PEGA_DUPLA_POR_ID);
+            this.pstmt = conexao.getConexao().prepareStatement(PEGA_DUPLA_POR_LIDER);
 
             this.pstmt.setInt(1, id);
 
@@ -296,7 +332,30 @@ public class Select {
         closeConns();
         return id;
     }
+    
+    public boolean verificaEstaInscritoTorneio(int idDupla, int idTorneio) throws SQLException {
 
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(VERIFICA_SE_JA_ESTA_INSCRITO_NO_TORNEIO);
+
+        this.pstmt.setInt(1, idDupla);
+        this.pstmt.setInt(2, idTorneio);
+
+        this.rs = pstmt.executeQuery();
+
+        if (this.rs != null) {
+            if (this.rs.next()) {
+                closeConns();
+                return true;
+            }
+
+        }
+            closeConns();
+            return false;
+        
+    }
+    
     public boolean verificaUsuarioExistente(String login) throws SQLException {
 
         this.conexao = new Conn();
@@ -426,9 +485,13 @@ public class Select {
 
     }
 
-    private void closeConns() throws SQLException {
-        this.pstmt.close();
-        this.rs.close();
+    public void closeConns() throws SQLException {
+        
+
+            this.pstmt.close();
+            this.rs.close();
+
+        
     }
 
     private Usuario getConsultaUsuario(ResultSet rSet) throws SQLException {
@@ -460,6 +523,25 @@ public class Select {
         d.setData(Utilities.DateToString(Utilities.StringToDate(rSet.getString("dataCriacao"))));
 
         return d;
+    }
+    
+    public int getCountQry(String qry) throws SQLException{
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(qry);        
+
+        this.rs = pstmt.executeQuery();
+
+        if (this.rs != null) {
+            if (this.rs.next()) {
+                int count = this.rs.getInt("c");
+                closeConns();
+                return count;
+            } 
+
+        }  
+        closeConns();
+        return 0;
     }
 
 }

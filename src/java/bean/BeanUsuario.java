@@ -31,6 +31,7 @@ public class BeanUsuario {
      */
     public String logar() throws SQLException {
 
+        this.mensagem = "";
         Select sel = new Select();
 
         this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
@@ -39,7 +40,8 @@ public class BeanUsuario {
             setLogado(true);
             return "main";
         } else {
-            return "";
+            this.mensagem = "Erro ao tentar logar!";
+            return "";            
         }
 
     }
@@ -107,6 +109,7 @@ public class BeanUsuario {
     public void aceitarConviteDeDupla() throws SQLException {
         Update upd = new Update();
         Select sel = new Select();
+        
         upd.atualizaDuplaAtual(sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId(), this.user.getId());
         upd.entrarParaDupla(this.user.getId(), sel.AutenticarDupla(this.user.getConvite(), this.user.getConvite()).getId());
         upd.recusarConvite(this.user.getId());
