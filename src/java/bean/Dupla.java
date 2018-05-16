@@ -21,7 +21,7 @@ public class Dupla {
         this.jogador = -1;
         this.jogadorLider = -1;
         this.nome = "";
-        this.logo = "http://turniir.ee/sites/default/files/teamimages/default-logo.png";
+        this.logo = "/res/svg/team-shield.svg";
         this.data = "01-01-0001 01:01:01";
     }
 

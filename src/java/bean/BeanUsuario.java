@@ -91,6 +91,11 @@ public class BeanUsuario {
         this.user = new Usuario();
         return "index";
     }
+    
+    public String getNomeDaDuplaAtual() throws SQLException{
+        Select sel = new Select();        
+        return sel.getNomeDuplaPorLiderID(this.user.getId());
+    }
 
     public String voltaIndex() {
         this.mensagem = "";
@@ -126,7 +131,7 @@ public class BeanUsuario {
         this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
 
     }
-
+    
     public void recusarConviteDeDupla() throws SQLException {
         Update upd = new Update();
 

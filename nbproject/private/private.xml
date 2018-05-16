@@ -11,5 +11,15 @@
             <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/JSF-Truco/web/template.xhtml</file>
             <file>file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/JSF-Truco/web/torneio.xhtml</file>
         </group>
+        <group>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/src/java/data/qry/Select.java</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/src/java/bean/BeanTorneio.java</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/web/WEB-INF/faces-config.xml</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/web/torneio_detalhado.xhtml</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/web/css/style.css</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/src/java/bean/tabelas/ListaDeTorneios.java</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/web/dupla.xhtml</file>
+            <file>file:/home/rafa/GITHUB/JSF-TRUCO/src/java/bean/BeanUsuario.java</file>
+        </group>
     </open-files>
 </project-private>

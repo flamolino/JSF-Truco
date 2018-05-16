@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.*;
+import javax.faces.component.html.*;
+import javax.faces.context.FacesContext;
 import outro.Utilities;
 
 @ManagedBean(name = "torneio")
@@ -21,24 +24,52 @@ public class BeanTorneio {
     private ListaDeTorneios lstTorneio = null;
     private ArrayList<ListaDeTorneios> listaDeTorneios = null;
     private Date dtCalendario = null;
-
+    private UIComponent found;
+    
     public BeanTorneio() {
         this.mensagem = "";
         this.torneio = new Torneio();
         this.lstTorneio = new ListaDeTorneios();
         this.listaDeTorneios = new ArrayList();
-        this.dtCalendario = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
+        this.dtCalendario = new Date();
     }
 
+    public void criaComp(){
+
+        HtmlPanelGroup div = new HtmlPanelGroup();
+        div.setLayout("block");
+        
+        HtmlOutputText tile = new HtmlOutputText();
+        tile.setValue("asdf");
+        tile.setStyle("tile");
+        div.getChildren().add(tile);
+        
+        doFind(FacesContext.getCurrentInstance(), "tiles");
+        found.getChildren().add(div);
+        
+        
+    }
+    
+    private void doFind(FacesContext context, String clientId){
+       FacesContext.getCurrentInstance().getViewRoot().invokeOnComponent(context, clientId, new ContextCallback() {
+           @Override
+           public void invokeContextCallback(FacesContext context, UIComponent component) {
+               found = component;
+           }
+       });
+    }
+    
+   
     public boolean setDefaultTorneio() {
         this.mensagem = "";
         this.torneio = new Torneio();
         this.lstTorneio = new ListaDeTorneios();
         this.listaDeTorneios = new ArrayList();
-        this.dtCalendario = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
+        this.dtCalendario = new Date();
         return true;
     }
 
+    
     public ArrayList<ListaDeTorneios> getListaDeTorneiosAtualizada() throws SQLException {
         Select sel = new Select();
         ArrayList<ListaDeTorneios> lst = sel.getListaDeTorneiosAtualizada();
@@ -55,6 +86,12 @@ public class BeanTorneio {
         return "go-to-torneio";
     }
 
+    public void iniciaTorneio(){
+        
+        
+        
+    }
+    
     public void criarNovoTorneio(int idCriador) throws SQLException {
         this.mensagem = "";
         Select sel = new Select();
@@ -83,6 +120,11 @@ public class BeanTorneio {
         }
     }
 
+    
+    public boolean verificaSeECriadorDoTorneio(int id){
+        return id == this.torneio.getCriador();
+    }
+    
     public ArrayList<String> getNumeroDeDuplas() {
 
         ArrayList<String> a = new ArrayList();
@@ -111,6 +153,14 @@ public class BeanTorneio {
         }
         return "";
 
+    }
+    
+    public boolean verificaSeDataJaUltrapassouAtual() {
+
+        Date dtEnc = Utilities.StringToDate(this.torneio.getDataEncerraInsc());
+        Date dtAtual = Utilities.StringToDate(Utilities.getDataAtualSemHoraString());
+
+        return dtEnc.compareTo(dtAtual) <= 0;
     }
 
     public String getStatusDoTorneio() {
@@ -285,12 +335,12 @@ public class BeanTorneio {
         this.listaDeTorneios = listaDeTorneios;
     }
 
-    public void setDtCalendario(Date data) {
-        this.torneio.setData(Utilities.DateToString(data));
-    }
-
     public Date getDtCalendario() {
         return dtCalendario;
+    }
+    
+    public void setDtCalendario(Date dt){
+        this.dtCalendario = dt;
     }
 
     public boolean getTorneioIsCheio() {

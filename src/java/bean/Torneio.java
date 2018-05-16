@@ -15,8 +15,8 @@ public class Torneio {
         this.criador = -1;
         this.nome = "";
         this.descricao = "";
-        this.data = "01-01-0001 01:01:01";
-        this.dataEncerraInsc = Utilities.getDataAtualSemHoraString();
+        this.data = Utilities.getDataAtualSemHoraString();
+        this.dataEncerraInsc = "01-01-0001 01:01:01";
 
     }
 

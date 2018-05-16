@@ -11,7 +11,8 @@ public class Update {
     private static final String ATUALIZAR_LOGO_DUPLA = "UPDATE dupla SET logo = ? WHERE id = ?;";
     private static final String CONVIDA_PARCEIRO = "UPDATE usuario SET convite = ? WHERE id = ?;";
     private static final String ENTRAR_PARA_DUPLA = "UPDATE DUPLA SET JOGADOR = ? WHERE id = ?;";
-    private static final String RECUSAR_CONVITE = "UPDATE usuario SET convite = -1 WHERE id = ?";
+    private static final String RECUSAR_CONVITE = "UPDATE usuario SET convite = -1 WHERE id = ?;";
+    private static final String ATUALIZA_AVATAR = "UPDATE usuario SET avatar = ? WHERE id = ?;";
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
 
@@ -42,13 +43,26 @@ public class Update {
 
         closeConns();
     }
-
-    public void atualizarLogo(int id, String logo) throws SQLException {
+    
+        public void atualizarLogo(int id, String logo) throws SQLException {
         this.conexao = new Conn();
 
         this.pstmt = conexao.getConexao().prepareStatement(ATUALIZAR_LOGO_DUPLA);
 
         this.pstmt.setString(1, logo);
+        this.pstmt.setInt(2, id);
+
+        pstmt.executeUpdate();
+
+        closeConns();
+    }
+
+    public void atualizarAvatar(int id, String avatar) throws SQLException {
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(ATUALIZA_AVATAR);
+
+        this.pstmt.setString(1, avatar);
         this.pstmt.setInt(2, id);
 
         pstmt.executeUpdate();

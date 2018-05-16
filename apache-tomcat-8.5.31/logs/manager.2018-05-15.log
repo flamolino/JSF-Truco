@@ -811,3 +811,344 @@
 15-May-2018 17:44:06.209 INFORMA��ES [http-nio-8080-exec-181] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
 15-May-2018 17:44:23.921 INFORMA��ES [http-nio-8080-exec-182] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
 15-May-2018 17:44:41.917 INFORMA��ES [http-nio-8080-exec-183] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 19:01:03.667 INFORMAÇÕES [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+15-May-2018 19:01:03.670 INFORMAÇÕES [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+15-May-2018 19:01:05.862 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 19:01:05.884 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 19:01:06.151 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/truco'
+15-May-2018 19:01:06.170 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/truco'
+15-May-2018 19:01:06.171 GRAVE [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log FAIL - Application at context path [/truco] could not be started
+ org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.manager.ManagerServlet.start(ManagerServlet.java:1349)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@dbaa08]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4907)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5042)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 31 more
+Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/rafa/GITHUB/JSF-TRUCO/apache-tomcat-8.5.31/webapps/truco] is not valid
+	at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:748)
+	at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:706)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 34 more
+
+15-May-2018 19:01:55.844 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 19:01:55.880 INFORMAÇÕES [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/truco'
+15-May-2018 19:02:03.898 INFORMAÇÕES [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 19:02:03.938 INFORMAÇÕES [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 19:02:03.996 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/tmp/context2446393735827234410.xml'
+15-May-2018 19:02:08.915 INFORMAÇÕES [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/truco'
+15-May-2018 19:06:45.657 INFORMAÇÕES [http-nio-8080-exec-15] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:23:51.700 INFORMAÇÕES [http-nio-8080-exec-20] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:30:14.261 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:30:15.878 INFORMAÇÕES [http-nio-8080-exec-21] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:30:15.953 INFORMAÇÕES [http-nio-8080-exec-20] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 20:30:21.783 INFORMAÇÕES [http-nio-8080-exec-21] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:30:21.840 INFORMAÇÕES [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 20:31:39.226 INFORMAÇÕES [http-nio-8080-exec-24] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:31:39.260 INFORMAÇÕES [http-nio-8080-exec-18] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 20:32:58.876 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:32:58.902 INFORMAÇÕES [http-nio-8080-exec-26] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 20:33:59.982 INFORMAÇÕES [http-nio-8080-exec-32] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:38:06.083 INFORMAÇÕES [http-nio-8080-exec-36] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:38:06.110 INFORMAÇÕES [http-nio-8080-exec-33] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 20:38:52.549 INFORMAÇÕES [http-nio-8080-exec-24] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:38:58.083 INFORMAÇÕES [http-nio-8080-exec-39] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:39:13.519 INFORMAÇÕES [http-nio-8080-exec-42] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:39:13.529 INFORMAÇÕES [http-nio-8080-exec-43] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:39:13.565 INFORMAÇÕES [http-nio-8080-exec-24] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 20:39:35.536 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:40:33.201 INFORMAÇÕES [http-nio-8080-exec-43] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:40:35.897 INFORMAÇÕES [http-nio-8080-exec-52] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:40:48.228 INFORMAÇÕES [http-nio-8080-exec-54] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:41:32.574 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:41:38.702 INFORMAÇÕES [http-nio-8080-exec-47] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:41:38.715 INFORMAÇÕES [http-nio-8080-exec-52] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:42:20.736 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:42:31.835 INFORMAÇÕES [http-nio-8080-exec-53] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:42:52.860 INFORMAÇÕES [http-nio-8080-exec-53] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:43:37.539 INFORMAÇÕES [http-nio-8080-exec-48] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:44:00.616 INFORMAÇÕES [http-nio-8080-exec-53] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:44:24.172 INFORMAÇÕES [http-nio-8080-exec-45] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:44:43.476 INFORMAÇÕES [http-nio-8080-exec-47] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:45:17.353 INFORMAÇÕES [http-nio-8080-exec-45] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:45:37.192 INFORMAÇÕES [http-nio-8080-exec-45] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:45:47.181 INFORMAÇÕES [http-nio-8080-exec-51] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:46:29.384 INFORMAÇÕES [http-nio-8080-exec-54] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:47:09.508 INFORMAÇÕES [http-nio-8080-exec-47] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:48:11.576 INFORMAÇÕES [http-nio-8080-exec-50] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:48:26.686 INFORMAÇÕES [http-nio-8080-exec-49] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:48:48.755 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:49:06.408 INFORMAÇÕES [http-nio-8080-exec-54] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:50:12.872 INFORMAÇÕES [http-nio-8080-exec-53] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:50:37.361 INFORMAÇÕES [http-nio-8080-exec-45] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:51:07.874 INFORMAÇÕES [http-nio-8080-exec-49] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:51:53.295 INFORMAÇÕES [http-nio-8080-exec-54] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:52:29.041 INFORMAÇÕES [http-nio-8080-exec-48] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:52:50.443 INFORMAÇÕES [http-nio-8080-exec-54] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 20:53:10.256 INFORMAÇÕES [http-nio-8080-exec-51] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:19:32.845 INFORMAÇÕES [http-nio-8080-exec-48] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:19:32.873 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:20:47.828 INFORMAÇÕES [http-nio-8080-exec-47] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:20:47.850 INFORMAÇÕES [http-nio-8080-exec-49] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:21:03.168 INFORMAÇÕES [http-nio-8080-exec-47] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:21:03.195 INFORMAÇÕES [http-nio-8080-exec-57] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:22:04.738 INFORMAÇÕES [http-nio-8080-exec-56] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:22:04.762 INFORMAÇÕES [http-nio-8080-exec-55] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:22:52.878 INFORMAÇÕES [http-nio-8080-exec-58] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:22:52.963 INFORMAÇÕES [http-nio-8080-exec-62] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:22:52.963 GRAVE [http-nio-8080-exec-62] org.apache.catalina.core.ApplicationContext.log Manager: ManagerServlet.reload[/truco]
+ java.lang.IllegalStateException: Context with name [/truco] has not yet been started
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3821)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1048)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:357)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-May-2018 21:23:26.050 INFORMAÇÕES [http-nio-8080-exec-65] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:23:26.058 INFORMAÇÕES [http-nio-8080-exec-58] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:23:26.093 INFORMAÇÕES [http-nio-8080-exec-62] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:23:26.093 GRAVE [http-nio-8080-exec-62] org.apache.catalina.core.ApplicationContext.log Manager: ManagerServlet.reload[/truco]
+ java.lang.IllegalStateException: Context with name [/truco] has not yet been started
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3821)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1048)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:357)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-May-2018 21:23:35.863 INFORMAÇÕES [http-nio-8080-exec-62] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:23:35.885 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/truco'
+15-May-2018 21:23:40.789 INFORMAÇÕES [http-nio-8080-exec-65] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:23:40.797 INFORMAÇÕES [130] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:23:40.828 INFORMAÇÕES [http-nio-8080-exec-62] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/tmp/context3163625567716747445.xml'
+15-May-2018 21:23:43.787 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/truco'
+15-May-2018 21:25:23.648 INFORMAÇÕES [http-nio-8080-exec-65] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:25:23.662 INFORMAÇÕES [http-nio-8080-exec-68] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:25:23.697 INFORMAÇÕES [http-nio-8080-exec-67] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/truco'
+15-May-2018 21:25:24.246 INFORMAÇÕES [http-nio-8080-exec-71] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/tmp/context4951804879189123739.xml'
+15-May-2018 21:25:26.873 INFORMAÇÕES [http-nio-8080-exec-69] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/truco'
+15-May-2018 21:25:40.854 INFORMAÇÕES [http-nio-8080-exec-64] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:25:56.024 INFORMAÇÕES [http-nio-8080-exec-75] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:25:56.035 INFORMAÇÕES [http-nio-8080-exec-69] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:27:09.525 INFORMAÇÕES [http-nio-8080-exec-78] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:27:09.545 INFORMAÇÕES [http-nio-8080-exec-76] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:27:59.601 INFORMAÇÕES [http-nio-8080-exec-74] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:27:59.622 INFORMAÇÕES [http-nio-8080-exec-77] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:28:07.527 INFORMAÇÕES [http-nio-8080-exec-83] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:28:07.535 INFORMAÇÕES [http-nio-8080-exec-79] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:28:07.573 INFORMAÇÕES [http-nio-8080-exec-78] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:29:08.410 INFORMAÇÕES [http-nio-8080-exec-96] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:30:50.779 INFORMAÇÕES [http-nio-8080-exec-89] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:30:52.909 INFORMAÇÕES [http-nio-8080-exec-88] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:30:53.325 INFORMAÇÕES [http-nio-8080-exec-90] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:30:53.382 INFORMAÇÕES [http-nio-8080-exec-91] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:31:37.527 INFORMAÇÕES [http-nio-8080-exec-92] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:32:16.488 INFORMAÇÕES [http-nio-8080-exec-90] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:33:08.418 INFORMAÇÕES [http-nio-8080-exec-90] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:34:43.695 INFORMAÇÕES [http-nio-8080-exec-94] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:34:43.744 INFORMAÇÕES [http-nio-8080-exec-88] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/truco'
+15-May-2018 21:34:43.837 INFORMAÇÕES [http-nio-8080-exec-96] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/truco'
+15-May-2018 21:38:10.879 INFORMAÇÕES [http-nio-8080-exec-107] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:39:09.235 INFORMAÇÕES [http-nio-8080-exec-101] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:39:25.729 INFORMAÇÕES [http-nio-8080-exec-102] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:39:40.226 INFORMAÇÕES [http-nio-8080-exec-106] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:39:43.950 INFORMAÇÕES [http-nio-8080-exec-106] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:39:43.960 INFORMAÇÕES [http-nio-8080-exec-104] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:39:44.026 INFORMAÇÕES [http-nio-8080-exec-102] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/truco'
+15-May-2018 21:39:44.072 INFORMAÇÕES [http-nio-8080-exec-98] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/truco'
+15-May-2018 21:41:24.970 INFORMAÇÕES [http-nio-8080-exec-110] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:41:42.978 INFORMAÇÕES [http-nio-8080-exec-111] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:42:00.457 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:42:25.584 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:42:25.591 INFORMAÇÕES [http-nio-8080-exec-111] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:42:54.338 INFORMAÇÕES [http-nio-8080-exec-115] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:43:41.299 INFORMAÇÕES [http-nio-8080-exec-111] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:43:54.079 INFORMAÇÕES [http-nio-8080-exec-108] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:44:11.524 INFORMAÇÕES [http-nio-8080-exec-115] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:44:22.641 INFORMAÇÕES [http-nio-8080-exec-115] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:46:50.591 INFORMAÇÕES [http-nio-8080-exec-112] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:46:50.620 INFORMAÇÕES [http-nio-8080-exec-115] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:47:00.879 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:47:00.909 INFORMAÇÕES [http-nio-8080-exec-116] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:47:30.161 INFORMAÇÕES [http-nio-8080-exec-114] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:47:30.189 INFORMAÇÕES [http-nio-8080-exec-118] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:48:23.412 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:48:31.146 INFORMAÇÕES [211] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:48:31.155 INFORMAÇÕES [http-nio-8080-exec-120] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:48:31.186 INFORMAÇÕES [http-nio-8080-exec-110] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:55:08.825 INFORMAÇÕES [http-nio-8080-exec-131] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:55:08.863 INFORMAÇÕES [http-nio-8080-exec-129] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:56:36.469 INFORMAÇÕES [http-nio-8080-exec-137] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:56:36.500 INFORMAÇÕES [http-nio-8080-exec-138] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:57:04.476 INFORMAÇÕES [http-nio-8080-exec-140] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:57:04.498 INFORMAÇÕES [http-nio-8080-exec-127] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 21:57:45.689 INFORMAÇÕES [http-nio-8080-exec-142] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:57:54.785 INFORMAÇÕES [http-nio-8080-exec-135] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:59:12.305 INFORMAÇÕES [http-nio-8080-exec-148] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:59:28.786 INFORMAÇÕES [http-nio-8080-exec-146] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 21:59:28.802 INFORMAÇÕES [http-nio-8080-exec-144] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:26:23.637 INFORMAÇÕES [http-nio-8080-exec-155] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:28:10.285 INFORMAÇÕES [http-nio-8080-exec-162] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:28:10.315 INFORMAÇÕES [http-nio-8080-exec-153] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:28:14.104 INFORMAÇÕES [http-nio-8080-exec-154] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:28:14.113 INFORMAÇÕES [http-nio-8080-exec-163] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:28:14.153 INFORMAÇÕES [http-nio-8080-exec-155] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:28:35.461 INFORMAÇÕES [http-nio-8080-exec-168] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:29:50.071 INFORMAÇÕES [http-nio-8080-exec-165] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:29:57.388 INFORMAÇÕES [http-nio-8080-exec-173] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:31:39.468 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:32:19.310 INFORMAÇÕES [http-nio-8080-exec-165] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:32:19.340 INFORMAÇÕES [http-nio-8080-exec-169] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:32:22.824 INFORMAÇÕES [http-nio-8080-exec-165] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:32:25.425 INFORMAÇÕES [http-nio-8080-exec-174] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:32:25.435 INFORMAÇÕES [http-nio-8080-exec-166] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:32:25.501 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:33:04.567 INFORMAÇÕES [http-nio-8080-exec-179] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:49:44.777 INFORMAÇÕES [http-nio-8080-exec-178] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:49:44.809 INFORMAÇÕES [http-nio-8080-exec-180] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:50:34.104 INFORMAÇÕES [http-nio-8080-exec-182] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:50:34.124 INFORMAÇÕES [http-nio-8080-exec-181] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:52:34.751 INFORMAÇÕES [http-nio-8080-exec-192] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:52:34.776 INFORMAÇÕES [http-nio-8080-exec-178] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:52:53.055 INFORMAÇÕES [http-nio-8080-exec-191] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:52:58.817 INFORMAÇÕES [http-nio-8080-exec-195] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:52:58.830 INFORMAÇÕES [http-nio-8080-exec-188] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:52:58.871 INFORMAÇÕES [http-nio-8080-exec-192] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:54:15.797 INFORMAÇÕES [http-nio-8080-exec-201] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:54:15.822 INFORMAÇÕES [http-nio-8080-exec-198] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:56:10.022 INFORMAÇÕES [http-nio-8080-exec-203] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:56:13.629 INFORMAÇÕES [http-nio-8080-exec-204] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:56:13.636 INFORMAÇÕES [http-nio-8080-exec-199] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:56:13.675 INFORMAÇÕES [http-nio-8080-exec-210] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:59:29.956 INFORMAÇÕES [http-nio-8080-exec-216] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:59:29.983 INFORMAÇÕES [http-nio-8080-exec-215] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 22:59:37.526 INFORMAÇÕES [http-nio-8080-exec-212] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:59:37.540 INFORMAÇÕES [http-nio-8080-exec-213] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 22:59:37.573 INFORMAÇÕES [http-nio-8080-exec-214] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:01:41.091 INFORMAÇÕES [http-nio-8080-exec-226] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:01:41.115 INFORMAÇÕES [http-nio-8080-exec-228] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:01:50.723 INFORMAÇÕES [http-nio-8080-exec-224] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:01:50.734 INFORMAÇÕES [http-nio-8080-exec-232] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:01:50.793 INFORMAÇÕES [http-nio-8080-exec-226] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:03:03.919 INFORMAÇÕES [http-nio-8080-exec-236] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:03.950 INFORMAÇÕES [http-nio-8080-exec-239] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:03:09.724 INFORMAÇÕES [http-nio-8080-exec-237] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:09.732 INFORMAÇÕES [http-nio-8080-exec-235] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:09.769 INFORMAÇÕES [http-nio-8080-exec-236] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:03:44.641 INFORMAÇÕES [http-nio-8080-exec-247] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:46.910 INFORMAÇÕES [http-nio-8080-exec-250] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:46.937 INFORMAÇÕES [http-nio-8080-exec-254] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:03:52.742 INFORMAÇÕES [http-nio-8080-exec-250] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:58.018 INFORMAÇÕES [http-nio-8080-exec-252] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:58.026 INFORMAÇÕES [http-nio-8080-exec-249] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:03:58.061 INFORMAÇÕES [http-nio-8080-exec-241] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:08:03.933 INFORMAÇÕES [http-nio-8080-exec-266] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:09:28.788 INFORMAÇÕES [http-nio-8080-exec-261] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:11:28.276 INFORMAÇÕES [http-nio-8080-exec-264] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:11:28.302 INFORMAÇÕES [http-nio-8080-exec-260] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:12:21.416 INFORMAÇÕES [http-nio-8080-exec-262] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:12:21.442 INFORMAÇÕES [http-nio-8080-exec-267] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:17:24.302 INFORMAÇÕES [http-nio-8080-exec-273] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:17:24.326 INFORMAÇÕES [http-nio-8080-exec-272] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:17:30.729 INFORMAÇÕES [http-nio-8080-exec-278] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:17:34.592 INFORMAÇÕES [http-nio-8080-exec-278] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:17:34.601 INFORMAÇÕES [http-nio-8080-exec-270] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:17:34.639 INFORMAÇÕES [http-nio-8080-exec-273] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:19:35.818 INFORMAÇÕES [http-nio-8080-exec-284] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:19:35.844 INFORMAÇÕES [http-nio-8080-exec-287] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:19:47.802 INFORMAÇÕES [http-nio-8080-exec-286] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:19:47.823 INFORMAÇÕES [http-nio-8080-exec-292] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:19:53.800 INFORMAÇÕES [http-nio-8080-exec-294] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:19:57.526 INFORMAÇÕES [http-nio-8080-exec-286] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:19:57.533 INFORMAÇÕES [http-nio-8080-exec-291] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:19:57.571 INFORMAÇÕES [http-nio-8080-exec-295] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:20:47.853 INFORMAÇÕES [http-nio-8080-exec-302] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:20:47.872 INFORMAÇÕES [http-nio-8080-exec-300] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'
+15-May-2018 23:22:06.770 INFORMAÇÕES [http-nio-8080-exec-308] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:22:06.780 INFORMAÇÕES [http-nio-8080-exec-307] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+15-May-2018 23:22:06.820 INFORMAÇÕES [http-nio-8080-exec-301] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/truco'

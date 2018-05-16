@@ -12,7 +12,7 @@
                     <label class="btn btn-warning active" style="width: 100%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}">
                         <h:outputLabel value='#{torneio.mensagem}' styleClass="text-light bg-transparent"/>
                     </label>
-                    <h:commandLink class="btn btn-warning text-light" style="width: 44%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}"
+                    <h:commandLink class="btn btn-warning text-light" style="width: 44px; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}"
                                    actionListener="#{torneio.limpaMensagem()}" value="&Chi;"/>
                 </div>
             </h:form>
@@ -24,7 +24,7 @@
                         <div class="torneio-detalhado-item bg-light" align="center">
 
                             <h2 class="news-title text-light bg-dark" style="font-weight: bold; border-radius: 5px;"> #{torneio.nome} </h2>
-                            <h:graphicImage styleClass="torneio-detalhado-img" value="res/svg/trophy.svg"/>
+                            <h:graphicImage styleClass="torneio-detalhado-img" value="res/svg/trophy-red.svg"/>
                             <h:panelGrid columns="2" >
                                 <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: bold;"> Criador : </h:outputLabel>
                                 <h:outputLabel class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;"> #{torneio.nomeCriador  } </h:outputLabel>
@@ -40,9 +40,19 @@
 
                             </h:panelGrid>
                             <h3 class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;  border-radius: 5px;"> #{torneio.descricao} </h3>
-
                             <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" style="margin: auto; margin-top: 10px;" disabled="#{torneio.isInscrever}" />
-
+                                
+                            <h:panelGrid columns="2" style="display:#{(torneio.verificaSeECriadorDoTorneio(usuario.id))?'block':'none'}" >
+                                <h:commandButton value="Apagar torneio" styleClass="btn btn-danger btn-sm" style="margin: auto; margin-top: 10px;"/>                                                                                                                             
+                                <h:commandButton value="Iniciar torneio" styleClass="btn btn-dark btn-sm" actionListener="#{torneio.iniciaTorneio()}" style="margin: auto; margin-top: 10px;" disabled="#{!torneio.verificaSeDataJaUltrapassouAtual()}"/>                                                                                                                  
+                            </h:panelGrid>
+                            
+                            <h:panelGroup layout="block" id="tiles">
+                                
+                            </h:panelGroup>
+                            
+                            <h:commandButton value="Cria Comp" actionListener="#{torneio.criaComp()}" title="new"/>
+                            
                         </div>
 
                         <div class="torneio-detalhado-item bg-light" align="center">
@@ -64,7 +74,7 @@
 
                                 <h:column>
                                     <f:facet name='header'>
-                                        Ordem de inscrição
+                                        Ordem
                                     </f:facet>
                                     <h:outputLabel value="#{lstInscritos.ordem}" class="text-dark"/>
                                 </h:column>

@@ -22,7 +22,7 @@
                     <label class="btn btn-warning active" style="width: 100%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}">
                         <h:outputLabel value='#{torneio.mensagem}' styleClass="text-light bg-transparent"/>
                     </label>
-                    <h:commandLink class="btn btn-warning text-light" style="width: 44%; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}"
+                    <h:commandLink class="btn btn-warning text-light" style="width: 44px; height: 40px; display:#{(torneio.verificaSeTemMensagem())?'block':'none'}"
                                    actionListener="#{torneio.limpaMensagem()}" value="&Chi;"/>
                 </div>
             </h:form>

@@ -101,6 +101,10 @@ public class BeanInputText {
             case 2:
                 ret = convidarParceiro();
                 break;
+                
+            case 3:
+                ret = updAvatar();
+                break;
 
             default:
                 ret = btnCancelar();
@@ -113,9 +117,8 @@ public class BeanInputText {
 
     private String addLogoDoTime() throws SQLException {
 
-        this.dupla.setLogo(this.inputText);
         Update upd = new Update();
-        upd.atualizarLogo(this.dupla.getId(), this.dupla.getLogo());
+        upd.atualizarLogo(this.dupla.getId(), this.inputText);
         this.setNull();
         return this.retorno;
 
@@ -138,6 +141,15 @@ public class BeanInputText {
         }
 
         return "";
+
+    }
+    
+    private String updAvatar() throws SQLException {
+
+        Update upd = new Update();
+        upd.atualizarAvatar(this.user.getId(), this.inputText);
+        this.setNull();
+        return this.retorno;
 
     }
 
@@ -209,5 +221,7 @@ public class BeanInputText {
     public String getMensagem() {
         return this.mensagem;
     }
+
+
 
 }
