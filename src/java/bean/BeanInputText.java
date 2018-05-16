@@ -4,10 +4,10 @@ import data.qry.Select;
 import data.qry.Update;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "inputText")
-@SessionScoped
+@RequestScoped
 
 public class BeanInputText {
 
@@ -101,7 +101,7 @@ public class BeanInputText {
             case 2:
                 ret = convidarParceiro();
                 break;
-                
+
             case 3:
                 ret = updAvatar();
                 break;
@@ -143,7 +143,7 @@ public class BeanInputText {
         return "";
 
     }
-    
+
     private String updAvatar() throws SQLException {
 
         Update upd = new Update();
@@ -221,7 +221,5 @@ public class BeanInputText {
     public String getMensagem() {
         return this.mensagem;
     }
-
-
 
 }

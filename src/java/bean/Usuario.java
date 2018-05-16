@@ -29,7 +29,7 @@ public class Usuario {
         this.login = "";
         this.senha = "";
         this.email = "";
-        this.avatar = "/res/svg/avatar.svg";
+        this.avatar = "res/svg/avatar-red.svg";
         this.endereco = "";
         this.data = "01-01-0001 01:01:01";
     }

@@ -20,8 +20,8 @@ public class Dupla {
         this.id = -1;
         this.jogador = -1;
         this.jogadorLider = -1;
-        this.nome = "";
-        this.logo = "/res/svg/team-shield.svg";
+        this.nome = "Crie uma dupla!";
+        this.logo = "res/svg/team-shield-red.svg";
         this.data = "01-01-0001 01:01:01";
     }
 
