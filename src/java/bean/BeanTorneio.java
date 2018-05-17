@@ -4,9 +4,12 @@ import bean.tabelas.ListaDeInscritosEmUmTorneio;
 import bean.tabelas.ListaDeTorneios;
 import data.qry.Insert;
 import data.qry.Select;
+import data.qry.Update;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Random;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.*;
@@ -22,44 +25,46 @@ public class BeanTorneio {
     private String mensagem;
     private Torneio torneio = null;
     private ListaDeTorneios lstTorneio = null;
+    private ListaDeInscritosEmUmTorneio lstTorneioSort = null;
     private ArrayList<ListaDeTorneios> listaDeTorneios = null;
+    private ArrayList<ListaDeInscritosEmUmTorneio> listaDeTorneiosSort = null;
     private Date dtCalendario = null;
     private UIComponent found;
-    
+
     public BeanTorneio() {
         this.mensagem = "";
         this.torneio = new Torneio();
         this.lstTorneio = new ListaDeTorneios();
         this.listaDeTorneios = new ArrayList();
+        this.listaDeTorneiosSort = new ArrayList();
         this.dtCalendario = new Date();
+        this.lstTorneioSort = new ListaDeInscritosEmUmTorneio();
     }
 
-    public void criaComp(){
+    public void criaComp() {
 
         HtmlPanelGroup div = new HtmlPanelGroup();
         div.setLayout("block");
-        
+
         HtmlOutputText tile = new HtmlOutputText();
         tile.setValue("asdf");
         tile.setStyle("tile");
         div.getChildren().add(tile);
-        
+
         doFind(FacesContext.getCurrentInstance(), "tiles");
         found.getChildren().add(div);
-        
-        
+
     }
-    
-    private void doFind(FacesContext context, String clientId){
-       FacesContext.getCurrentInstance().getViewRoot().invokeOnComponent(context, clientId, new ContextCallback() {
-           @Override
-           public void invokeContextCallback(FacesContext context, UIComponent component) {
-               found = component;
-           }
-       });
+
+    private void doFind(FacesContext context, String clientId) {
+        FacesContext.getCurrentInstance().getViewRoot().invokeOnComponent(context, clientId, new ContextCallback() {
+            @Override
+            public void invokeContextCallback(FacesContext context, UIComponent component) {
+                found = component;
+            }
+        });
     }
-    
-   
+
     public boolean setDefaultTorneio() {
         this.mensagem = "";
         this.torneio = new Torneio();
@@ -69,7 +74,6 @@ public class BeanTorneio {
         return true;
     }
 
-    
     public ArrayList<ListaDeTorneios> getListaDeTorneiosAtualizada() throws SQLException {
         Select sel = new Select();
         ArrayList<ListaDeTorneios> lst = sel.getListaDeTorneiosAtualizada();
@@ -86,12 +90,124 @@ public class BeanTorneio {
         return "go-to-torneio";
     }
 
-    public void iniciaTorneio(){
-        
-        
-        
+    public void iniciaTorneio() throws SQLException {
+
+        int idTorneio = this.torneio.getId();
+        Select sel = new Select();
+        this.listaDeTorneiosSort = sel.getListaDeInscritosAtualizada(idTorneio);
+
+        if (this.listaDeTorneiosSort != null) {
+            System.out.println(this.listaDeTorneiosSort.size());
+
+            if (this.listaDeTorneiosSort.size() < this.torneio.getLimiteDuplas()) {
+                for (int i = this.listaDeTorneiosSort.size(); i < this.torneio.getLimiteDuplas(); i++) {
+                    this.lstTorneioSort = new ListaDeInscritosEmUmTorneio();
+                    this.lstTorneioSort.setIdInscrito(-1);
+                    this.listaDeTorneiosSort.add(this.lstTorneioSort);
+                }
+            }
+
+            this.listaDeTorneiosSort = (ArrayList<ListaDeInscritosEmUmTorneio>) Utilities.embaralhaArrayList(this.listaDeTorneiosSort);
+
+            Insert ins = new Insert();
+
+            int max = this.torneio.getLimiteDuplas() / 2;
+
+            int j = this.listaDeTorneiosSort.size() - 1;
+            int id1, id2;
+
+            for (int i = 0; i < max; i++) {
+
+                id1 = this.listaDeTorneiosSort.get(i).getIdInscrito();
+                id2 = this.listaDeTorneiosSort.get(j).getIdInscrito();
+
+                ins.inserirNaChave(id1, id2, 1, idTorneio);
+
+                j--;
+
+            }
+
+        }
     }
-    
+
+    public void avancaFasesTorneio() throws SQLException {
+
+        Select sel = new Select();
+        Insert ins = new Insert();
+
+        ArrayList<ChaveTorneio> chaveTor = null;
+
+        int qtdFases = 0;
+
+        for (int i = 1; i <= this.torneio.getLimiteDuplas(); i *= 2) {
+            qtdFases++;
+        }
+
+        int win1 = -1, win2 = -1;
+        int score1, score2;
+        int control = 1;
+        boolean go = false;
+
+        for (int j = 0; j < qtdFases; j++) {
+
+            chaveTor = sel.getChaveTorneioAtualizadaPorFase(this.torneio.getId(), j + 1);
+
+            System.out.println("size: " + chaveTor.size());
+            for (int i = 0; i < chaveTor.size(); i++) {
+
+                score1 = chaveTor.get(i).getScoreDp1();
+                score2 = chaveTor.get(i).getScoreDp2();
+
+                if (control == 1) {
+                    if (score1 != score2) {
+
+                        if (score1 > score2) {
+                            win1 = chaveTor.get(i).getIdDupla1();
+                        } else {
+                            win1 = chaveTor.get(i).getIdDupla2();
+                        }
+                    } else {
+                        win1 = -1;
+                    }
+                    go = false;
+
+                } else if (control == 2) {
+                    if (score1 != score2) {
+
+                        if (score1 > score2) {
+                            win2 = chaveTor.get(i).getIdDupla1();
+                        } else {
+                            win2 = chaveTor.get(i).getIdDupla2();
+                        }
+                    } else {
+                        win2 = -1;
+                    }
+                    go = true;
+
+                }
+
+                if (control == 2 && go) {
+
+                    boolean insertOk = sel.getObjChaveTorneioAtualizadaPorFaseEIds(win1, win2, j + 1, this.torneio.getId()) == null;
+                    if (insertOk) {
+
+                        ins.inserirNaChave(win1, win2, j + 1, this.torneio.getId());
+
+                    }
+
+                    control = 0;
+
+                }
+
+                control++;
+
+                System.out.println("I: " + i);
+            }
+            System.out.println("J: " + j);
+        }
+
+    }
+
     public void criarNovoTorneio(int idCriador) throws SQLException {
         this.mensagem = "";
         Select sel = new Select();
@@ -120,11 +236,10 @@ public class BeanTorneio {
         }
     }
 
-    
-    public boolean verificaSeECriadorDoTorneio(int id){
+    public boolean verificaSeECriadorDoTorneio(int id) {
         return id == this.torneio.getCriador();
     }
-    
+
     public ArrayList<String> getNumeroDeDuplas() {
 
         ArrayList<String> a = new ArrayList();
@@ -154,7 +269,7 @@ public class BeanTorneio {
         return "";
 
     }
-    
+
     public boolean verificaSeDataJaUltrapassouAtual() {
 
         Date dtEnc = Utilities.StringToDate(this.torneio.getDataEncerraInsc());
@@ -338,8 +453,8 @@ public class BeanTorneio {
     public Date getDtCalendario() {
         return dtCalendario;
     }
-    
-    public void setDtCalendario(Date dt){
+
+    public void setDtCalendario(Date dt) {
         this.dtCalendario = dt;
     }
 

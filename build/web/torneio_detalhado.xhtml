@@ -41,18 +41,12 @@
                             </h:panelGrid>
                             <h3 class="bg-transparent text-dark" style="font-size: 14px; font-weight: normal;  border-radius: 5px;"> #{torneio.descricao} </h3>
                             <h:commandButton value="Inscrever-se" styleClass="btn btn-danger btn-sm" style="margin: auto; margin-top: 10px;" disabled="#{torneio.isInscrever}" />
-                                
+
                             <h:panelGrid columns="2" style="display:#{(torneio.verificaSeECriadorDoTorneio(usuario.id))?'block':'none'}" >
-                                <h:commandButton value="Apagar torneio" styleClass="btn btn-danger btn-sm" style="margin: auto; margin-top: 10px;"/>                                                                                                                             
-                                <h:commandButton value="Iniciar torneio" styleClass="btn btn-dark btn-sm" actionListener="#{torneio.iniciaTorneio()}" style="margin: auto; margin-top: 10px;" disabled="#{!torneio.verificaSeDataJaUltrapassouAtual()}"/>                                                                                                                  
+                                <h:commandButton value="Apagar torneio" styleClass="btn btn-danger btn-sm" style="margin: auto; margin-top: 10px;"/>
+                                <h:commandButton value="Iniciar torneio" styleClass="btn btn-dark btn-sm" actionListener="#{torneio.iniciaTorneio()}" style="margin: auto; margin-top: 10px;" disabled="#{!torneio.verificaSeDataJaUltrapassouAtual()}"/>
                             </h:panelGrid>
-                            
-                            <h:panelGroup layout="block" id="tiles">
-                                
-                            </h:panelGroup>
-                            
-                            <h:commandButton value="Cria Comp" actionListener="#{torneio.criaComp()}" title="new"/>
-                            
+                            <h:commandButton value="avançar torneio" styleClass="btn btn-primary btn-sm" actionListener="#{torneio.avancaFasesTorneio()}" style="margin: auto; margin-top: 10px;" disabled="#{!torneio.verificaSeDataJaUltrapassouAtual()}"/>
                         </div>
 
                         <div class="torneio-detalhado-item bg-light" align="center">

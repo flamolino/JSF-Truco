@@ -1,5 +1,6 @@
 package data.qry;
 
+import bean.ChaveTorneio;
 import bean.Dupla;
 import bean.Torneio;
 import bean.Usuario;
@@ -27,17 +28,18 @@ public class Select {
     private static final String PEGA_DUPLA_POR_ID = "select * from dupla where id = ?;";
 
     private static final String VERIFICAR_TORNEIO_EXISTENTE = "select * from torneio where nome = ?;";
+    private static final String PEGA_TORNEIO_POR_ID = "select * from torneio where id = ?;";
     private static final String PEGA_LISTA_DE_TORNEIOS_EM_ATIVIDADE = "select T.nome as nome, count(I.id) as qtd, T.lim"
             + "iteDuplas as limite, T.descricao as descr, T.dataEncerramentoInsc as dataEnc from  torneio T left join inscritos_torneio I on T.id = I.idTorn"
             + "eio where T.finalizado <= 0 group by T.id order by qtd desc;";
-    private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO = "select dupla.nome as duplas, "
+    private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO = "select dupla.nome as duplas, dupla.id as iddupla, "
             + "inscritos_torneio.ordem as ordem, dupla.logo as logo from dupla, torneio, inscritos_torneio where torneio.id = ? and dupla.id = ins"
             + "critos_torneio.idDupla and torneio.id = inscritos_torneio.idTorneio group by inscritos_torneio.ordem;";
-    private static final String PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO_ALEATORIAMENTE = " select dupla.nome as duplas from dupla, torneio, inscri"
-            + "tos_torneio where torneio.id = ? and torneio.id = inscritos_torneio.idTorneio and dupla.id = inscritos_torneio.idDupla group by dupla.nome order by random(); ";
-    
-    
     private static final String VERIFICA_SE_JA_ESTA_INSCRITO_NO_TORNEIO = "select * from inscritos_torneio where idDupla = ? and idTorneio = ?;";
+
+    private static final String PEGA_CHAVE_TORNEIO_POR_ID = "select * from chave where idTorneio = ?;";
+    private static final String PEGA_CHAVE_TORNEIO_POR_ID_E_FASE = "select * from chave where idTorneio = ? and fase = ?;";
+    private static final String PEGA_CHAVE_TORNEIO_POR_ID_E_FASE_E_IDS = "select * from chave where idTorneio = ? and fase = ? and idDupla1 = ? and idDupla2 = ?;";
 
     private Usuario user = null;
     private Dupla dupla = null;
@@ -49,6 +51,94 @@ public class Select {
     private ArrayList<ListaDeTorneios> listaDeTorneios = null;
     private ListaDeInscritosEmUmTorneio lstInscrTor = null;
     private ArrayList<ListaDeInscritosEmUmTorneio> listaDeInscritosEmUmTorneio = null;
+    private ChaveTorneio chaveTorneio = null;
+    private ArrayList<ChaveTorneio> listaChaveTor = null;
+
+    public ArrayList<ChaveTorneio> getChaveTorneioAtualizada(int idTorneio) throws SQLException {
+
+        this.conexao = new Conn();
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_CHAVE_TORNEIO_POR_ID);
+
+        this.pstmt.setInt(1, idTorneio);
+
+        this.rs = pstmt.executeQuery();
+        if (this.rs != null) {
+            this.listaChaveTor = new ArrayList();
+            while (this.rs.next()) {
+                this.chaveTorneio = new ChaveTorneio();
+                this.chaveTorneio.setFase(this.rs.getInt("fase"));
+                this.chaveTorneio.setId(this.rs.getInt("id"));
+                this.chaveTorneio.setIdDupla1(this.rs.getInt("idDupla1"));
+                this.chaveTorneio.setIdDupla2(this.rs.getInt("idDupla2"));
+                this.chaveTorneio.setIdTorneio(this.rs.getInt("idTorneio"));
+                this.chaveTorneio.setScoreDp1(this.rs.getInt("scoreDp1"));
+                this.chaveTorneio.setScoreDp2(this.rs.getInt("scoreDp2"));
+                this.listaChaveTor.add(chaveTorneio);
+            }
+        }
+        this.closeConns();
+        return listaChaveTor;
+    }
+
+    public ArrayList<ChaveTorneio> getChaveTorneioAtualizadaPorFase(int idTorneio, int fase) throws SQLException {
+
+        this.conexao = new Conn();
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_CHAVE_TORNEIO_POR_ID_E_FASE);
+
+        this.pstmt.setInt(1, idTorneio);
+        this.pstmt.setInt(2, fase);
+
+        ArrayList<ChaveTorneio> lsChv = null;
+        ChaveTorneio chv = null;
+
+        this.rs = pstmt.executeQuery();
+        if (this.rs != null) {
+            lsChv = new ArrayList();
+            while (this.rs.next()) {
+                chv = new ChaveTorneio();
+                chv.setFase(this.rs.getInt("fase"));
+                chv.setId(this.rs.getInt("id"));
+                chv.setIdDupla1(this.rs.getInt("idDupla1"));
+                chv.setIdDupla2(this.rs.getInt("idDupla2"));
+                chv.setIdTorneio(this.rs.getInt("idTorneio"));
+                chv.setScoreDp1(this.rs.getInt("scoreDp1"));
+                chv.setScoreDp2(this.rs.getInt("scoreDp2"));
+                lsChv.add(chv);
+            }
+        }
+        this.closeConns();
+        return lsChv;
+    }
+
+    public ChaveTorneio getObjChaveTorneioAtualizadaPorFaseEIds(int idTorneio, int fase, int idDp1, int idDp2) throws SQLException {
+
+        this.conexao = new Conn();
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_CHAVE_TORNEIO_POR_ID_E_FASE_E_IDS);
+
+        this.pstmt.setInt(1, idTorneio);
+        this.pstmt.setInt(2, fase);
+        this.pstmt.setInt(3, idDp1);
+        this.pstmt.setInt(4, idDp2);
+
+        ChaveTorneio chv = null;
+
+        this.rs = pstmt.executeQuery();
+        if (this.rs != null) {
+            if (this.rs.next()) {
+                chv = new ChaveTorneio();
+                chv.setFase(this.rs.getInt("fase"));
+                chv.setId(this.rs.getInt("id"));
+                chv.setIdDupla1(this.rs.getInt("idDupla1"));
+                chv.setIdDupla2(this.rs.getInt("idDupla2"));
+                chv.setIdTorneio(this.rs.getInt("idTorneio"));
+                chv.setScoreDp1(this.rs.getInt("scoreDp1"));
+                chv.setScoreDp2(this.rs.getInt("scoreDp2"));
+
+            }
+        }
+        this.closeConns();
+        return chv;
+    }
 
     public ArrayList<ListaDeInscritosEmUmTorneio> getListaDeInscritosAtualizada(int idTorneio) throws SQLException {
 
@@ -65,35 +155,13 @@ public class Select {
                 this.lstInscrTor = new ListaDeInscritosEmUmTorneio();
                 this.lstInscrTor.setNome(this.rs.getString("duplas"));
                 this.lstInscrTor.setLogo(this.rs.getString("logo"));
+                this.lstInscrTor.setIdInscrito(this.rs.getInt("iddupla"));
                 this.lstInscrTor.setOrdem(this.rs.getInt("ordem"));
                 this.listaDeInscritosEmUmTorneio.add(lstInscrTor);
                 i++;
             }
         }
-
-        return listaDeInscritosEmUmTorneio;
-    }
-
-    public ArrayList<ListaDeInscritosEmUmTorneio> getListaDeInscritosAleatorio(int idTorneio) throws SQLException {
-
-        this.conexao = new Conn();
-        this.pstmt = conexao.getConexao().prepareStatement(PEGA_LISTA_DE_INSCRITOS_EM_UM_TORNEIO_ALEATORIAMENTE);
-
-        this.pstmt.setInt(1, idTorneio);
-
-        this.rs = pstmt.executeQuery();
-        int i = 1;
-        if (this.rs != null) {
-            this.listaDeInscritosEmUmTorneio = new ArrayList();
-            while (this.rs.next()) {
-                this.lstInscrTor = new ListaDeInscritosEmUmTorneio();
-                this.lstInscrTor.setNome(this.rs.getString("duplas"));
-                this.lstInscrTor.setOrdem(i);
-                this.listaDeInscritosEmUmTorneio.add(lstInscrTor);
-                i++;
-            }
-        }
-
+        this.closeConns();
         return listaDeInscritosEmUmTorneio;
     }
 
@@ -123,7 +191,7 @@ public class Select {
                 this.listaDeTorneios.add(lstDTor);
             }
         }
-
+        this.closeConns();
         return listaDeTorneios;
     }
 
@@ -133,6 +201,36 @@ public class Select {
         this.pstmt = conexao.getConexao().prepareStatement(VERIFICAR_TORNEIO_EXISTENTE);
 
         this.pstmt.setString(1, nomeTorneio);
+
+        this.rs = pstmt.executeQuery();
+
+        if (this.rs != null) {
+
+            if (this.rs.next()) {
+                this.torneio = new Torneio();
+
+                this.torneio.setCriador(this.rs.getInt("criador"));
+                this.torneio.setData(Utilities.DateToString(Utilities.StringToDate(this.rs.getString("dataCriacao"))));
+                this.torneio.setDataEncerraInsc(Utilities.DateToString(Utilities.StringToDate(this.rs.getString("dataEncerramentoInsc"))));
+                this.torneio.setDescricao(this.rs.getString("descricao"));
+                this.torneio.setFinalizado(this.rs.getInt("finalizado"));
+                this.torneio.setId(this.rs.getInt("id"));
+                this.torneio.setLimiteDuplas(this.rs.getInt("limiteDuplas"));
+                this.torneio.setNome(this.rs.getString("nome"));
+
+            }
+        }
+
+        this.closeConns();
+        return this.torneio;
+    }
+
+    public Torneio getTorneioPorID(int idTorneio) throws SQLException {
+
+        this.conexao = new Conn();
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_TORNEIO_POR_ID);
+
+        this.pstmt.setInt(1, idTorneio);
 
         this.rs = pstmt.executeQuery();
 

@@ -18,10 +18,6 @@ import javax.faces.component.html.HtmlOutputText;
 import javax.faces.component.html.HtmlPanelGroup;
 import javax.faces.context.FacesContext;
 
-/**
- *
- * @author gerard
- */
 @ManagedBean(name = "datatableManagedBean")
 @SessionScoped
 public class BeanBrack {
@@ -37,7 +33,7 @@ public class BeanBrack {
         Select sel = new Select();
 
         int maxInscritos = sel.getTorneioPorNome("oloco testeee").getLimiteDuplas();
-
+        int qtdRodadas = maxInscritos / 2;
         int qtdColunas = 1;
 
         for (int i = 1; i < maxInscritos; i *= 2) {
@@ -83,6 +79,7 @@ public class BeanBrack {
                     }
 
                 } else {
+
                     if (sep1 == 4) {
                         strCol = new String[qtdColunas];
                         arrStrCol.add(strCol);
@@ -93,9 +90,11 @@ public class BeanBrack {
                         break;
 
                     } else {
+
                         if (j == 1 || j == qtdColunas - 2) {
                             strCol[j] = "|";
                         }
+
                     }
                 }
 

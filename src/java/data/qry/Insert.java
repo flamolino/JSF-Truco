@@ -27,6 +27,10 @@ public class Insert {
     private static final String INSCREVER_TORNEIO = "INSERT INTO inscritos_torneio "
             + "(id, idDupla, idTorneio, ordem) VALUES (null, ?, ?, ?);";
 
+    private static final String INSERIR_CHAVE = "INSERT INTO chave "
+            + "(id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2)"
+            + " VALUES (null, ?, ?, ?, ?, ?, ?);";
+
     private int registros;
 
     public boolean novoUsuario(Usuario user) throws SQLException {
@@ -45,6 +49,26 @@ public class Insert {
         this.pstmt.setString(8, user.getEndereco());
         this.pstmt.setString(9, user.getData());
         this.pstmt.setInt(10, user.getConvite());
+
+        this.registros = this.pstmt.executeUpdate();
+        closeConns();
+
+        return this.registros == 1;
+
+    }
+
+    public boolean inserirNaChave(int idDp1, int idDp2, int fase, int idTorneio) throws SQLException {
+
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(INSERIR_CHAVE);
+
+        this.pstmt.setInt(1, idDp1);
+        this.pstmt.setInt(2, idDp2);
+        this.pstmt.setInt(3, fase);
+        this.pstmt.setInt(4, idTorneio);
+        this.pstmt.setInt(5, 0);
+        this.pstmt.setInt(6, 0);
 
         this.registros = this.pstmt.executeUpdate();
         closeConns();
@@ -94,6 +118,7 @@ public class Insert {
 
         Select sel = new Select();
         int ordem = sel.getCountQry("select count(*) as c from inscritos_torneio where idTorneio = " + idTorneio + ";") + 1;
+
         this.conexao = new Conn();
         this.pstmt = this.conexao.getConexao().prepareStatement(INSCREVER_TORNEIO);
 

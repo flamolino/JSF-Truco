@@ -7,8 +7,11 @@ package outro;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Random;
 
 /**
  *
@@ -59,6 +62,15 @@ public class Utilities {
         Calendar calendario = Calendar.getInstance();
         calendario.setTime(date);
         return calendario;
+    }
+
+    public static ArrayList<?> embaralhaArrayList(ArrayList<?> al) {
+        long seed = System.nanoTime();
+        Random rand = new Random(seed);
+
+        Collections.shuffle(al, rand);
+
+        return al;
     }
 
 }

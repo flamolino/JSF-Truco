@@ -13,6 +13,7 @@ public class Update {
     private static final String ENTRAR_PARA_DUPLA = "UPDATE DUPLA SET JOGADOR = ? WHERE id = ?;";
     private static final String RECUSAR_CONVITE = "UPDATE usuario SET convite = -1 WHERE id = ?;";
     private static final String ATUALIZA_AVATAR = "UPDATE usuario SET avatar = ? WHERE id = ?;";
+    private static final String ATUALIZA_SCORE_CHAVE_TORNEIO = "UPDATE chave SET scoreDp1 = ?, scoreDp2 = ? WHERE id = ?;";
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
 
@@ -43,8 +44,23 @@ public class Update {
 
         closeConns();
     }
-    
-        public void atualizarLogo(int id, String logo) throws SQLException {
+
+    public void atualizaScoreChave(int score1, int score2, int idChave) throws SQLException {
+
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(ATUALIZA_SCORE_CHAVE_TORNEIO);
+
+        this.pstmt.setInt(1, score1);
+        this.pstmt.setInt(2, score2);
+        this.pstmt.setInt(3, idChave);
+
+        pstmt.executeUpdate();
+
+        closeConns();
+    }
+
+    public void atualizarLogo(int id, String logo) throws SQLException {
         this.conexao = new Conn();
 
         this.pstmt = conexao.getConexao().prepareStatement(ATUALIZAR_LOGO_DUPLA);
