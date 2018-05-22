@@ -13,11 +13,22 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
+
     <session-config>
         <session-timeout>
-            30
+            1
         </session-timeout>
     </session-config>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>filtro.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/restricted/*</url-pattern>
+    </filter-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsf</welcome-file>
     </welcome-file-list>

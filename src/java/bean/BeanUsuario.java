@@ -3,12 +3,14 @@ package bean;
 import data.qry.Insert;
 import data.qry.Select;
 import data.qry.Update;
+import filtro.SessionContext;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import outro.Utilities;
 
 @ManagedBean(name = "usuario")
@@ -39,9 +41,11 @@ public class BeanUsuario {
 
         if (this.user.getId() != -1) {
             setLogado(true);
+            SessionContext.getInstance().setAttribute("usuarioLogado", this.user);
             return "go-to-main";
         } else {
             this.mensagem = "Usuário ou senha incorretos!";
+            FacesContext.getCurrentInstance().validationFailed();
             return "";
         }
 
@@ -91,9 +95,9 @@ public class BeanUsuario {
         this.user = new Usuario();
         return "index";
     }
-    
-    public String getNomeDaDuplaAtual() throws SQLException{
-        Select sel = new Select();        
+
+    public String getNomeDaDuplaAtual() throws SQLException {
+        Select sel = new Select();
         return sel.getNomeDuplaPorLiderID(this.user.getId());
     }
 
@@ -131,7 +135,7 @@ public class BeanUsuario {
         this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
 
     }
-    
+
     public void recusarConviteDeDupla() throws SQLException {
         Update upd = new Update();
 
