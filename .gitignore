@@ -2,3 +2,4 @@
 apache-tomcat-8.5.31/bin\database\truco.db
 /dist/
 /build/
+/nbproject/private/
