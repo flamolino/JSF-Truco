@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class Conn {
 
     private String path = System.getProperty("user.dir");
-    private final String URL_WIN = "jdbc:sqlite:" + path + "\\database\\truco.db";
-    private final String URL = "jdbc:sqlite:" + path + "/database/truco.db";
+    private final String URL_WIN = "jdbc:sqlite:" + path + "\\database\\data.db";
+    private final String URL = "jdbc:sqlite:" + path + "/database/data.db";
     private Connection conexao = null;
 
     public Conn() throws SQLException {

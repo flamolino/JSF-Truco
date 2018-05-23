@@ -3,7 +3,6 @@ package bean;
 import data.qry.Insert;
 import data.qry.Select;
 import data.qry.Update;
-import filtro.SessionContext;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -41,7 +40,6 @@ public class BeanUsuario {
 
         if (this.user.getId() != -1) {
             setLogado(true);
-            SessionContext.getInstance().setAttribute("usuarioLogado", this.user);
             return "go-to-main";
         } else {
             this.mensagem = "Usuário ou senha incorretos!";
