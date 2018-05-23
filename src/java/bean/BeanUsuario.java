@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 import outro.Utilities;
 
 @ManagedBean(name = "usuario")
@@ -39,6 +40,8 @@ public class BeanUsuario {
         this.user = sel.AutenticarLogin(this.user.getLogin(), this.user.getSenha());
 
         if (this.user.getId() != -1) {
+            FacesContext.getCurrentInstance().getExternalContext().
+                    getSessionMap().put("Usuario", this.user);
             setLogado(true);
             return "go-to-main";
         } else {
@@ -86,12 +89,27 @@ public class BeanUsuario {
     }
 
     public String desloga(boolean dp, boolean to, boolean it) {
-        dp = false;
-        to = false;
-        it = false;
-        this.mensagem = "";
-        this.user = new Usuario();
+        FacesContext fc = FacesContext.getCurrentInstance();
+        HttpSession sessao = (HttpSession) fc.getExternalContext().
+                getSession(false);
+        sessao.invalidate();
+        this.reinicializaBean();
         return "index";
+    }
+
+    public String desloga() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        HttpSession sessao = (HttpSession) fc.getExternalContext().
+                getSession(false);
+        sessao.invalidate();
+        this.reinicializaBean();
+        return "index";
+    }
+
+    private void reinicializaBean() {
+        this.user = new Usuario();
+        this.logado = false;
+        this.mensagem = "";
     }
 
     public String getNomeDaDuplaAtual() throws SQLException {

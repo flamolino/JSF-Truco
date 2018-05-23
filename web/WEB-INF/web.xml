@@ -4,20 +4,36 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
+
     <session-config>
         <session-timeout>
-            30
+            1
         </session-timeout>
     </session-config>
+
+    <filter>
+        <description>Filtro de Validação de Seção</description>
+        <filter-name>SessionValidatorFilter</filter-name>
+        <filter-class>filtro.FiltroValidacaoSessao</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>SessionValidatorFilter</filter-name>
+        <url-pattern>/faces/*</url-pattern>
+    </filter-mapping>
+
+
     <welcome-file-list>
         <welcome-file>index.jsf</welcome-file>
     </welcome-file-list>
