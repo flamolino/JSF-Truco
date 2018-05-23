@@ -92,11 +92,12 @@ public class BeanTorneio {
 
     public void iniciaTorneio() throws SQLException {
 
+        this.mensagem = "";
         int idTorneio = this.torneio.getId();
         Select sel = new Select();
         this.listaDeTorneiosSort = sel.getListaDeInscritosAtualizada(idTorneio);
 
-        if (this.listaDeTorneiosSort != null) {
+        if (this.listaDeTorneiosSort.size() > 1) {
             System.out.println(this.listaDeTorneiosSort.size());
 
             if (this.listaDeTorneiosSort.size() < this.torneio.getLimiteDuplas()) {
@@ -126,85 +127,15 @@ public class BeanTorneio {
                 j--;
 
             }
-
+            this.mensagem = "O torneio foi iniciado com sucesso!";
+        } else {
+            this.mensagem = "Não há quantidade de inscritos suficiente para iniciar o torneio!";
         }
     }
 
     public void avancaFasesTorneio() throws SQLException {
 
         Select sel = new Select();
-        Insert ins = new Insert();
-
-        ArrayList<ChaveTorneio> chaveTor = null;
-
-        int qtdFases = 0;
-
-        for (int i = 1; i <= this.torneio.getLimiteDuplas(); i *= 2) {
-            qtdFases++;
-        }
-
-        int win1 = -1, win2 = -1;
-        int score1, score2;
-        int control = 1;
-        boolean go = false;
-
-        for (int j = 0; j < qtdFases; j++) {
-
-            chaveTor = sel.getChaveTorneioAtualizadaPorFase(this.torneio.getId(), j + 1);
-
-            System.out.println("size: " + chaveTor.size());
-            for (int i = 0; i < chaveTor.size(); i++) {
-
-                score1 = chaveTor.get(i).getScoreDp1();
-                score2 = chaveTor.get(i).getScoreDp2();
-
-                if (control == 1) {
-                    if (score1 != score2) {
-
-                        if (score1 > score2) {
-                            win1 = chaveTor.get(i).getIdDupla1();
-                        } else {
-                            win1 = chaveTor.get(i).getIdDupla2();
-                        }
-                    } else {
-                        win1 = -1;
-                    }
-                    go = false;
-
-                } else if (control == 2) {
-                    if (score1 != score2) {
-
-                        if (score1 > score2) {
-                            win2 = chaveTor.get(i).getIdDupla1();
-                        } else {
-                            win2 = chaveTor.get(i).getIdDupla2();
-                        }
-                    } else {
-                        win2 = -1;
-                    }
-                    go = true;
-
-                }
-
-                if (control == 2 && go) {
-
-                    boolean insertOk = sel.getObjChaveTorneioAtualizadaPorFaseEIds(win1, win2, j + 1, this.torneio.getId()) == null;
-                    if (insertOk) {
-
-                        ins.inserirNaChave(win1, win2, j + 1, this.torneio.getId());
-
-                    }
-
-                    control = 0;
-
-                }
-
-                control++;
-
-                System.out.println("I: " + i);
-            }
-            System.out.println("J: " + j);
-        }
 
     }
 
