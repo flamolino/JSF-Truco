@@ -1,0 +1,484 @@
+22-May-2018 17:52:49.077 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.31
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 27 2018 20:24:25 UTC
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.31.0
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_131\jre
+22-May-2018 17:52:49.079 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\logging.properties
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|c430761
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+22-May-2018 17:52:49.080 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-May-2018 17:52:49.081 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+22-May-2018 17:52:49.081 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31
+22-May-2018 17:52:49.081 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31
+22-May-2018 17:52:49.081 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\temp
+22-May-2018 17:52:49.081 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Borland\Delphi7\Bin;C:\Program Files (x86)\Borland\Delphi7\Projects\Bpl\;C:\Oracle\product\11.2.0\client_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Dell\Dell Data Protection\Drivers\TSS\bin\;C:\Program Files (x86)\Skype\Phone\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Lua\5.1;C:\Program Files (x86)\Lua\5.1\clibs;C:\MinGW\bin;C:\Users\04783714118\Desktop\R\Facul\RRPGSDK3\SDK3;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files (x86)\Java\jdk1.8.0_131\bin;C:\Program Files\Git\cmd;C:\Users\Public\Documents\RAD Studio\7.0\Bpl;C:\Users\04783714118\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\04783714118\AppData\Roaming\npm;C:\Program Files (x86)\Java\jdk1.8.0_131\bin;C:\Users\04783714118\AppData\Local\atom\bin;C:\Users\04783714118\AppData\Local\GitHubDesktop\bin;.]
+22-May-2018 17:52:49.275 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+22-May-2018 17:52:49.374 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+22-May-2018 17:52:49.381 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+22-May-2018 17:52:49.383 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+22-May-2018 17:52:49.383 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 576 ms
+22-May-2018 17:52:49.408 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+22-May-2018 17:52:49.408 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.31
+22-May-2018 17:52:49.415 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\Catalina\localhost\truco.xml]
+22-May-2018 17:52:50.509 INFORMAÇÕES [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+22-May-2018 17:52:50.632 INFORMAÇÕES [localhost-startStop-1] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+22-May-2018 17:52:50.778 INFORMAÇÕES [localhost-startStop-1] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+22-May-2018 17:52:51.222 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.224 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_usuario.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'index.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/dupla.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.225 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.226 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.226 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.226 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio_detalhado.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.283 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_torneio.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.283 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/cadastro_torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.283 ADVERTÊNCIA [localhost-startStop-1] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/perfil.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:51.488 INFORMAÇÕES [localhost-startStop-1] com.sun.faces.config.ConfigureListener$WebConfigResourceMonitor$Monitor.<init> Monitoring file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/JSF-Truco/build/web/WEB-INF/faces-config.xml for modifications
+22-May-2018 17:52:51.535 INFORMAÇÕES [localhost-startStop-1] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+22-May-2018 17:52:51.578 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\Catalina\localhost\truco.xml] has finished in [2,162] ms
+22-May-2018 17:52:51.579 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\docs]
+22-May-2018 17:52:51.599 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\docs] has finished in [21] ms
+22-May-2018 17:52:51.599 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\examples]
+22-May-2018 17:52:52.599 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\examples] has finished in [999] ms
+22-May-2018 17:52:52.599 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\host-manager]
+22-May-2018 17:52:52.652 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\host-manager] has finished in [53] ms
+22-May-2018 17:52:52.652 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\manager]
+22-May-2018 17:52:52.700 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\manager] has finished in [48] ms
+22-May-2018 17:52:52.700 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\ROOT]
+22-May-2018 17:52:52.723 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\webapps\ROOT] has finished in [23] ms
+22-May-2018 17:52:52.728 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+22-May-2018 17:52:52.734 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+22-May-2018 17:52:52.737 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 3353 ms
+22-May-2018 17:52:56.718 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/truco]
+22-May-2018 17:52:56.733 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\Catalina\localhost\truco.xml]
+22-May-2018 17:52:57.800 INFORMAÇÕES [http-nio-8080-exec-10] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+22-May-2018 17:52:57.937 INFORMAÇÕES [http-nio-8080-exec-10] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+22-May-2018 17:52:58.754 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.757 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_usuario.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'index.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/dupla.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.758 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.759 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.759 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio_detalhado.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.759 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_torneio.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.807 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/cadastro_torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:58.807 ADVERTÊNCIA [http-nio-8080-exec-10] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/perfil.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:52:59.022 INFORMAÇÕES [http-nio-8080-exec-10] com.sun.faces.config.ConfigureListener$WebConfigResourceMonitor$Monitor.<init> Monitoring file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/JSF-Truco/build/web/WEB-INF/faces-config.xml for modifications
+22-May-2018 17:52:59.062 INFORMAÇÕES [http-nio-8080-exec-10] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+22-May-2018 17:52:59.066 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\Catalina\localhost\truco.xml] has finished in [2,332] ms
+22-May-2018 17:53:00.389 ADVERTÊNCIA [http-nio-8080-exec-6] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+22-May-2018 17:53:03.100 ADVERTÊNCIA [http-nio-8080-exec-4] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuarioLogado, classe do valor: bean.Usuario).
+22-May-2018 17:53:03.146 ADVERTÊNCIA [http-nio-8080-exec-9] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: dupla, classe do valor: bean.beanDupla).
+22-May-2018 17:53:58.557 ADVERTÊNCIA [http-nio-8080-exec-3] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [truco] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+22-May-2018 17:53:58.574 GRAVE [http-nio-8080-exec-1] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+ java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:395)
+	at org.apache.tomcat.util.digester.CallMethodRule.end(CallMethodRule.java:427)
+	at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1020)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:609)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1782)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1521)
+	at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1104)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:765)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:299)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.manager.ManagerServlet.start(ManagerServlet.java:1349)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "0.1"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.apache.tomcat.util.descriptor.web.SessionConfig.setSessionTimeout(SessionConfig.java:45)
+	... 56 more
+
+22-May-2018 17:53:58.856 GRAVE [http-nio-8080-exec-1] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+22-May-2018 17:53:58.856 GRAVE [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+22-May-2018 17:53:58.867 GRAVE [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.startInternal Context [/truco] startup failed due to previous errors
+22-May-2018 17:54:02.759 INFORMAÇÕES [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/truco]
+22-May-2018 17:54:02.771 GRAVE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+ java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:395)
+	at org.apache.tomcat.util.digester.CallMethodRule.end(CallMethodRule.java:427)
+	at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1020)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:609)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1782)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1521)
+	at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1104)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:765)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:299)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1419)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1383)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1619)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:314)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1166)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1390)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1394)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1362)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "0.1"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.apache.tomcat.util.descriptor.web.SessionConfig.setSessionTimeout(SessionConfig.java:45)
+	... 35 more
+
+22-May-2018 17:54:02.774 GRAVE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+22-May-2018 17:54:02.775 GRAVE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+22-May-2018 17:54:02.833 GRAVE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.startInternal Context [/truco] startup failed due to previous errors
+22-May-2018 17:54:06.400 INFORMAÇÕES [http-nio-8080-exec-12] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after stop() had already been called. The second call will be ignored.
+22-May-2018 17:54:06.415 GRAVE [http-nio-8080-exec-18] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+ java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:395)
+	at org.apache.tomcat.util.digester.CallMethodRule.end(CallMethodRule.java:427)
+	at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1020)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:609)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1782)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1521)
+	at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1104)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:765)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:299)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.manager.ManagerServlet.start(ManagerServlet.java:1349)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "0.1"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.apache.tomcat.util.descriptor.web.SessionConfig.setSessionTimeout(SessionConfig.java:45)
+	... 56 more
+
+22-May-2018 17:54:06.505 GRAVE [http-nio-8080-exec-18] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+22-May-2018 17:54:06.505 GRAVE [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+22-May-2018 17:54:06.514 GRAVE [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.startInternal Context [/truco] startup failed due to previous errors
+22-May-2018 17:54:10.981 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after stop() had already been called. The second call will be ignored.
+22-May-2018 17:54:10.997 GRAVE [http-nio-8080-exec-18] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+ java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:395)
+	at org.apache.tomcat.util.digester.CallMethodRule.end(CallMethodRule.java:427)
+	at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1020)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:609)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1782)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1521)
+	at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1104)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:765)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:299)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.manager.ManagerServlet.start(ManagerServlet.java:1349)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "0.1"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.apache.tomcat.util.descriptor.web.SessionConfig.setSessionTimeout(SessionConfig.java:45)
+	... 56 more
+
+22-May-2018 17:54:11.094 GRAVE [http-nio-8080-exec-18] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+22-May-2018 17:54:11.094 GRAVE [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+22-May-2018 17:54:11.102 GRAVE [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.startInternal Context [/truco] startup failed due to previous errors
+22-May-2018 17:54:14.973 INFORMAÇÕES [http-nio-8080-exec-5] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after stop() had already been called. The second call will be ignored.
+22-May-2018 17:54:14.991 GRAVE [http-nio-8080-exec-11] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+ java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:395)
+	at org.apache.tomcat.util.digester.CallMethodRule.end(CallMethodRule.java:427)
+	at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1020)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:609)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1782)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1521)
+	at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1104)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:765)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:299)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.manager.ManagerServlet.start(ManagerServlet.java:1349)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:613)
+	at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:348)
+	at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:52)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "0.1"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.apache.tomcat.util.descriptor.web.SessionConfig.setSessionTimeout(SessionConfig.java:45)
+	... 56 more
+
+22-May-2018 17:54:15.032 GRAVE [http-nio-8080-exec-11] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+22-May-2018 17:54:15.032 GRAVE [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+22-May-2018 17:54:15.039 GRAVE [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.startInternal Context [/truco] startup failed due to previous errors
+22-May-2018 17:54:21.484 INFORMAÇÕES [http-nio-8080-exec-11] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after stop() had already been called. The second call will be ignored.
+22-May-2018 17:54:21.986 INFORMAÇÕES [http-nio-8080-exec-11] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/truco]
+22-May-2018 17:54:22.004 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\Catalina\localhost\truco.xml]
+22-May-2018 17:54:22.201 INFORMAÇÕES [Finalizer] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [org.sqlite.SQLiteErrorCode]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [org.sqlite.SQLiteErrorCode]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1328)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1316)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1175)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1136)
+	at org.sqlite.core.DB.newSQLException(DB.java:907)
+	at org.sqlite.core.CoreStatement.internalClose(CoreStatement.java:115)
+	at org.sqlite.jdbc3.JDBC3Statement.close(JDBC3Statement.java:35)
+	at org.sqlite.jdbc4.JDBC4Statement.close(JDBC4Statement.java:27)
+	at org.sqlite.jdbc3.JDBC3Statement.finalize(JDBC3Statement.java:42)
+	at java.lang.System$2.invokeFinalize(System.java:1270)
+	at java.lang.ref.Finalizer.runFinalizer(Finalizer.java:98)
+	at java.lang.ref.Finalizer.access$100(Finalizer.java:34)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:210)
+
+22-May-2018 17:54:22.785 INFORMAÇÕES [http-nio-8080-exec-19] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+22-May-2018 17:54:22.852 INFORMAÇÕES [http-nio-8080-exec-19] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+22-May-2018 17:54:23.217 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_usuario.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'index.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/dupla.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.220 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio_detalhado.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.223 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_torneio.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.223 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/cadastro_torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.223 ADVERTÊNCIA [http-nio-8080-exec-19] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/perfil.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:23.369 INFORMAÇÕES [http-nio-8080-exec-19] com.sun.faces.config.ConfigureListener$WebConfigResourceMonitor$Monitor.<init> Monitoring file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/JSF-Truco/build/web/WEB-INF/faces-config.xml for modifications
+22-May-2018 17:54:23.404 INFORMAÇÕES [http-nio-8080-exec-19] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+22-May-2018 17:54:23.407 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\04783714118\Documents\NetBeansProjects\JSF\JSF-Truco\apache-tomcat-8.5.31\conf\Catalina\localhost\truco.xml] has finished in [1,403] ms
+22-May-2018 17:54:23.410 INFORMAÇÕES [http-nio-8080-exec-21] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/truco]] after start() had already been called. The second call will be ignored.
+22-May-2018 17:54:25.626 INFORMAÇÕES [http-nio-8080-exec-23] com.sun.faces.config.ConfigureListener.contextInitialized Inicializando Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) para o contexto '/truco'
+22-May-2018 17:54:25.714 INFORMAÇÕES [http-nio-8080-exec-23] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: Anotações PostConstruct/PreDestroy presentes.  Os métodos ManagedBeans marcados com essas anotações informarão as anotações processadas.
+22-May-2018 17:54:26.079 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_usuario.xhtml', para navegação de '/index.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'index.xhtml', para navegação de '/cadastro_usuario.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/dupla.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '/main.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'dupla.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'main.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'perfil.xhtml', para navegação de '*', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.082 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio_detalhado.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.084 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'cadastro_torneio.xhtml', para navegação de '/torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.084 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'torneio.xhtml', para navegação de '/cadastro_torneio.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.084 ADVERTÊNCIA [http-nio-8080-exec-23] com.sun.faces.config.processor.NavigationConfigProcessor.addNavigationCasesForRule JSF1058: O recurso referido por to-view-id, 'inputText.xhtml', para navegação de '/perfil.xhtml', não começa com '/'.  Isso será adicionado para você, mas deveria ser corrigido.
+22-May-2018 17:54:26.237 INFORMAÇÕES [http-nio-8080-exec-23] com.sun.faces.config.ConfigureListener$WebConfigResourceMonitor$Monitor.<init> Monitoring file:/C:/Users/04783714118/Documents/NetBeansProjects/JSF/JSF-Truco/build/web/WEB-INF/faces-config.xml for modifications
+22-May-2018 17:54:26.272 INFORMAÇÕES [http-nio-8080-exec-23] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 6.2
+22-May-2018 17:54:26.674 ADVERTÊNCIA [http-nio-8080-exec-22] com.sun.faces.context.SessionMap.put JSF1063: AVISO! Definindo valor de atributo não serializável em HttpSession (chave: usuario, classe do valor: bean.BeanUsuario).
+22-May-2018 17:55:16.996 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+22-May-2018 17:55:16.997 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+22-May-2018 17:55:17.085 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+22-May-2018 17:55:17.190 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+22-May-2018 17:55:17.213 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+22-May-2018 17:55:17.215 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+22-May-2018 17:55:17.216 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+22-May-2018 17:55:17.217 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
