@@ -23,7 +23,7 @@
                         <h:commandButton image="res/svg/ranking.svg" value="Rankings" styleClass="btn btn-link btn-mainTop"/>
                         <h:commandButton image="res/svg/logout.svg" value="Sair" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.desloga(dupla.setDefaultDupla(), torneio.setDefaultTorneio(), inputText.setDefaultInputText())}"/>
                         <h:commandButton image="res/svg/avatar.svg" value="#{usuario.login}" styleClass="btn btn-link btn-mainTopRight" action="#{usuario.callPerfil}"/>
-                        <h:commandButton image="res/svg/team-shield.svg" value="Minha dupla" styleClass="btn btn-link btn-mainTopRight" action="#{dupla.callDupla(usuario.id)}"/>
+                        <h:commandButton image="res/svg/team-shield.svg" value="Minha dupla" styleClass="btn btn-link btn-mainTopRight" action="#{dupla.callDupla(usuario.id, usuario.logado)}"/>
                     </div>
                 </h:form>
             </ui:insert>

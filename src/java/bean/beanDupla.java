@@ -105,12 +105,16 @@ public class beanDupla {
 
     }
 
-    public String callDupla(int id) throws SQLException {
-        Select sel = new Select();
-        this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
-        this.dupla = sel.AutenticarDupla(id, id);
-        this.mensagem = "";
-        return "go-to-dupla";
+    public String callDupla(int id, boolean logado) throws SQLException {
+        if (logado) {
+            Select sel = new Select();
+            this.temDupla = sel.verificaSeEstaOuSeTemDupla(id);
+            this.dupla = sel.AutenticarDupla(id, id);
+            this.mensagem = "";
+            return "go-to-dupla";
+        } else {
+            return "";
+        }
     }
 
     public boolean verificaSeTemMensagem() {

@@ -188,7 +188,11 @@ public class BeanUsuario {
 
     public String callPerfil() {
         this.mensagem = "";
-        return "go-to-perfil";
+        if (logado) {
+            return "go-to-perfil";
+        } else {
+            return "";
+        }
     }
 
     /*
