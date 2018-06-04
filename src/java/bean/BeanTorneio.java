@@ -95,6 +95,7 @@ public class BeanTorneio {
         this.listaDeTorneiosSort = sel.getListaDeInscritosAtualizada(idTorneio);
 
         if (this.listaDeTorneiosSort.size() > 1) {
+
             System.out.println(this.listaDeTorneiosSort.size());
 
             if (this.listaDeTorneiosSort.size() < this.torneio.getLimiteDuplas()) {
@@ -128,6 +129,7 @@ public class BeanTorneio {
         } else {
             this.mensagem = "Não há quantidade de inscritos suficiente para iniciar o torneio!";
         }
+
     }
 
     public void avancaFasesTorneio() throws SQLException {
