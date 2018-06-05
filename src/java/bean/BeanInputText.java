@@ -4,10 +4,10 @@ import data.qry.Select;
 import data.qry.Update;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "inputText")
-@RequestScoped
+@SessionScoped
 
 public class BeanInputText {
 
@@ -22,12 +22,15 @@ public class BeanInputText {
     /*  IF
         opcao == 1 { Adicionar a logo do time }
         opcao == 2 { Convidar usuario pra ser parceiro }
+        opcao == 3 { alterar avatar usuario }
+        opcao == 4 {  }
      */
     public BeanInputText() {
         this.inputText = "";
         this.inputTextTitle = "";
         this.retorno = "";
         this.mensagem = "";
+        this.opcao = -1;
     }
 
     public boolean setDefaultInputText() {
@@ -35,6 +38,7 @@ public class BeanInputText {
         this.inputTextTitle = "";
         this.retorno = "";
         this.mensagem = "";
+        this.opcao = -1;
         return true;
     }
 
@@ -55,6 +59,7 @@ public class BeanInputText {
         this.retorno = telaRetorno;
         this.opcao = opcao;
         this.mensagem = "";
+        System.out.println(this.toString());
         return callInputText();
 
     }
@@ -86,7 +91,9 @@ public class BeanInputText {
 
     public String btnCancelar() {
         this.setNull();
-        return this.retorno;
+        String ret = this.retorno;
+        this.setDefaultInputText();
+        return ret;
     }
 
     public String btnConfirmar() throws SQLException {
@@ -158,6 +165,7 @@ public class BeanInputText {
     }
 
     private void setNull() {
+
         this.user = null;
         this.dupla = null;
     }
@@ -220,6 +228,11 @@ public class BeanInputText {
 
     public String getMensagem() {
         return this.mensagem;
+    }
+
+    @Override
+    public String toString() {
+        return this.user.getLogin() + " | " + this.inputTextTitle + " | " + this.retorno + " | " + this.opcao;
     }
 
 }
