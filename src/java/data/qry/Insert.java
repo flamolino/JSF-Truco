@@ -28,8 +28,8 @@ public class Insert {
             + "(id, idDupla, idTorneio, ordem) VALUES (null, ?, ?, ?);";
 
     private static final String INSERIR_CHAVE = "INSERT INTO chave "
-            + "(id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2)"
-            + " VALUES (null, ?, ?, ?, ?, ?, ?);";
+            + "(id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2, veificado)"
+            + " VALUES (null, ?, ?, ?, ?, ?, ?, ?);";
 
     private int registros;
 
@@ -69,6 +69,7 @@ public class Insert {
         this.pstmt.setInt(4, idTorneio);
         this.pstmt.setInt(5, 0);
         this.pstmt.setInt(6, 0);
+        this.pstmt.setInt(7, -1);
 
         this.registros = this.pstmt.executeUpdate();
         closeConns();

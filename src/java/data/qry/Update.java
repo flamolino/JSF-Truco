@@ -14,6 +14,9 @@ public class Update {
     private static final String RECUSAR_CONVITE = "UPDATE usuario SET convite = -1 WHERE id = ?;";
     private static final String ATUALIZA_AVATAR = "UPDATE usuario SET avatar = ? WHERE id = ?;";
     private static final String ATUALIZA_SCORE_CHAVE_TORNEIO = "UPDATE chave SET scoreDp1 = ?, scoreDp2 = ? WHERE id = ?;";
+    private static final String ATUALIZAR_STATUS_TORNEIO = "UPDATE torneio SET finalizado = ? WHERE id = ?;";
+    private static final String ATUALIZAR_VERIFICADO_CHAVE = "UPDATE chave SET verificado = ? WHERE id = ?;";
+    private static final String ATUALIZAR_CHAVE_ADVS2 = "UPDATE chave SET idDupla2 = ? WHERE id = ?;";
     private PreparedStatement pstmt = null;
     private Conn conexao = null;
 
@@ -39,6 +42,34 @@ public class Update {
         this.pstmt = conexao.getConexao().prepareStatement(RECUSAR_CONVITE);
 
         this.pstmt.setInt(1, idJogador);
+
+        pstmt.executeUpdate();
+
+        closeConns();
+    }
+
+    public void atualizaVerificadoChave(int idChave) throws SQLException {
+
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(ATUALIZAR_VERIFICADO_CHAVE);
+
+        this.pstmt.setInt(1, 1);
+        this.pstmt.setInt(2, idChave);
+
+        pstmt.executeUpdate();
+
+        closeConns();
+    }
+
+    public void atualizaAdversarioChave(int idDupla, int idChave) throws SQLException {
+
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(ATUALIZAR_CHAVE_ADVS2);
+
+        this.pstmt.setInt(1, idDupla);
+        this.pstmt.setInt(2, idChave);
 
         pstmt.executeUpdate();
 
@@ -119,6 +150,19 @@ public class Update {
 
         this.pstmt.setInt(1, idDupla);
         this.pstmt.setInt(2, id);
+
+        pstmt.executeUpdate();
+
+        closeConns();
+    }
+
+    public void atualizaStatusTorneio(int idTorneio, int status) throws SQLException {
+        this.conexao = new Conn();
+
+        this.pstmt = conexao.getConexao().prepareStatement(ATUALIZAR_STATUS_TORNEIO);
+
+        this.pstmt.setInt(1, status);
+        this.pstmt.setInt(2, idTorneio);
 
         pstmt.executeUpdate();
 

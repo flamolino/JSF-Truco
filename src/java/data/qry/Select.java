@@ -38,6 +38,7 @@ public class Select {
     private static final String VERIFICA_SE_JA_ESTA_INSCRITO_NO_TORNEIO = "select * from inscritos_torneio where idDupla = ? and idTorneio = ?;";
 
     private static final String PEGA_CHAVE_TORNEIO_POR_ID = "select * from chave where idTorneio = ?;";
+    private static final String PEGA_ID_CHAVE_TORNEIO_POR_IDDUPLA1_E_FASE = "select id from chave where idDupla1 = ? and fase = ?;";
     private static final String PEGA_CHAVE_TORNEIO_POR_ID_E_FASE = "select * from chave where idTorneio = ? and fase = ?;";
     private static final String PEGA_CHAVE_TORNEIO_POR_ID_E_FASE_E_IDS = "select * from chave where idTorneio = ? and fase = ? and idDupla1 = ? and idDupla2 = ?;";
 
@@ -53,6 +54,34 @@ public class Select {
     private ArrayList<ListaDeInscritosEmUmTorneio> listaDeInscritosEmUmTorneio = null;
     private ChaveTorneio chaveTorneio = null;
     private ArrayList<ChaveTorneio> listaChaveTor = null;
+
+    public int getIDChaveTorneio(int idDupla1, int fase) throws SQLException {
+        int idChave = -1;
+        try {
+
+            this.conexao = new Conn();
+
+            this.pstmt = conexao.getConexao().prepareStatement(PEGA_ID_CHAVE_TORNEIO_POR_IDDUPLA1_E_FASE);
+
+            this.pstmt.setInt(1, idDupla1);
+            this.pstmt.setInt(1, fase);
+
+            this.rs = pstmt.executeQuery();
+
+            if (this.rs != null) {
+
+                if (this.rs.next()) {
+
+                    idChave = this.rs.getInt("id");
+                }
+            }
+
+        } catch (SQLException e) {
+
+        }
+        closeConns();
+        return idChave;
+    }
 
     public ArrayList<ChaveTorneio> getChaveTorneioAtualizada(int idTorneio) throws SQLException {
 
@@ -73,6 +102,7 @@ public class Select {
                 this.chaveTorneio.setIdTorneio(this.rs.getInt("idTorneio"));
                 this.chaveTorneio.setScoreDp1(this.rs.getInt("scoreDp1"));
                 this.chaveTorneio.setScoreDp2(this.rs.getInt("scoreDp2"));
+                this.chaveTorneio.setVerificado(this.rs.getInt("verificado"));
                 this.listaChaveTor.add(chaveTorneio);
             }
         }

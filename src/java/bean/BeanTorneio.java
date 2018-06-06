@@ -4,6 +4,7 @@ import bean.tabelas.ListaDeInscritosEmUmTorneio;
 import bean.tabelas.ListaDeTorneios;
 import data.qry.Insert;
 import data.qry.Select;
+import data.qry.Update;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +26,8 @@ public class BeanTorneio {
     private ListaDeInscritosEmUmTorneio lstTorneioSort = null;
     private ArrayList<ListaDeTorneios> listaDeTorneios = null;
     private ArrayList<ListaDeInscritosEmUmTorneio> listaDeTorneiosSort = null;
+    private ChaveTorneio chaveTorneio = null;
+    private ArrayList<ChaveTorneio> lstChaveTorneio = null;
     private Date dtCalendario = null;
     private UIComponent found;
 
@@ -36,6 +39,8 @@ public class BeanTorneio {
         this.listaDeTorneiosSort = new ArrayList();
         this.dtCalendario = new Date();
         this.lstTorneioSort = new ListaDeInscritosEmUmTorneio();
+        this.chaveTorneio = new ChaveTorneio();
+        this.lstChaveTorneio = new ArrayList();
     }
 
     public void criaComp() {
@@ -68,6 +73,9 @@ public class BeanTorneio {
         this.lstTorneio = new ListaDeTorneios();
         this.listaDeTorneios = new ArrayList();
         this.dtCalendario = new Date();
+        this.lstTorneioSort = new ListaDeInscritosEmUmTorneio();
+        this.chaveTorneio = new ChaveTorneio();
+        this.lstChaveTorneio = new ArrayList();
         return true;
     }
 
@@ -90,51 +98,109 @@ public class BeanTorneio {
     public void iniciaTorneio() throws SQLException {
 
         this.mensagem = "";
-        int idTorneio = this.torneio.getId();
-        Select sel = new Select();
-        this.listaDeTorneiosSort = sel.getListaDeInscritosAtualizada(idTorneio);
 
-        if (this.listaDeTorneiosSort.size() > 1) {
+        if (this.torneio.getFinalizado() == -1) {
+            int idTorneio = this.torneio.getId();
+            Select sel = new Select();
+            this.listaDeTorneiosSort = sel.getListaDeInscritosAtualizada(idTorneio);
 
-            System.out.println(this.listaDeTorneiosSort.size());
+            if (this.listaDeTorneiosSort.size() > 1) {
 
-            if (this.listaDeTorneiosSort.size() < this.torneio.getLimiteDuplas()) {
-                for (int i = this.listaDeTorneiosSort.size(); i < this.torneio.getLimiteDuplas(); i++) {
-                    this.lstTorneioSort = new ListaDeInscritosEmUmTorneio();
-                    this.lstTorneioSort.setIdInscrito(-1);
-                    this.listaDeTorneiosSort.add(this.lstTorneioSort);
+                System.out.println(this.listaDeTorneiosSort.size());
+
+                if (this.listaDeTorneiosSort.size() < this.torneio.getLimiteDuplas()) {
+                    for (int i = this.listaDeTorneiosSort.size(); i < this.torneio.getLimiteDuplas(); i++) {
+                        this.lstTorneioSort = new ListaDeInscritosEmUmTorneio();
+                        this.lstTorneioSort.setIdInscrito(-1);
+                        this.listaDeTorneiosSort.add(this.lstTorneioSort);
+                    }
                 }
+
+                this.listaDeTorneiosSort = (ArrayList<ListaDeInscritosEmUmTorneio>) Utilities.embaralhaArrayList(this.listaDeTorneiosSort);
+
+                Insert ins = new Insert();
+
+                int max = this.torneio.getLimiteDuplas() / 2;
+
+                int j = this.listaDeTorneiosSort.size() - 1;
+                int id1, id2;
+
+                for (int i = 0; i < max; i++) {
+
+                    id1 = this.listaDeTorneiosSort.get(i).getIdInscrito();
+                    id2 = this.listaDeTorneiosSort.get(j).getIdInscrito();
+
+                    ins.inserirNaChave(id1, id2, 1, idTorneio);
+
+                    j--;
+
+                }
+
+                this.torneio.setFinalizado(0);
+                Update upd = new Update();
+                upd.atualizaStatusTorneio(idTorneio, 0);
+                this.mensagem = "O torneio foi iniciado com sucesso!";
+
+            } else {
+                this.mensagem = "Não há quantidade de inscritos suficiente para iniciar o torneio!";
             }
-
-            this.listaDeTorneiosSort = (ArrayList<ListaDeInscritosEmUmTorneio>) Utilities.embaralhaArrayList(this.listaDeTorneiosSort);
-
-            Insert ins = new Insert();
-
-            int max = this.torneio.getLimiteDuplas() / 2;
-
-            int j = this.listaDeTorneiosSort.size() - 1;
-            int id1, id2;
-
-            for (int i = 0; i < max; i++) {
-
-                id1 = this.listaDeTorneiosSort.get(i).getIdInscrito();
-                id2 = this.listaDeTorneiosSort.get(j).getIdInscrito();
-
-                ins.inserirNaChave(id1, id2, 1, idTorneio);
-
-                j--;
-
-            }
-            this.mensagem = "O torneio foi iniciado com sucesso!";
         } else {
-            this.mensagem = "Não há quantidade de inscritos suficiente para iniciar o torneio!";
+            this.mensagem = "O torneio já foi iniciado ou já está finalizado!";
         }
 
     }
 
     public void avancaFasesTorneio() throws SQLException {
 
-        Select sel = new Select();
+        if (this.torneio.getFinalizado() == 0) {
+
+            Select sel = new Select();
+            Insert ins = new Insert();
+            Update upd = new Update();
+
+            int fasesMax = 0;
+
+            for (int i = 1; i < this.torneio.getLimiteDuplas(); i *= 2) {
+                fasesMax++;
+            }
+
+            this.lstChaveTorneio = new ArrayList();
+            this.lstChaveTorneio = sel.getChaveTorneioAtualizada(this.torneio.getId());
+            ChaveTorneio chave = new ChaveTorneio();
+            int idDupla1Chave = -1;
+            for (int i = 0; i < this.lstChaveTorneio.size(); i++) {
+
+                chave = this.lstChaveTorneio.get(i);
+
+                if (chave.getVerificado() == -1) {
+
+                    if (chave.getScoreDp1() != 0 || chave.getScoreDp2() != 0) {
+
+                        int idWin;
+
+                        if (chave.getScoreDp1() > chave.getScoreDp2()) {
+                            idWin = chave.getIdDupla1();
+                        } else {
+                            idWin = chave.getIdDupla2();
+                        }
+
+                        if (i == 0 || i % 2 == 0) {
+                            ins.inserirNaChave(idWin, -1, chave.getFase() + 1, this.torneio.getId());
+                            upd.atualizaVerificadoChave(chave.getId());
+
+                        } else {
+
+                            upd.atualizaAdversarioChave(idWin, sel.getIDChaveTorneio(idDupla1Chave, chave.getFase() + 1));
+                            upd.atualizaVerificadoChave(chave.getId());
+                        }
+                    }
+
+                }
+                idDupla1Chave = chave.getIdDupla1();
+
+            }
+
+        }
 
     }
 

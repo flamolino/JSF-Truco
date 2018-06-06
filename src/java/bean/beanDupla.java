@@ -81,6 +81,7 @@ public class beanDupla {
     }
 
     public void excluirOuSairDaDupla(String dupla) throws SQLException {
+
         int id1 = this.dupla.getJogador();
         int id2 = this.dupla.getJogadorLider();
         if (this.temDupla) {

@@ -11,7 +11,7 @@ package bean;
  */
 public class ChaveTorneio {
 
-    private int id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2;
+    private int id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2, verificado;
 
     public ChaveTorneio() {
         this.id = -1;
@@ -21,6 +21,7 @@ public class ChaveTorneio {
         this.idTorneio = -1;
         this.scoreDp1 = 0;
         this.scoreDp2 = 0;
+        this.verificado = -1;
     }
 
     /**
@@ -119,6 +120,20 @@ public class ChaveTorneio {
      */
     public void setScoreDp2(int scoreDp2) {
         this.scoreDp2 = scoreDp2;
+    }
+
+    /**
+     * @return the verificado
+     */
+    public int getVerificado() {
+        return verificado;
+    }
+
+    /**
+     * @param verificado the verificado to set
+     */
+    public void setVerificado(int verificado) {
+        this.verificado = verificado;
     }
 
 }
