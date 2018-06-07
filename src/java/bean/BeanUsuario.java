@@ -198,8 +198,8 @@ public class BeanUsuario {
 
     public String marcacao() {
 
-        return "<h:commandButton value=\"Cadastrar\" styleClass=\"btn btn-danger btn-login\" action=\"#{usuario.callCadastroUsuario}\"/>";
-
+        //return "<div> /div>";
+        return "<h:commandButton value=\"TESTE\" styleClass=\"btn btn-warning btn-login\"/>";
     }
 
 
