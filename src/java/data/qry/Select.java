@@ -56,31 +56,29 @@ public class Select {
     private ArrayList<ChaveTorneio> listaChaveTor = null;
 
     public int getIDChaveTorneio(int idDupla1, int fase) throws SQLException {
+
         int idChave = -1;
-        try {
 
-            this.conexao = new Conn();
+        this.conexao = new Conn();
 
-            this.pstmt = conexao.getConexao().prepareStatement(PEGA_ID_CHAVE_TORNEIO_POR_IDDUPLA1_E_FASE);
+        this.pstmt = conexao.getConexao().prepareStatement(PEGA_ID_CHAVE_TORNEIO_POR_IDDUPLA1_E_FASE);
 
-            this.pstmt.setInt(1, idDupla1);
-            this.pstmt.setInt(1, fase);
+        this.pstmt.setInt(1, idDupla1);
+        this.pstmt.setInt(2, fase);
 
-            this.rs = pstmt.executeQuery();
+        this.rs = pstmt.executeQuery();
 
-            if (this.rs != null) {
+        if (this.rs != null) {
 
-                if (this.rs.next()) {
+            if (this.rs.next()) {
 
-                    idChave = this.rs.getInt("id");
-                }
+                idChave = this.rs.getInt("id");
             }
-
-        } catch (SQLException e) {
-
         }
+
         closeConns();
         return idChave;
+
     }
 
     public ArrayList<ChaveTorneio> getChaveTorneioAtualizada(int idTorneio) throws SQLException {

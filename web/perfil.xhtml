@@ -24,9 +24,12 @@
                     <div align="center" class="mainMid-form bg-light">
 
                         <h2 class="text-dark" > #{usuario.nome} </h2>
-                        <h:commandButton id="imagem" image="#{usuario.avatar}" styleClass="btn btn-transparent btn-image-avatar" action="#{inputText.callInputText(usuario.user, 'perfil', 3, 'Adicione a URL da imagem')}">
-                            <f:ajax  event='action' render="imagem" > </f:ajax>
-                        </h:commandButton>
+                        
+                        <h:panelGroup id="imagem">
+                            <h:commandButton image="#{usuario.avatar}" styleClass="btn btn-transparent btn-image-avatar" action="#{inputText.callInputText(usuario.user, 'perfil', 3, 'Adicione a URL da imagem')}">
+                                <f:ajax  event='action' render="imagem" > </f:ajax>
+                            </h:commandButton>
+                        </h:panelGroup>
 
                         <h:panelGrid columns="2" >
 

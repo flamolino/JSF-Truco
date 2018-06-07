@@ -152,29 +152,32 @@ public class BeanTorneio {
 
     public void avancaFasesTorneio() throws SQLException {
 
-        if (this.torneio.getFinalizado() == 0) {
+        //     if (this.torneio.getFinalizado() == 0) {
+        Select sel = new Select();
+        Insert ins = new Insert();
+        Update upd = new Update();
 
-            Select sel = new Select();
-            Insert ins = new Insert();
-            Update upd = new Update();
+        int fasesMax = 0;
 
-            int fasesMax = 0;
+        for (int i = 1; i < this.torneio.getLimiteDuplas(); i *= 2) {
+            fasesMax++;
+        }
 
-            for (int i = 1; i < this.torneio.getLimiteDuplas(); i *= 2) {
-                fasesMax++;
-            }
+        this.lstChaveTorneio = new ArrayList();
+        this.lstChaveTorneio = sel.getChaveTorneioAtualizada(this.torneio.getId());
+        ChaveTorneio chave = new ChaveTorneio();
+        int idDuplaChave = -1;
 
-            this.lstChaveTorneio = new ArrayList();
-            this.lstChaveTorneio = sel.getChaveTorneioAtualizada(this.torneio.getId());
-            ChaveTorneio chave = new ChaveTorneio();
-            int idDupla1Chave = -1;
-            for (int i = 0; i < this.lstChaveTorneio.size(); i++) {
+        this.mensagem = String.valueOf(fasesMax) + " | " + String.valueOf(this.lstChaveTorneio.size());
 
-                chave = this.lstChaveTorneio.get(i);
+        for (int i = 0; i < this.lstChaveTorneio.size(); i++) {
 
+            chave = this.lstChaveTorneio.get(i);
+
+            if (fasesMax > chave.getFase()) {
                 if (chave.getVerificado() == -1) {
 
-                    if (chave.getScoreDp1() != 0 || chave.getScoreDp2() != 0) {
+                    if (chave.getScoreDp1() != 0 || chave.getScoreDp2() != 0 && chave.getIdDupla1() != -1 && chave.getIdDupla2() != -1) {
 
                         int idWin;
 
@@ -184,24 +187,52 @@ public class BeanTorneio {
                             idWin = chave.getIdDupla2();
                         }
 
-                        if (i == 0 || i % 2 == 0) {
-                            ins.inserirNaChave(idWin, -1, chave.getFase() + 1, this.torneio.getId());
-                            upd.atualizaVerificadoChave(chave.getId());
+                        atualizaFase(i, chave, idDuplaChave, idWin);
 
-                        } else {
+                    } else if (chave.getIdDupla1() == -1 && chave.getIdDupla2() == -1) {
 
-                            upd.atualizaAdversarioChave(idWin, sel.getIDChaveTorneio(idDupla1Chave, chave.getFase() + 1));
-                            upd.atualizaVerificadoChave(chave.getId());
-                        }
+                        atualizaFase(i, chave, idDuplaChave, -1);
+
+                    } else if (chave.getIdDupla1() == -1 && chave.getIdDupla2() != -1) {
+
+                        atualizaFase(i, chave, idDuplaChave, chave.getIdDupla2());
+
+                    } else if (chave.getIdDupla1() != -1 && chave.getIdDupla2() == -1) {
+
+                        atualizaFase(i, chave, idDuplaChave, chave.getIdDupla1());
+
                     }
 
                 }
-                idDupla1Chave = chave.getIdDupla1();
 
+            } else {
+                // se entrar aqui, está na fase final
+            }
+            if (chave.getScoreDp1() >= chave.getScoreDp2()) {
+                idDuplaChave = chave.getIdDupla1();
+            } else {
+                idDuplaChave = chave.getIdDupla2();
             }
 
         }
 
+        //  }
+    }
+
+    private void atualizaFase(int i, ChaveTorneio chave, int idDuplaChave, int idWin) throws SQLException {
+        Insert ins = new Insert();
+        Update upd = new Update();
+        Select sel = new Select();
+        if (i % 2 == 0 || i == 0) {
+            ins.inserirNaChave(idWin, -1, chave.getFase() + 1, this.torneio.getId());
+            upd.atualizaVerificadoChave(chave.getId());
+        } else {
+            int idChaveTorneio = sel.getIDChaveTorneio(idDuplaChave, (chave.getFase() + 1));
+            if (idChaveTorneio != -1) {
+                upd.atualizaAdversarioChave(idWin, idChaveTorneio);
+                upd.atualizaVerificadoChave(chave.getId());
+            }
+        }
     }
 
     public void criarNovoTorneio(int idCriador) throws SQLException {

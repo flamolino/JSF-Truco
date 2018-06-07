@@ -11,7 +11,6 @@
 
     <body class="bg-dark">
 
-
         <div class="login-form bg-light">
             <h:form>
                 <div class="btn-group btn-group-toggle" style="width: 100%; margin-bottom: 20px;">
@@ -38,14 +37,16 @@
                 <h:inputSecret id='senha' value="#{usuario.senha}" required="true" requiredMessage="Digite a senha" styleClass="input-login"/>
                 <h:commandButton value="Logar" styleClass="btn btn-dark btn-login" action="#{usuario.logar}"/>
             </h:form>
+
             <h:form>
                 <h:commandButton value="Cadastrar" styleClass="btn btn-danger btn-login" action="#{usuario.callCadastroUsuario}"/>
             </h:form>
+
+            #{usuario.marcacao()}
+
         </div>
 
-
     </body>
-
 
 </html>
 

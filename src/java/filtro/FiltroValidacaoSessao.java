@@ -41,7 +41,7 @@ public class FiltroValidacaoSessao implements Filter {
             } else {
                 ((HttpServletResponse) response).
                         sendRedirect(((HttpServletRequest) request).
-                                getContextPath() + "/index.xhtml");
+                                getContextPath() + "/index.jsf");
             }
         } catch (IOException | ServletException ex) {
             Logger.getLogger(FiltroValidacaoSessao.class.getName()).log(Level.SEVERE, null, ex);

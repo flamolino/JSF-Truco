@@ -28,7 +28,7 @@ public class Insert {
             + "(id, idDupla, idTorneio, ordem) VALUES (null, ?, ?, ?);";
 
     private static final String INSERIR_CHAVE = "INSERT INTO chave "
-            + "(id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2, veificado)"
+            + "(id, idDupla1, idDupla2, fase, idTorneio, scoreDp1, scoreDp2, verificado)"
             + " VALUES (null, ?, ?, ?, ?, ?, ?, ?);";
 
     private int registros;

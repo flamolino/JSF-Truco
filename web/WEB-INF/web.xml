@@ -30,7 +30,12 @@
 
     <filter-mapping>
         <filter-name>SessionValidatorFilter</filter-name>
-        <url-pattern>/faces/*</url-pattern>
+        <url-pattern>/torneio_detalhado.jsf</url-pattern>
+        <url-pattern>/dupla.jsf</url-pattern>
+        <url-pattern>/perfil.jsf</url-pattern>
+        <url-pattern>/cadastro_torneio.jsf</url-pattern>
+        <url-pattern>/inputText.jsf</url-pattern>
+        <url-pattern>/torneio_detalhado.jsf</url-pattern>
     </filter-mapping>
 
 

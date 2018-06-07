@@ -21,6 +21,7 @@ public class BeanUsuario {
     private String mensagem;
     private boolean logado;
     private Usuario user = null;
+    boolean mostrar;
 
     //constructor
     public BeanUsuario() {
@@ -194,6 +195,13 @@ public class BeanUsuario {
             return "";
         }
     }
+
+    public String marcacao() {
+
+        return "<h:commandButton value=\"Cadastrar\" styleClass=\"btn btn-danger btn-login\" action=\"#{usuario.callCadastroUsuario}\"/>";
+
+    }
+
 
     /*
     Gets and Setters
