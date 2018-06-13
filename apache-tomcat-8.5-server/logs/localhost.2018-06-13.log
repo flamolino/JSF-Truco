@@ -1,0 +1,5 @@
+13-Jun-2018 13:38:30.453 INFORMA합ES [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Jun-2018 13:38:30.453 INFORMA합ES [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Jun-2018 13:38:30.455 INFORMA합ES [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@943b627')
+13-Jun-2018 14:18:25.321 INFORMA합ES [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Jun-2018 14:18:25.321 INFORMA합ES [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
